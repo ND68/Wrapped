@@ -3380,6 +3380,7 @@ int id mtrl_picker_text_input_range_start 0x7f08012e
 int id mtrl_picker_title_text 0x7f08012f
 int id mtrl_view_tag_bottom_padding 0x7f080130
 int id multiply 0x7f080131
+int id nameTextView 0x7f0801fa
 int id navigation_bar_item_active_indicator_view 0x7f080132
 int id navigation_bar_item_icon_container 0x7f080133
 int id navigation_bar_item_icon_view 0x7f080134
@@ -3720,6 +3721,7 @@ int layout m3_alert_dialog_actions 0x7f0b0032
 int layout m3_alert_dialog_title 0x7f0b0033
 int layout m3_auto_complete_simple_item 0x7f0b0034
 int layout m3_side_sheet_dialog 0x7f0b0035
+int layout main_display_page 0x7f0b006e
 int layout material_chip_input_combo 0x7f0b0036
 int layout material_clock_display 0x7f0b0037
 int layout material_clock_display_divider 0x7f0b0038

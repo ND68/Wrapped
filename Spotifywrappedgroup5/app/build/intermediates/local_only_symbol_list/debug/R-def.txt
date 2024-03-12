@@ -7,11 +7,13 @@ drawable ic_launcher_foreground
 id activity_main
 id code_btn
 id code_text_view
+id nameTextView
 id profile_btn
 id response_text_view
 id token_btn
 id token_text_view
 layout activity_main
+layout main_display_page
 mipmap ic_launcher
 mipmap ic_launcher_round
 string app_name
