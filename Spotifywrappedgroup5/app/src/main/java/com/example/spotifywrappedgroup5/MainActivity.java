@@ -24,10 +24,13 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
+import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
+
 public class MainActivity extends AppCompatActivity {
 
-    public static final String CLIENT_ID = "Client ID Here!";
-    public static final String REDIRECT_URI = "[ Insert redirectSchemeName here! ]://[ Insert redirectHostName here! ]";
+    public static final String CLIENT_ID = "4cf685333f204e4fadde2561002b308a";
+    public static final String REDIRECT_URI = "spotifywrappedgroup5://auth";
 
     public static final int AUTH_TOKEN_REQUEST_CODE = 0;
     public static final int AUTH_CODE_REQUEST_CODE = 1;
@@ -36,17 +39,22 @@ public class MainActivity extends AppCompatActivity {
     private String mAccessToken, mAccessCode;
     private Call mCall;
 
-    private TextView tokenTextView, codeTextView, profileTextView;
+    private TextView tokenTextView, codeTextView, profileTextView, nameTextView;
+    protected String userName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         // Initialize the views
         tokenTextView = (TextView) findViewById(R.id.token_text_view);
         codeTextView = (TextView) findViewById(R.id.code_text_view);
         profileTextView = (TextView) findViewById(R.id.response_text_view);
+
+
+        //nameTextView = (TextView) findViewById(R.id.nameTextView);
 
         // Initialize the buttons
         Button tokenBtn = (Button) findViewById(R.id.token_btn);
@@ -124,6 +132,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Create a request to get the user profile
         final Request request = new Request.Builder()
+                // URL here. Added artists.
                 .url("https://api.spotify.com/v1/me")
                 .addHeader("Authorization", "Bearer " + mAccessToken)
                 .build();
@@ -142,8 +151,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 try {
+                    // Access JSON response here.
                     final JSONObject jsonObject = new JSONObject(response.body().string());
+                    // Set to text in profileTextView.
+                    userName = jsonObject.get("display_name").toString();
+                    //setTextAsync(userName, nameTextView);
                     setTextAsync(jsonObject.toString(3), profileTextView);
+
                 } catch (JSONException e) {
                     Log.d("JSON", "Failed to parse data: " + e);
                     Toast.makeText(MainActivity.this, "Failed to parse data, watch Logcat for more details",
@@ -173,7 +187,7 @@ public class MainActivity extends AppCompatActivity {
     private AuthorizationRequest getAuthenticationRequest(AuthorizationResponse.Type type) {
         return new AuthorizationRequest.Builder(CLIENT_ID, type, getRedirectUri().toString())
                 .setShowDialog(false)
-                .setScopes(new String[] { "user-read-email" }) // <--- Change the scope of your requested token here
+                .setScopes(new String[] { "user-top-read" }) // <--- Change the scope of your requested token here
                 .setCampaign("your-campaign-token")
                 .build();
     }
