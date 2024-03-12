@@ -1,0 +1,21 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color white
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+id activity_main
+id code_btn
+id code_text_view
+id profile_btn
+id response_text_view
+id token_btn
+id token_text_view
+layout activity_main
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+style Base.Theme.SpotifyWrappedGroup5
+style Theme.SpotifyWrappedGroup5
+xml backup_rules
+xml data_extraction_rules
