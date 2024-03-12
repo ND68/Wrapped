@@ -3302,6 +3302,7 @@ id easeInOut
 id easeOut
 id east
 id edge
+id editTextTextPassword
 id edit_query
 id elastic
 id embed
@@ -3535,6 +3536,7 @@ id shortcut
 id showCustom
 id showHome
 id showTitle
+id signup
 id sin
 id skipCollapsed
 id skipped
@@ -3622,6 +3624,7 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id userNameInput
 id vertical_only
 id view_offset_helper
 id view_transition
@@ -3776,6 +3779,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout landing_page
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
@@ -3896,6 +3900,7 @@ string fallback_menu_item_share_link
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
 string item_view_role_description
+string login_button
 string m3_exceed_max_badge_text_suffix
 string m3_ref_typeface_brand_medium
 string m3_ref_typeface_brand_regular
@@ -4009,6 +4014,7 @@ string searchview_clear_text_content_description
 string searchview_navigation_content_description
 string side_sheet_accessibility_pane_title
 string side_sheet_behavior
+string signup_button
 string status_bar_notification_info_overflow
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
