@@ -24,6 +24,10 @@
         "source": "com.example.spotifywrappedgroup5.app-main-47:/mipmap-hdpi/ic_launcher_round.webp"
     },
     {
+        "merged": "com.example.spotifywrappedgroup5.app-merged_res-45:/layout_signup.xml.flat",
+        "source": "com.example.spotifywrappedgroup5.app-main-47:/layout/signup.xml"
+    },
+    {
         "merged": "com.example.spotifywrappedgroup5.app-merged_res-45:/mipmap-mdpi_ic_launcher.webp.flat",
         "source": "com.example.spotifywrappedgroup5.app-main-47:/mipmap-mdpi/ic_launcher.webp"
     },
