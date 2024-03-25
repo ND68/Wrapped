@@ -8,24 +8,25 @@
             <LayoutPositions>
               <option name="myPositions">
                 <map>
-                  <entry key="mainActivity">
+                  <entry key="LandingPage">
                     <value>
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="-96" />
+                            <option name="x" value="-24" />
+                            <option name="y" value="-154" />
                           </Point>
                         </option>
                       </LayoutPositions>
                     </value>
                   </entry>
-                  <entry key="mainDisplayPage">
+                  <entry key="SignUpPage">
                     <value>
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="115" />
-                            <option name="y" value="1" />
+                            <option name="x" value="179" />
+                            <option name="y" value="-128" />
                           </Point>
                         </option>
                       </LayoutPositions>

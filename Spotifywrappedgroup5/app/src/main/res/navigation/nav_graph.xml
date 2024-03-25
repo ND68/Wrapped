@@ -2,12 +2,23 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph">
+    android:id="@+id/nav_graph"
+    app:startDestination="@+id/LandingPage">
 
     <fragment
         android:id="@+id/LandingPage"
         android:name="com.example.spotifywrappedgroup5.LandingPage"
-        android:label="Landing Fragment"
+        android:label="Login"
+        tools:layout="@layout/landing_page">
+        <action
+            android:id="@+id/action_LandingPage_to_SignUpPage"
+            app:destination="@id/SignUpPage" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/SignUpPage"
+        android:name="com.example.spotifywrappedgroup5.SignupPage"
+        android:label="Signup"
         tools:layout="@layout/landing_page">
     </fragment>
 
