@@ -18,8 +18,11 @@
     <fragment
         android:id="@+id/SignUpPage"
         android:name="com.example.spotifywrappedgroup5.SignupPage"
-        android:label="Landing Fragment"
+        android:label="Signup"
         tools:layout="@layout/landing_page">
+        <action
+            android:id="@+id/action_SignUpPage_to_LandingPage"
+            app:destination="@id/LandingPage" />
     </fragment>
 
 </navigation>

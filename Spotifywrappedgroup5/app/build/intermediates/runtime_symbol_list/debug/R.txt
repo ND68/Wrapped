@@ -3174,6 +3174,7 @@ int id actionDown 0x7f080032
 int id actionDownUp 0x7f080033
 int id actionUp 0x7f080034
 int id action_LandingPage_to_SignUpPage 0x7f080035
+int id action_SignUpPage_to_LandingPage 0x7f08020f
 int id action_bar 0x7f080036
 int id action_bar_activity_content 0x7f080037
 int id action_bar_container 0x7f080038
@@ -3227,7 +3228,6 @@ int id browser_actions_menu_item_icon 0x7f080067
 int id browser_actions_menu_item_text 0x7f080068
 int id browser_actions_menu_items 0x7f080069
 int id browser_actions_menu_view 0x7f08006a
-int id button2 0x7f08006b
 int id buttonPanel 0x7f08006c
 int id cache_measures 0x7f08006d
 int id callMeasure 0x7f08006e
@@ -3539,6 +3539,7 @@ int id showCustom 0x7f08019f
 int id showHome 0x7f0801a0
 int id showTitle 0x7f0801a1
 int id sin 0x7f0801a2
+int id singup 0x7f08020e
 int id skipCollapsed 0x7f0801a3
 int id skipped 0x7f0801a4
 int id slide 0x7f0801a5
@@ -3845,7 +3846,7 @@ int layout notification_template_part_time 0x7f0b006c
 int layout select_dialog_item_material 0x7f0b006d
 int layout select_dialog_multichoice_material 0x7f0b006e
 int layout select_dialog_singlechoice_material 0x7f0b006f
-int layout signup 0x7f0b0070
+int layout signup_page 0x7f0b0072
 int layout support_simple_spinner_dropdown_item 0x7f0b0071
 int mipmap ic_launcher 0x7f0d0000
 int mipmap ic_launcher_round 0x7f0d0001
