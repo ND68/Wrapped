@@ -4,7 +4,7 @@
             "outputFile": "com.example.spotifywrappedgroup5.app-mergeDebugResources-43:/values-w600dp-land-v13/values-w600dp-land-v13.xml",
             "map": [
                 {
-                    "source": "/Users/nathand/.gradle/caches/transforms-3/55be221419965dd391bedfdbcdacbf0f/transformed/material-1.11.0/res/values-w600dp-land-v13/values-w600dp-land-v13.xml",
+                    "source": "/Users/ameenagbaria/.gradle/caches/transforms-3/55be221419965dd391bedfdbcdacbf0f/transformed/material-1.11.0/res/values-w600dp-land-v13/values-w600dp-land-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
