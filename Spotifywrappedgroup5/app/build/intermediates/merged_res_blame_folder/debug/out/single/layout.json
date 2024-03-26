@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "/Users/nathand/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-mergeDebugResources-44:/layout/activity_main.xml",
+        "source": "/Users/nathand/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-main-47:/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/nathand/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-mergeDebugResources-44:/layout/signup.xml",
+        "source": "/Users/nathand/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-main-47:/layout/signup.xml"
+    },
+    {
+        "merged": "com.example.spotifywrappedgroup5.app-mergeDebugResources-44:/layout/signup_page.xml",
+        "source": "com.example.spotifywrappedgroup5.app-main-47:/layout/signup_page.xml"
+    },
+    {
+        "merged": "/Users/nathand/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-mergeDebugResources-44:/layout/main_display_page.xml",
+        "source": "/Users/nathand/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-main-47:/layout/main_display_page.xml"
+    },
+    {
+        "merged": "/Users/nathand/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-mergeDebugResources-44:/layout/landing_page.xml",
+        "source": "/Users/nathand/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-main-47:/layout/landing_page.xml"
+    },
+    {
+        "merged": "/Users/nathand/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-mergeDebugResources-44:/layout/content_main.xml",
+        "source": "/Users/nathand/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-main-47:/layout/content_main.xml"
+    }
+]
