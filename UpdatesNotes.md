@@ -10,3 +10,8 @@
 2. Change the layout of MainActivity
 3. Design New Fragment windows to address User Story #1:  a colorful and fun presentation of the different aspects of a user's personal Spotify music listening tastes displayed
 
+2024 Mar. 14   <br>
+1. Setting up connection between main page, sign up page, and login page
+
+2024 Mar. 26   <br>
+

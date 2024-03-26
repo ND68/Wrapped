@@ -3,16 +3,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/mainActivity">
+    app:startDestination="@+id/LandingPage">
 
-    <activity
-        android:id="@+id/mainActivity"
-        android:name="com.example.spotifywrappedgroup5.MainActivity"
-        android:label="activity_main"
-        tools:layout="@layout/activity_main" />
-    <activity
-        android:id="@+id/mainDisplayPage"
-        android:name="com.example.spotifywrappedgroup5.MainDisplayPage"
-        android:label="main_display_page"
-        tools:layout="@layout/main_display_page" />
+    <fragment
+        android:id="@+id/LandingPage"
+        android:name="com.example.spotifywrappedgroup5.LandingPage"
+        android:label="Login"
+        tools:layout="@layout/landing_page">
+        <action
+            android:id="@+id/action_LandingPage_to_SignUpPage"
+            app:destination="@id/SignUpPage" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/SignUpPage"
+        android:name="com.example.spotifywrappedgroup5.SignupPage"
+        android:label="Signup"
+        tools:layout="@layout/landing_page">
+        <action
+            android:id="@+id/action_SignUpPage_to_LandingPage"
+            app:destination="@id/LandingPage" />
+    </fragment>
+
 </navigation>
