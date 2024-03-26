@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_LandingPage_to_SignUpPage"
             app:destination="@id/SignUpPage" />
+        <action
+            android:id="@+id/action_LandingPage_to_SpotifySummary"
+            app:destination="@id/SpotifySummary" />
     </fragment>
 
     <fragment
@@ -30,9 +33,6 @@
         android:name="com.example.spotifywrappedgroup5.SpotifySummary"
         android:label="Summary"
         tools:layout="@layout/spotify_summary">
-        <action
-            android:id="@+id/action_LandingPage_to_SignUpPage"
-            app:destination="@id/SignUpPage" />
     </fragment>
 
 </navigation>

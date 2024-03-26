@@ -61,7 +61,7 @@ public class SignupPage extends Fragment {
                             if (task.isSuccessful()) {
                                 Toast.makeText(getActivity(), "Signup Successful", Toast.LENGTH_SHORT).show();
                                 NavHostFragment.findNavController(SignupPage.this)
-                                        .navigate(R.id.action_SignUpPage_to_LandingPage);
+                                        .navigate(R.id.action_LandingPage_to_SpotifySummary);
                             } else {
                                 Toast.makeText(getActivity(), "Signup Failed" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             }

@@ -57,6 +57,8 @@ public class LandingPage extends Fragment {
                             @Override
                             public void onSuccess(AuthResult authResult) {
                                 Toast.makeText(getActivity(), "Login Successful", Toast.LENGTH_SHORT).show();
+                                NavHostFragment.findNavController(LandingPage.this)
+                                        .navigate(R.id.action_LandingPage_to_SpotifySummary);
                             }
                         }).addOnFailureListener(new OnFailureListener() {
                             @Override
