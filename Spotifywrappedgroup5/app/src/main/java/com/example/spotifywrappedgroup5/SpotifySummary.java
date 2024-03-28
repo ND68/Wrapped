@@ -59,8 +59,6 @@ public class SpotifySummary extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         profileTextView = view.findViewById(R.id.usernameTextView);
         getToken();
-        getCode();
-        onGetUserProfileClicked();
     };
 
     /**
@@ -71,7 +69,12 @@ public class SpotifySummary extends Fragment {
      */
     public void getToken() {
         final AuthorizationRequest request = getAuthenticationRequest(AuthorizationResponse.Type.TOKEN);
-        AuthorizationClient.openLoginActivity(getActivity(), AUTH_TOKEN_REQUEST_CODE, request);
+        // To start LoginActivity from a Fragment:
+        Intent intent = AuthorizationClient.createLoginActivityIntent(getActivity(), request);
+        startActivityForResult(intent, AUTH_TOKEN_REQUEST_CODE);
+
+        // To close LoginActivity
+        AuthorizationClient.stopLoginActivity(getActivity(), AUTH_TOKEN_REQUEST_CODE);
     }
 
     /**
@@ -82,7 +85,12 @@ public class SpotifySummary extends Fragment {
      */
     public void getCode() {
         final AuthorizationRequest request = getAuthenticationRequest(AuthorizationResponse.Type.CODE);
-        AuthorizationClient.openLoginActivity(getActivity(), AUTH_CODE_REQUEST_CODE, request);
+        // To start LoginActivity from a Fragment:
+        Intent intent = AuthorizationClient.createLoginActivityIntent(getActivity(), request);
+        startActivityForResult(intent, AUTH_CODE_REQUEST_CODE);
+
+        // To close LoginActivity
+        AuthorizationClient.stopLoginActivity(getActivity(), AUTH_CODE_REQUEST_CODE);
     }
 
 
@@ -98,11 +106,13 @@ public class SpotifySummary extends Fragment {
         // Check which request code is present (if any)
         if (AUTH_TOKEN_REQUEST_CODE == requestCode) {
             mAccessToken = response.getAccessToken();
-            //setTextAsync(mAccessToken, tokenTextView);
+            getCode();
+            //profileTextView.setText(mAccessToken);
 
         } else if (AUTH_CODE_REQUEST_CODE == requestCode) {
             mAccessCode = response.getCode();
-            //setTextAsync(mAccessCode, codeTextView);
+            onGetUserProfileClicked();
+            profileTextView.setText(mAccessCode);
         }
     }
 
@@ -160,9 +170,6 @@ public class SpotifySummary extends Fragment {
      * @param text the text to set
      * @param textView TextView object to update
      */
-//    private void setTextAsync(final String text, TextView textView) {
-//        runOnUiThread(() -> textView.setText(text));
-//    }
 
     /**
      * Get authentication request
