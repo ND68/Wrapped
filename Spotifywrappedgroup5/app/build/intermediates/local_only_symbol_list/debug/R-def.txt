@@ -26,6 +26,7 @@ id submit_signup
 id toolbar
 id userNameInput
 id username
+id usernameTextView
 id verify_password
 layout activity_main
 layout content_main

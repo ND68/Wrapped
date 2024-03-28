@@ -5805,6 +5805,7 @@ com.example.spotifywrappedgroup5:dimen/mtrl_alert_dialog_picker_background_inset
 com.example.spotifywrappedgroup5:style/Widget.MaterialComponents.MaterialDivider = 0x7f12042d
 com.example.spotifywrappedgroup5:color/m3_sys_color_dynamic_dark_on_error = 0x7f05018d
 com.example.spotifywrappedgroup5:dimen/m3_carousel_extra_small_item_size = 0x7f0600f0
+com.example.spotifywrappedgroup5:id/usernameTextView = 0x7f080217
 com.example.spotifywrappedgroup5:macro/m3_comp_top_app_bar_medium_headline_color = 0x7f0c016e
 com.example.spotifywrappedgroup5:attr/badgeTextColor = 0x7f03005f
 com.example.spotifywrappedgroup5:color/material_slider_inactive_track_color = 0x7f0502ba
