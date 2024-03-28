@@ -3134,6 +3134,7 @@ int id SHOW_PATH 0x7f08000a
 int id SHOW_PROGRESS 0x7f08000b
 int id SYM 0x7f08000c
 int id SignUpPage 0x7f08000d
+int id SpotifySummary 0x7f08020f
 int id TOP_END 0x7f08000e
 int id TOP_START 0x7f08000f
 int id accelerate 0x7f080010
@@ -3847,6 +3848,7 @@ int layout select_dialog_item_material 0x7f0b006d
 int layout select_dialog_multichoice_material 0x7f0b006e
 int layout select_dialog_singlechoice_material 0x7f0b006f
 int layout signup_page 0x7f0b0070
+int layout spotify_summary 0x7f0b0072
 int layout support_simple_spinner_dropdown_item 0x7f0b0071
 int mipmap ic_launcher 0x7f0d0000
 int mipmap ic_launcher_round 0x7f0d0001

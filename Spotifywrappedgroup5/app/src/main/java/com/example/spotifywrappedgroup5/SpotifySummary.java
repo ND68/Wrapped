@@ -16,6 +16,7 @@ public class SpotifySummary extends Fragment {
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
+
     ) {
 
         binding = SpotifySummaryBinding.inflate(inflater, container, false);

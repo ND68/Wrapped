@@ -6,6 +6,7 @@ drawable ic_launcher_background
 drawable ic_launcher_foreground
 id LandingPage
 id SignUpPage
+id SpotifySummary
 id action_LandingPage_to_SignUpPage
 id action_SignUpPage_to_LandingPage
 id editTextTextPassword
@@ -29,6 +30,7 @@ layout content_main
 layout landing_page
 layout main_display_page
 layout signup_page
+layout spotify_summary
 mipmap ic_launcher
 mipmap ic_launcher_round
 navigation nav_graph
