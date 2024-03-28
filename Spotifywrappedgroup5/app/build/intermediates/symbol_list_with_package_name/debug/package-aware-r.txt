@@ -3674,6 +3674,7 @@ id up
 id useLogo
 id userNameInput
 id username
+id usernameTextView
 id verify_password
 id vertical_only
 id view_offset_helper

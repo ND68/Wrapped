@@ -3673,6 +3673,7 @@ int id up 0x7f0801ff
 int id useLogo 0x7f080200
 int id userNameInput 0x7f080201
 int id username 0x7f080202
+int id usernameTextView 0x7f080217
 int id verify_password 0x7f080203
 int id vertical_only 0x7f080204
 int id view_offset_helper 0x7f080205
