@@ -21,10 +21,10 @@ public final class LandingPageBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final EditText editTextTextPassword;
+  public final Button loginButton;
 
   @NonNull
-  public final Button login;
+  public final EditText passwordInput;
 
   @NonNull
   public final Button singup;
@@ -32,12 +32,11 @@ public final class LandingPageBinding implements ViewBinding {
   @NonNull
   public final EditText userNameInput;
 
-  private LandingPageBinding(@NonNull ConstraintLayout rootView,
-      @NonNull EditText editTextTextPassword, @NonNull Button login, @NonNull Button singup,
-      @NonNull EditText userNameInput) {
+  private LandingPageBinding(@NonNull ConstraintLayout rootView, @NonNull Button loginButton,
+      @NonNull EditText passwordInput, @NonNull Button singup, @NonNull EditText userNameInput) {
     this.rootView = rootView;
-    this.editTextTextPassword = editTextTextPassword;
-    this.login = login;
+    this.loginButton = loginButton;
+    this.passwordInput = passwordInput;
     this.singup = singup;
     this.userNameInput = userNameInput;
   }
@@ -69,15 +68,15 @@ public final class LandingPageBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.editTextTextPassword;
-      EditText editTextTextPassword = ViewBindings.findChildViewById(rootView, id);
-      if (editTextTextPassword == null) {
+      id = R.id.loginButton;
+      Button loginButton = ViewBindings.findChildViewById(rootView, id);
+      if (loginButton == null) {
         break missingId;
       }
 
-      id = R.id.login;
-      Button login = ViewBindings.findChildViewById(rootView, id);
-      if (login == null) {
+      id = R.id.passwordInput;
+      EditText passwordInput = ViewBindings.findChildViewById(rootView, id);
+      if (passwordInput == null) {
         break missingId;
       }
 
@@ -93,8 +92,8 @@ public final class LandingPageBinding implements ViewBinding {
         break missingId;
       }
 
-      return new LandingPageBinding((ConstraintLayout) rootView, editTextTextPassword, login,
-          singup, userNameInput);
+      return new LandingPageBinding((ConstraintLayout) rootView, loginButton, passwordInput, singup,
+          userNameInput);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

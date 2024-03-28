@@ -13,8 +13,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="-24" />
-                            <option name="y" value="-154" />
+                            <option name="x" value="-255" />
+                            <option name="y" value="-132" />
                           </Point>
                         </option>
                         <option name="myPositions">
@@ -50,13 +50,13 @@
                       </LayoutPositions>
                     </value>
                   </entry>
-                  <entry key="s">
+                  <entry key="SpotifySummary">
                     <value>
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="12" />
-                            <option name="y" value="12" />
+                            <option name="x" value="-267" />
+                            <option name="y" value="271" />
                           </Point>
                         </option>
                         <option name="myPositions">

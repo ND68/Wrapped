@@ -12,4 +12,9 @@ public class LandingPageDirections {
   public static NavDirections actionLandingPageToSignUpPage() {
     return new ActionOnlyNavDirections(R.id.action_LandingPage_to_SignUpPage);
   }
+
+  @NonNull
+  public static NavDirections actionLandingPageToSpotifySummary() {
+    return new ActionOnlyNavDirections(R.id.action_LandingPage_to_SpotifySummary);
+  }
 }
