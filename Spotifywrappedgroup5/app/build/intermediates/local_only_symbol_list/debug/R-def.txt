@@ -24,6 +24,7 @@ id singup
 id submit_signup
 id toolbar
 id userNameInput
+id userProfilePic
 id usernameTextView
 id verify_password
 layout activity_main

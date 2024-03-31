@@ -3672,6 +3672,7 @@ int id unlabeled 0x7f0801ff
 int id up 0x7f080200
 int id useLogo 0x7f080201
 int id userNameInput 0x7f080202
+int id userProfilePic 0x7f080218
 int id usernameTextView 0x7f080203
 int id verify_password 0x7f080204
 int id vertical_only 0x7f080205

@@ -3673,6 +3673,7 @@ id unlabeled
 id up
 id useLogo
 id userNameInput
+id userProfilePic
 id usernameTextView
 id verify_password
 id vertical_only

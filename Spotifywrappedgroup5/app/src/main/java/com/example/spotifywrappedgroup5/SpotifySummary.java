@@ -1,12 +1,15 @@
 package com.example.spotifywrappedgroup5;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +25,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.URI;
+import java.net.URL;
+import java.sql.SQLOutput;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -41,16 +48,16 @@ public class SpotifySummary extends Fragment {
     private Call mCall;
     private @NonNull SpotifySummaryBinding binding;
 
-    //** put all views here **
+    //** put all views here to make them global**
     //** views that aren't global variables can't be accessed by function **
     private TextView usernameTextView;
+    private ImageView profilePicImageView;
 
     @Override
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
-
         binding = SpotifySummaryBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
@@ -61,13 +68,13 @@ public class SpotifySummary extends Fragment {
         getToken();
 
         // **instantiate all views here**
-        // **make sure the views are global views**
+        // **make sure the views are also global variables**
         usernameTextView = view.findViewById(R.id.usernameTextView);
+        profilePicImageView = view.findViewById(R.id.userProfilePic);
     }
 
-    public void onResume() {
-        super.onResume();
 
+    public void start() {
         // **put all api calls here**
         // **put actual function code at the bottom of the page**
 
@@ -123,6 +130,7 @@ public class SpotifySummary extends Fragment {
 
         } else if (AUTH_CODE_REQUEST_CODE == requestCode) {
             mAccessCode = response.getCode();
+            start();
         }
     }
 
@@ -161,7 +169,7 @@ public class SpotifySummary extends Fragment {
                 try {
                     // Access JSON response here.
                     json[0] = new JSONObject(response.body().string());
-                    System.out.println(json[0]);
+                    //System.out.println(json[0]);
 
                 } catch (JSONException e) {
                     Log.d("JSON", "Failed to parse data: " + e);
@@ -178,7 +186,7 @@ public class SpotifySummary extends Fragment {
 
         }
 
-        System.out.println(json[0]);
+        //System.out.println(json[0]);
         return json[0];
     }
 
@@ -240,8 +248,11 @@ public class SpotifySummary extends Fragment {
         try {
             String userName = profileJSON.get("display_name").toString();
             setTextAsync(userName, usernameTextView);
+
+
         } catch (Exception e) {
             Toast.makeText(getActivity(), "Error displaying data" + e, Toast.LENGTH_LONG).show();
+            System.out.println(e);
         }
     }
 }
