@@ -10,6 +10,7 @@ id SpotifySummary
 id action_LandingPage_to_SignUpPage
 id action_LandingPage_to_SpotifySummary
 id action_SignUpPage_to_LandingPage
+id artistListLayout
 id email_id
 id fab
 id firstname
@@ -25,7 +26,6 @@ id submit_signup
 id toolbar
 id userNameInput
 id username
-id usernameTextView
 id verify_password
 layout activity_main
 layout content_main

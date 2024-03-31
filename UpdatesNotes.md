@@ -14,4 +14,5 @@
 1. Setting up connection between main page, sign up page, and login page
 
 2024 Mar. 26   <br>
-
+1. Setting up Firebase for User Story #2: As a user, I want to be able to create an account and log into to the app so I can view my past Spotify Wrapped summaries.
+2. Debugging the login page
