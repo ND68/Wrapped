@@ -4,20 +4,28 @@ package com.example.spotifywrappedgroup5.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
 import com.example.spotifywrappedgroup5.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
+import java.lang.String;
 
 public final class SpotifySummaryBinding implements ViewBinding {
   @NonNull
   private final ConstraintLayout rootView;
 
-  private SpotifySummaryBinding(@NonNull ConstraintLayout rootView) {
+  @NonNull
+  public final TextView usernameTextView;
+
+  private SpotifySummaryBinding(@NonNull ConstraintLayout rootView,
+      @NonNull TextView usernameTextView) {
     this.rootView = rootView;
+    this.usernameTextView = usernameTextView;
   }
 
   @Override
@@ -43,10 +51,19 @@ public final class SpotifySummaryBinding implements ViewBinding {
 
   @NonNull
   public static SpotifySummaryBinding bind(@NonNull View rootView) {
-    if (rootView == null) {
-      throw new NullPointerException("rootView");
-    }
+    // The body of this method is generated in a way you would not otherwise write.
+    // This is done to optimize the compiled bytecode for size and performance.
+    int id;
+    missingId: {
+      id = R.id.usernameTextView;
+      TextView usernameTextView = ViewBindings.findChildViewById(rootView, id);
+      if (usernameTextView == null) {
+        break missingId;
+      }
 
-    return new SpotifySummaryBinding((ConstraintLayout) rootView);
+      return new SpotifySummaryBinding((ConstraintLayout) rootView, usernameTextView);
+    }
+    String missingId = rootView.getResources().getResourceName(id);
+    throw new NullPointerException("Missing required view with ID: ".concat(missingId));
   }
 }

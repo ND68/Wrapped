@@ -3248,7 +3248,6 @@ int id animateToStart 0x7f080056
 int id antiClockwise 0x7f080057
 int id anticipate 0x7f080058
 int id arc 0x7f080059
-int id artistListLayout 0x7f08005a
 int id asConfigured 0x7f08005b
 int id async 0x7f08005c
 int id auto 0x7f08005d
@@ -3673,7 +3672,7 @@ int id unlabeled 0x7f0801ff
 int id up 0x7f080200
 int id useLogo 0x7f080201
 int id userNameInput 0x7f080202
-int id username 0x7f080203
+int id usernameTextView 0x7f080203
 int id verify_password 0x7f080204
 int id vertical_only 0x7f080205
 int id view_offset_helper 0x7f080206

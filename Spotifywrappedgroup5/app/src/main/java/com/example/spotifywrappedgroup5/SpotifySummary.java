@@ -39,17 +39,16 @@ public class SpotifySummary extends Fragment {
     private final OkHttpClient mOkHttpClient = new OkHttpClient();
     private String mAccessToken, mAccessCode;
     private Call mCall;
-    protected String userName;
-    private TextView profileTextView;
-
-    private JSONObject jsonObject;
     private @NonNull SpotifySummaryBinding binding;
+
+    //** put all views here **
+    //** views that aren't global variables can't be accessed by function **
+    private TextView usernameTextView;
 
     @Override
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
-
     ) {
 
         binding = SpotifySummaryBinding.inflate(inflater, container, false);
@@ -59,10 +58,21 @@ public class SpotifySummary extends Fragment {
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        profileTextView = view.findViewById(R.id.usernameTextView);
         getToken();
 
-    };
+        // **instantiate all views here**
+        // **make sure the views are global views**
+        usernameTextView = view.findViewById(R.id.usernameTextView);
+    }
+
+    public void onResume() {
+        super.onResume();
+
+        // **put all api calls here**
+        // **put actual function code at the bottom of the page**
+
+        displayUserProfile();
+    }
 
     /**
      * Get token from Spotify
@@ -113,7 +123,6 @@ public class SpotifySummary extends Fragment {
 
         } else if (AUTH_CODE_REQUEST_CODE == requestCode) {
             mAccessCode = response.getCode();
-            getJSON("https://api.spotify.com/v1/me");
         }
     }
 
@@ -137,7 +146,8 @@ public class SpotifySummary extends Fragment {
         cancelCall();
         mCall = mOkHttpClient.newCall(request);
 
-        final JSONObject json;
+        final JSONObject[] json = new JSONObject[1];
+
         mCall.enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
@@ -150,20 +160,28 @@ public class SpotifySummary extends Fragment {
             public void onResponse(Call call, Response response) throws IOException {
                 try {
                     // Access JSON response here.
-                    final JSONObject jsonObject = new JSONObject(response.body().string());
-                    json = jsonObject;
-                    // Set to text in profileTextView.
-                    //userName = jsonObject.get("display_name").toString();
-                    //setTextAsync(userName, profileTextView);
+                    json[0] = new JSONObject(response.body().string());
+                    System.out.println(json[0]);
 
                 } catch (JSONException e) {
                     Log.d("JSON", "Failed to parse data: " + e);
                     Toast.makeText(getActivity(), "Failed to parse data, watch Logcat for more details",
                             Toast.LENGTH_SHORT).show();
                 }
+
             }
+
         });
+        try {
+            Thread.sleep(300);
+        } catch (Exception e) {
+
+        }
+
+        System.out.println(json[0]);
+        return json[0];
     }
+
 
     /**
      * Creates a UI thread to update a TextView in the background
@@ -213,5 +231,17 @@ public class SpotifySummary extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+    }
+
+    public void displayUserProfile() {
+        JSONObject profileJSON = getJSON("https://api.spotify.com/v1/me");
+
+        // Set to text in profileTextView.
+        try {
+            String userName = profileJSON.get("display_name").toString();
+            setTextAsync(userName, usernameTextView);
+        } catch (Exception e) {
+            Toast.makeText(getActivity(), "Error displaying data" + e, Toast.LENGTH_LONG).show();
+        }
     }
 }

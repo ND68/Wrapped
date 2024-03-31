@@ -4,7 +4,6 @@ package com.example.spotifywrappedgroup5.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
@@ -22,19 +21,14 @@ public final class ActivityMainBinding implements ViewBinding {
   private final CoordinatorLayout rootView;
 
   @NonNull
-  public final LinearLayout artistListLayout;
-
-  @NonNull
   public final FloatingActionButton fab;
 
   @NonNull
   public final MaterialToolbar toolbar;
 
   private ActivityMainBinding(@NonNull CoordinatorLayout rootView,
-      @NonNull LinearLayout artistListLayout, @NonNull FloatingActionButton fab,
-      @NonNull MaterialToolbar toolbar) {
+      @NonNull FloatingActionButton fab, @NonNull MaterialToolbar toolbar) {
     this.rootView = rootView;
-    this.artistListLayout = artistListLayout;
     this.fab = fab;
     this.toolbar = toolbar;
   }
@@ -66,12 +60,6 @@ public final class ActivityMainBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.artistListLayout;
-      LinearLayout artistListLayout = ViewBindings.findChildViewById(rootView, id);
-      if (artistListLayout == null) {
-        break missingId;
-      }
-
       id = R.id.fab;
       FloatingActionButton fab = ViewBindings.findChildViewById(rootView, id);
       if (fab == null) {
@@ -84,7 +72,7 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityMainBinding((CoordinatorLayout) rootView, artistListLayout, fab, toolbar);
+      return new ActivityMainBinding((CoordinatorLayout) rootView, fab, toolbar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

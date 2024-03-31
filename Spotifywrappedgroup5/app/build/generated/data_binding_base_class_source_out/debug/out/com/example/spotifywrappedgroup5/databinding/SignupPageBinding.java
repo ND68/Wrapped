@@ -36,21 +36,22 @@ public final class SignupPageBinding implements ViewBinding {
   public final Button submitSignup;
 
   @NonNull
-  public final EditText username;
+  public final EditText usernameTextView;
 
   @NonNull
   public final EditText verifyPassword;
 
   private SignupPageBinding(@NonNull ConstraintLayout rootView, @NonNull EditText emailId,
       @NonNull EditText firstname, @NonNull EditText lastname, @NonNull EditText password,
-      @NonNull Button submitSignup, @NonNull EditText username, @NonNull EditText verifyPassword) {
+      @NonNull Button submitSignup, @NonNull EditText usernameTextView,
+      @NonNull EditText verifyPassword) {
     this.rootView = rootView;
     this.emailId = emailId;
     this.firstname = firstname;
     this.lastname = lastname;
     this.password = password;
     this.submitSignup = submitSignup;
-    this.username = username;
+    this.usernameTextView = usernameTextView;
     this.verifyPassword = verifyPassword;
   }
 
@@ -111,9 +112,9 @@ public final class SignupPageBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.username;
-      EditText username = ViewBindings.findChildViewById(rootView, id);
-      if (username == null) {
+      id = R.id.usernameTextView;
+      EditText usernameTextView = ViewBindings.findChildViewById(rootView, id);
+      if (usernameTextView == null) {
         break missingId;
       }
 
@@ -124,7 +125,7 @@ public final class SignupPageBinding implements ViewBinding {
       }
 
       return new SignupPageBinding((ConstraintLayout) rootView, emailId, firstname, lastname,
-          password, submitSignup, username, verifyPassword);
+          password, submitSignup, usernameTextView, verifyPassword);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
