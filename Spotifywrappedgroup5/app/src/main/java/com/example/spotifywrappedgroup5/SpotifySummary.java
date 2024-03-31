@@ -41,6 +41,8 @@ public class SpotifySummary extends Fragment {
     private Call mCall;
     protected String userName;
     private TextView profileTextView;
+
+    private JSONObject jsonObject;
     private @NonNull SpotifySummaryBinding binding;
 
     @Override
@@ -59,6 +61,7 @@ public class SpotifySummary extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         profileTextView = view.findViewById(R.id.usernameTextView);
         getToken();
+
     };
 
     /**
@@ -107,12 +110,10 @@ public class SpotifySummary extends Fragment {
         if (AUTH_TOKEN_REQUEST_CODE == requestCode) {
             mAccessToken = response.getAccessToken();
             getCode();
-            //profileTextView.setText(mAccessToken);
 
         } else if (AUTH_CODE_REQUEST_CODE == requestCode) {
             mAccessCode = response.getCode();
-            onGetUserProfileClicked();
-            profileTextView.setText(mAccessCode);
+            getJSON("https://api.spotify.com/v1/me");
         }
     }
 
@@ -120,22 +121,23 @@ public class SpotifySummary extends Fragment {
      * Get user profile
      * This method will get the user profile using the token
      */
-    public void onGetUserProfileClicked() {
+    public JSONObject getJSON(String url) {
         if (mAccessToken == null) {
             Toast.makeText(getActivity(), "Error Accessing Access Token", Toast.LENGTH_SHORT).show();
-            return;
+            return null;
         }
 
         // Create a request to get the user profile
         final Request request = new Request.Builder()
-                // URL here. Added artists.
-                .url("https://api.spotify.com/v1/me")
+                // URL here. Added artists
+                .url(url)
                 .addHeader("Authorization", "Bearer " + mAccessToken)
                 .build();
 
         cancelCall();
         mCall = mOkHttpClient.newCall(request);
 
+        final JSONObject json;
         mCall.enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
@@ -149,10 +151,10 @@ public class SpotifySummary extends Fragment {
                 try {
                     // Access JSON response here.
                     final JSONObject jsonObject = new JSONObject(response.body().string());
+                    json = jsonObject;
                     // Set to text in profileTextView.
-                    userName = jsonObject.get("display_name").toString();
-                    //setTextAsync(userName, nameTextView);
-                    profileTextView.setText(userName);
+                    //userName = jsonObject.get("display_name").toString();
+                    //setTextAsync(userName, profileTextView);
 
                 } catch (JSONException e) {
                     Log.d("JSON", "Failed to parse data: " + e);
@@ -183,6 +185,12 @@ public class SpotifySummary extends Fragment {
                 .setScopes(new String[] { "user-top-read" }) // <--- Change the scope of your requested token here
                 .setCampaign("your-campaign-token")
                 .build();
+    }
+
+    private void setTextAsync(final String text, TextView textView) {
+        if (isAdded()) {
+            getActivity().runOnUiThread(() -> textView.setText(text));
+        }
     }
 
     /**
