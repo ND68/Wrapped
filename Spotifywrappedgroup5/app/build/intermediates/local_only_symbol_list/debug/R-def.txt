@@ -20,6 +20,7 @@ id nav_graph
 id nav_host_fragment_content_main
 id password
 id passwordInput
+id progressbar
 id singup
 id submit_signup
 id toolbar

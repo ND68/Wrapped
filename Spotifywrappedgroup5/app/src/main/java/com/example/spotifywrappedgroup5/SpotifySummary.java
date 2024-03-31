@@ -1,8 +1,7 @@
 package com.example.spotifywrappedgroup5;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,8 +9,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.Handler;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -47,9 +51,11 @@ public class SpotifySummary extends Fragment {
     private String mAccessToken, mAccessCode;
     private Call mCall;
     private @NonNull SpotifySummaryBinding binding;
+    private Handler mainHandler = new Handler();
 
     //** put all views here to make them global**
     //** views that aren't global variables can't be accessed by function **
+    ProgressBar progressBar;
     private TextView usernameTextView;
     private ImageView profilePicImageView;
 
@@ -65,10 +71,14 @@ public class SpotifySummary extends Fragment {
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
         getToken();
 
         // **instantiate all views here**
         // **make sure the views are also global variables**
+        progressBar = view.findViewById(R.id.progressbar);
+        progressBar.setVisibility(View.VISIBLE);
+
         usernameTextView = view.findViewById(R.id.usernameTextView);
         profilePicImageView = view.findViewById(R.id.userProfilePic);
     }
@@ -79,6 +89,7 @@ public class SpotifySummary extends Fragment {
         // **put actual function code at the bottom of the page**
 
         displayUserProfile();
+        progressBar.setVisibility(View.INVISIBLE);
     }
 
     /**
@@ -241,14 +252,44 @@ public class SpotifySummary extends Fragment {
         binding = null;
     }
 
+    class FetchImage extends Thread {
+        String URL;
+        Bitmap bitmap;
+        ImageView imageView;
+        public FetchImage(ImageView imageView, String URL) {
+            this.imageView = imageView;
+            this.URL = URL;
+        }
+        @Override
+        public void run() {
+
+            InputStream inputStream = null;
+            try {
+                inputStream = new URL(URL).openStream();
+                bitmap = BitmapFactory.decodeStream(inputStream);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            mainHandler.post(new Runnable() {
+                @Override
+                public void run() {
+                    imageView.setImageBitmap(bitmap);
+                }
+            });
+        }
+    }
+
     public void displayUserProfile() {
         JSONObject profileJSON = getJSON("https://api.spotify.com/v1/me");
+
 
         // Set to text in profileTextView.
         try {
             String userName = profileJSON.get("display_name").toString();
             setTextAsync(userName, usernameTextView);
 
+            String picURL = profileJSON.getJSONArray("images").getJSONObject(0).get("url").toString();
+            new FetchImage(profilePicImageView, picURL).start();
 
         } catch (Exception e) {
             Toast.makeText(getActivity(), "Error displaying data" + e, Toast.LENGTH_LONG).show();

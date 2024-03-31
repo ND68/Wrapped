@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -21,14 +22,19 @@ public final class SpotifySummaryBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
+  public final ProgressBar progressbar;
+
+  @NonNull
   public final ImageView userProfilePic;
 
   @NonNull
   public final TextView usernameTextView;
 
   private SpotifySummaryBinding(@NonNull ConstraintLayout rootView,
-      @NonNull ImageView userProfilePic, @NonNull TextView usernameTextView) {
+      @NonNull ProgressBar progressbar, @NonNull ImageView userProfilePic,
+      @NonNull TextView usernameTextView) {
     this.rootView = rootView;
+    this.progressbar = progressbar;
     this.userProfilePic = userProfilePic;
     this.usernameTextView = usernameTextView;
   }
@@ -60,6 +66,12 @@ public final class SpotifySummaryBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.progressbar;
+      ProgressBar progressbar = ViewBindings.findChildViewById(rootView, id);
+      if (progressbar == null) {
+        break missingId;
+      }
+
       id = R.id.userProfilePic;
       ImageView userProfilePic = ViewBindings.findChildViewById(rootView, id);
       if (userProfilePic == null) {
@@ -72,7 +84,7 @@ public final class SpotifySummaryBinding implements ViewBinding {
         break missingId;
       }
 
-      return new SpotifySummaryBinding((ConstraintLayout) rootView, userProfilePic,
+      return new SpotifySummaryBinding((ConstraintLayout) rootView, progressbar, userProfilePic,
           usernameTextView);
     }
     String missingId = rootView.getResources().getResourceName(id);
