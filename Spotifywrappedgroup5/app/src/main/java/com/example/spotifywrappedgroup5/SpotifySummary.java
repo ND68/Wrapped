@@ -33,6 +33,8 @@ import java.io.InputStream;
 import java.net.URI;
 import java.net.URL;
 import java.sql.SQLOutput;
+import java.util.Arrays;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -152,6 +154,7 @@ public class SpotifySummary extends Fragment {
     public JSONObject getJSON(String url) {
         if (mAccessToken == null) {
             Toast.makeText(getActivity(), "Error Accessing Access Token", Toast.LENGTH_SHORT).show();
+            System.out.println(mAccessToken + mAccessCode);
             return null;
         }
 
@@ -180,24 +183,20 @@ public class SpotifySummary extends Fragment {
                 try {
                     // Access JSON response here.
                     json[0] = new JSONObject(response.body().string());
-                    //System.out.println(json[0]);
 
                 } catch (JSONException e) {
                     Log.d("JSON", "Failed to parse data: " + e);
-                    Toast.makeText(getActivity(), "Failed to parse data, watch Logcat for more details",
+                    Toast.makeText(getActivity(), "Failed to parse data, please relaunch app",
                             Toast.LENGTH_SHORT).show();
                 }
 
             }
 
         });
-        try {
-            Thread.sleep(300);
-        } catch (Exception e) {
 
+        while(json[0] == null) {
+            //wait until json returns before returning json
         }
-
-        //System.out.println(json[0]);
         return json[0];
     }
 
@@ -281,7 +280,6 @@ public class SpotifySummary extends Fragment {
 
     public void displayUserProfile() {
         JSONObject profileJSON = getJSON("https://api.spotify.com/v1/me");
-
 
         // Set to text in profileTextView.
         try {
