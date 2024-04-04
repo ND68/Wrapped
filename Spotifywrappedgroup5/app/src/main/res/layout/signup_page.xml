@@ -6,12 +6,12 @@
     android:layout_height="match_parent">
 
     <EditText
-        android:id="@+id/firstname"
+        android:id="@+id/full_name"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_marginTop="48dp"
         android:ems="10"
-        android:hint="@string/first_name"
+        android:hint="@string/full_name"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
@@ -19,37 +19,15 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/lastname"
+        android:id="@+id/email"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:ems="10"
-        android:hint="@string/last_name"
+        android:hint="@string/email"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/firstname" />
-
-    <EditText
-        android:id="@+id/usernameTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:ems="10"
-        android:hint="@string/username"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lastname" />
-
-    <EditText
-        android:id="@+id/email_id"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:ems="10"
-        android:hint="@string/email_id"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/usernameTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/full_name" />
 
     <Button
         android:id="@+id/submit_signup"
@@ -59,7 +37,8 @@
         android:text="@string/submit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/verify_password" />
 
     <EditText
         android:id="@+id/password"
@@ -70,7 +49,7 @@
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email_id" />
+        app:layout_constraintTop_toBottomOf="@+id/email" />
 
     <EditText
         android:id="@+id/verify_password"
