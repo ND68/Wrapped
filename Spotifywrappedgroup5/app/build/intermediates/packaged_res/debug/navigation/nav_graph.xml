@@ -42,7 +42,9 @@
     </fragment>
     <action
         android:id="@+id/action_global_SpotifySummary"
-        app:destination="@id/SpotifySummary" />
+        app:destination="@id/SpotifySummary"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim" />
     <fragment
         android:id="@+id/settingsPage"
         android:name="com.example.spotifywrappedgroup5.SettingsPage"

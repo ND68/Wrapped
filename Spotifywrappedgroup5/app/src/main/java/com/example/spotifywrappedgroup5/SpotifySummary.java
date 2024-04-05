@@ -208,9 +208,7 @@ public class SpotifySummary extends Fragment {
             return null;
         }
 
-        // Create a request to get the user profile
         final Request request = new Request.Builder()
-                // URL here. Added artists
                 .url(url)
                 .addHeader("Authorization", "Bearer " + mAccessToken)
                 .build();
@@ -268,7 +266,7 @@ public class SpotifySummary extends Fragment {
     private AuthorizationRequest getAuthenticationRequest(AuthorizationResponse.Type type) {
         return new AuthorizationRequest.Builder(CLIENT_ID, type, getRedirectUri().toString())
                 .setShowDialog(false)
-                .setScopes(new String[] { "user-top-read" }) // <--- Change the scope of your requested token here
+                .setScopes(new String[] { "user-top-read", "offline_access" }) // <--- Change the scope of your requested token here
                 .setCampaign("your-campaign-token")
                 .build();
     }
