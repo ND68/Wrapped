@@ -3347,7 +3347,7 @@ id east
 id edge
 id edit_query
 id elastic
-id email_id
+id email
 id embed
 id end
 id endToStart
@@ -3362,7 +3362,6 @@ id fill
 id fill_horizontal
 id fill_vertical
 id filled
-id firstname
 id fitCenter
 id fitEnd
 id fitStart
@@ -3374,6 +3373,7 @@ id floating
 id forever
 id fragment_container_view_tag
 id frost
+id full_name
 id fullscreen_header
 id ghost_view
 id ghost_view_holder
@@ -3407,7 +3407,6 @@ id item_touch_helper_previous_elevation
 id jumpToEnd
 id jumpToStart
 id labeled
-id lastname
 id layout
 id left
 id leftToRight
@@ -3965,7 +3964,7 @@ string common_signin_button_text
 string common_signin_button_text_long
 string copy_toast_msg
 string dest_title
-string email_id
+string email
 string error_a11y_label
 string error_icon_content_description
 string exposed_dropdown_menu_content_description
@@ -3974,7 +3973,8 @@ string fab_transformation_sheet_behavior
 string fallback_menu_item_copy_link
 string fallback_menu_item_open_in_browser
 string fallback_menu_item_share_link
-string first_name
+string firebase_database_url
+string full_name
 string gcm_defaultSenderId
 string google_api_key
 string google_app_id
@@ -3983,7 +3983,6 @@ string google_storage_bucket
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
 string item_view_role_description
-string last_name
 string login_button
 string m3_exceed_max_badge_text_suffix
 string m3_ref_typeface_brand_medium

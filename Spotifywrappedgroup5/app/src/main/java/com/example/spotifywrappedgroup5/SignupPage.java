@@ -84,7 +84,7 @@ public class SignupPage extends Fragment {
                                 Toast.makeText(getActivity(), "Signup Successful", Toast.LENGTH_SHORT).show();
 
                                 String uid = auth.getCurrentUser().getUid();
-                                UserInformation userInformation = new UserInformation(uid, name, name);
+                                UserInformation userInformation = new UserInformation(uid, name, email);
                                 reference.child(uid).setValue(userInformation).addOnCompleteListener(new OnCompleteListener<Void>() {
                                     @Override
                                     public void onComplete(@NonNull Task<Void> task) {

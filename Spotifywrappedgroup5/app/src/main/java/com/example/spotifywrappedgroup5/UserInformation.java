@@ -34,7 +34,7 @@ public class UserInformation {
         this.accessCode = accessCode;
     }
 
-    public UserInformation(String name, String email, String uid) {
+    public UserInformation(String uid, String name, String email) {
         this.uid = uid;
         this.name = name;
         this.email = email;

@@ -92,7 +92,7 @@ public class SpotifySummary extends Fragment {
         reference = database.getReference("users");
 
         String uid = auth.getCurrentUser().getUid();
-        System.out.println(uid);
+        //System.out.println(uid);
         HashMap userData = new HashMap<>();
 
         Query checkUserDatabase = reference.orderByChild("uid").equalTo(uid);
@@ -107,17 +107,17 @@ public class SpotifySummary extends Fragment {
                     userData.put("name",  nameFromDB);
                     userData.put("email",  emailFromDB);
                     userData.put("accessCode",  accessCodeFromDB);
-                    System.out.println("snapshot exists");
+                    //System.out.println(userData.get("name"));
+                } else {
+                    System.out.println("snapshot does not exists");
                 }
-                System.out.println("snapshot does not exists");
+
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
         });
-
-        System.out.println(userData.get(uid + "name"));
 
         getToken();
         // **instantiate all views here**
