@@ -61,6 +61,7 @@ color md_theme_light_surfaceVariant
 color md_theme_light_tertiary
 color md_theme_light_tertiaryContainer
 color seed
+drawable edittext_box
 drawable green_wallpaper
 drawable ic_launcher_background
 drawable ic_launcher_foreground
@@ -76,6 +77,8 @@ id action_SignUpPage_to_LandingPage
 id email
 id fab
 id full_name
+id linearLayout
+id login
 id loginButton
 id nameTextView
 id nav_graph
@@ -85,6 +88,9 @@ id passwordInput
 id progressbar
 id singup
 id submit_signup
+id textView
+id textView2
+id textView3
 id toolbar
 id userNameInput
 id userProfilePic

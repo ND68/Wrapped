@@ -6,6 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -27,22 +29,35 @@ public final class SignupPageBinding implements ViewBinding {
   public final EditText fullName;
 
   @NonNull
+  public final LinearLayout linearLayout;
+
+  @NonNull
+  public final Button login;
+
+  @NonNull
   public final EditText password;
 
   @NonNull
   public final Button submitSignup;
 
   @NonNull
+  public final TextView textView;
+
+  @NonNull
   public final EditText verifyPassword;
 
   private SignupPageBinding(@NonNull ConstraintLayout rootView, @NonNull EditText email,
-      @NonNull EditText fullName, @NonNull EditText password, @NonNull Button submitSignup,
+      @NonNull EditText fullName, @NonNull LinearLayout linearLayout, @NonNull Button login,
+      @NonNull EditText password, @NonNull Button submitSignup, @NonNull TextView textView,
       @NonNull EditText verifyPassword) {
     this.rootView = rootView;
     this.email = email;
     this.fullName = fullName;
+    this.linearLayout = linearLayout;
+    this.login = login;
     this.password = password;
     this.submitSignup = submitSignup;
+    this.textView = textView;
     this.verifyPassword = verifyPassword;
   }
 
@@ -85,6 +100,18 @@ public final class SignupPageBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.linearLayout;
+      LinearLayout linearLayout = ViewBindings.findChildViewById(rootView, id);
+      if (linearLayout == null) {
+        break missingId;
+      }
+
+      id = R.id.login;
+      Button login = ViewBindings.findChildViewById(rootView, id);
+      if (login == null) {
+        break missingId;
+      }
+
       id = R.id.password;
       EditText password = ViewBindings.findChildViewById(rootView, id);
       if (password == null) {
@@ -97,14 +124,20 @@ public final class SignupPageBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.textView;
+      TextView textView = ViewBindings.findChildViewById(rootView, id);
+      if (textView == null) {
+        break missingId;
+      }
+
       id = R.id.verify_password;
       EditText verifyPassword = ViewBindings.findChildViewById(rootView, id);
       if (verifyPassword == null) {
         break missingId;
       }
 
-      return new SignupPageBinding((ConstraintLayout) rootView, email, fullName, password,
-          submitSignup, verifyPassword);
+      return new SignupPageBinding((ConstraintLayout) rootView, email, fullName, linearLayout,
+          login, password, submitSignup, textView, verifyPassword);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

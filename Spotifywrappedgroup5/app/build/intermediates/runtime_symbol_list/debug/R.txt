@@ -3127,6 +3127,7 @@ int drawable design_ic_visibility 0x7f070096
 int drawable design_ic_visibility_off 0x7f070097
 int drawable design_password_eye 0x7f070098
 int drawable design_snackbar_background 0x7f070099
+int drawable edittext_box 0x7f0700f5
 int drawable googleg_disabled_color_18 0x7f07009a
 int drawable googleg_standard_color_18 0x7f07009b
 int drawable green_wallpaper 0x7f07009c
@@ -3477,9 +3478,11 @@ int id light 0x7f0900fc
 int id line1 0x7f0900fd
 int id line3 0x7f0900fe
 int id linear 0x7f0900ff
+int id linearLayout 0x7f090219
 int id listMode 0x7f090100
 int id list_item 0x7f090101
 int id locale 0x7f090102
+int id login 0x7f09021c
 int id loginButton 0x7f090103
 int id ltr 0x7f090104
 int id m3_side_sheet 0x7f090105
@@ -3703,6 +3706,9 @@ int id textSpacerNoButtons 0x7f0901de
 int id textSpacerNoTitle 0x7f0901df
 int id textStart 0x7f0901e0
 int id textTop 0x7f0901e1
+int id textView 0x7f090218
+int id textView2 0x7f09021a
+int id textView3 0x7f09021b
 int id text_input_end_icon 0x7f0901e2
 int id text_input_error_icon 0x7f0901e3
 int id text_input_start_icon 0x7f0901e4
