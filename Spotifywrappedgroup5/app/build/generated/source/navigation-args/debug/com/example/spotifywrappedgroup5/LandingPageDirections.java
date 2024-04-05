@@ -17,4 +17,14 @@ public class LandingPageDirections {
   public static NavDirections actionLandingPageToSpotifySummary() {
     return new ActionOnlyNavDirections(R.id.action_LandingPage_to_SpotifySummary);
   }
+
+  @NonNull
+  public static NavDirections actionGlobalSpotifySummary() {
+    return NavGraphDirections.actionGlobalSpotifySummary();
+  }
+
+  @NonNull
+  public static NavDirections actionGlobalSettingsPage() {
+    return NavGraphDirections.actionGlobalSettingsPage();
+  }
 }

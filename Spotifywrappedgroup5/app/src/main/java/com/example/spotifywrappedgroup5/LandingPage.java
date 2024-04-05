@@ -31,7 +31,6 @@ public class LandingPage extends Fragment {
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
-
         binding = LandingPageBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
@@ -49,8 +48,8 @@ public class LandingPage extends Fragment {
             @Override
             public void onClick(View v) {
                 //temporary code to bypass loginpage
-                NavHostFragment.findNavController(LandingPage.this)
-                        .navigate(R.id.action_LandingPage_to_SpotifySummary);
+//                NavHostFragment.findNavController(LandingPage.this)
+//                        .navigate(R.id.action_LandingPage_to_SpotifySummary);
 
                 String email = loginEmail.getText().toString().trim();
                 String pass = loginPass.getText().toString().trim();
@@ -89,7 +88,6 @@ public class LandingPage extends Fragment {
         });
 
     };
-
 
     @Override
     public void onDestroyView() {

@@ -1,5 +1,7 @@
 package com.example.spotifywrappedgroup5;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Intent;
@@ -10,6 +12,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 import com.spotify.sdk.android.auth.AuthorizationClient;
@@ -30,6 +34,7 @@ import okhttp3.Response;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
+import androidx.navigation.NavDestination;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
@@ -39,9 +44,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
+    public String userName;
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
-
     public static final String CLIENT_ID = "4cf685333f204e4fadde2561002b308a";
     public static final String REDIRECT_URI = "spotifywrappedgroup5://auth";
 
@@ -53,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
     private Call mCall;
 
     private TextView tokenTextView, codeTextView, profileTextView, nameTextView;
-    protected String userName;
+    public BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,46 +74,37 @@ public class MainActivity extends AppCompatActivity {
         appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
 
-        binding.fab.setOnClickListener(new View.OnClickListener() {
+        bottomNavigationView = binding.bottomNavigation;
+        bottomNavigationView.setOnItemSelectedListener(item -> {
+            int itemId = item.getItemId();
+            if (itemId == R.id.wrapped) {
+                navController.navigate(R.id.action_global_SpotifySummary);
+            } else if (itemId == R.id.settings) {
+                navController.navigate(R.id.action_global_settingsPage);
+            }
+            return true;
+        });
+        navController.addOnDestinationChangedListener(new NavController.OnDestinationChangedListener() {
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAnchorView(R.id.fab)
-                        .setAction("Action", null).show();
+            public void onDestinationChanged(@NonNull NavController navController, @NonNull NavDestination navDestination, @Nullable Bundle bundle) {
+                if (navDestination.getId() == R.id.LandingPage ||
+                        navDestination.getId() == R.id.SignUpPage) {
+                    bottomNavigationView.setVisibility(View.GONE);
+                } else {
+                    bottomNavigationView.setVisibility(View.VISIBLE);
+                }
             }
         });
-    }
-//        setContentView(R.layout.activity_main);
-//
-//
-//        // Initialize the views
-//        tokenTextView = (TextView) findViewById(R.id.token_text_view);
-//        codeTextView = (TextView) findViewById(R.id.code_text_view);
-//        profileTextView = (TextView) findViewById(R.id.response_text_view);
-//
-//
-//        //nameTextView = (TextView) findViewById(R.id.nameTextView);
-//
-//        // Initialize the buttons
-//        Button tokenBtn = (Button) findViewById(R.id.token_btn);
-//        Button codeBtn = (Button) findViewById(R.id.code_btn);
-//        Button profileBtn = (Button) findViewById(R.id.profile_btn);
-//
-//        // Set the click listeners for the buttons
-//
-//        tokenBtn.setOnClickListener((v) -> {
-//            getToken();
-//        });
-//
-//        codeBtn.setOnClickListener((v) -> {
-//            getCode();
-//        });
-//
-//        profileBtn.setOnClickListener((v) -> {
-//            onGetUserProfileClicked();
-//        });
-//    }
 
+//        binding.fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAnchorView(R.id.fab)
+//                        .setAction("Action", null).show();
+//            }
+//        });
+    }
 
     @Override
     public boolean onSupportNavigateUp() {
@@ -194,7 +190,7 @@ public class MainActivity extends AppCompatActivity {
                     // Access JSON response here.
                     final JSONObject jsonObject = new JSONObject(response.body().string());
                     // Set to text in profileTextView.
-                    userName = jsonObject.get("display_name").toString();
+                    //userName = jsonObject.get("display_name").toString();
                     //setTextAsync(userName, nameTextView);
                     setTextAsync(jsonObject.toString(3), profileTextView);
 

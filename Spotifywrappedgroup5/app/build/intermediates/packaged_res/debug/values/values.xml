@@ -1,26 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="md_theme_dark_background">#1A1C19</color>
+    <color name="md_theme_dark_error">#FFB4AB</color>
+    <color name="md_theme_dark_errorContainer">#93000A</color>
+    <color name="md_theme_dark_inverseOnSurface">#1A1C19</color>
+    <color name="md_theme_dark_inversePrimary">#006E2C</color>
+    <color name="md_theme_dark_inverseSurface">#E2E3DD</color>
+    <color name="md_theme_dark_onBackground">#E2E3DD</color>
+    <color name="md_theme_dark_onError">#690005</color>
+    <color name="md_theme_dark_onErrorContainer">#FFDAD6</color>
+    <color name="md_theme_dark_onPrimary">#003913</color>
+    <color name="md_theme_dark_onPrimaryContainer">#69FF89</color>
+    <color name="md_theme_dark_onSecondary">#243425</color>
+    <color name="md_theme_dark_onSecondaryContainer">#D4E8D1</color>
+    <color name="md_theme_dark_onSurface">#E2E3DD</color>
+    <color name="md_theme_dark_onSurfaceVariant">#C1C9BE</color>
+    <color name="md_theme_dark_onTertiary">#00363D</color>
+    <color name="md_theme_dark_onTertiaryContainer">#BDEAF3</color>
+    <color name="md_theme_dark_outline">#8B9389</color>
+    <color name="md_theme_dark_outlineVariant">#424940</color>
+    <color name="md_theme_dark_primary">#34E36A</color>
+    <color name="md_theme_dark_primaryContainer">#00531F</color>
+    <color name="md_theme_dark_scrim">#000000</color>
+    <color name="md_theme_dark_secondary">#B8CCB5</color>
+    <color name="md_theme_dark_secondaryContainer">#3A4B3A</color>
+    <color name="md_theme_dark_shadow">#000000</color>
+    <color name="md_theme_dark_surface">#1A1C19</color>
+    <color name="md_theme_dark_surfaceTint">#34E36A</color>
+    <color name="md_theme_dark_surfaceVariant">#424940</color>
+    <color name="md_theme_dark_tertiary">#A1CED6</color>
+    <color name="md_theme_dark_tertiaryContainer">#1F4D54</color>
+    <color name="md_theme_light_background">#FCFDF7</color>
+    <color name="md_theme_light_error">#BA1A1A</color>
+    <color name="md_theme_light_errorContainer">#FFDAD6</color>
+    <color name="md_theme_light_inverseOnSurface">#F0F1EB</color>
+    <color name="md_theme_light_inversePrimary">#34E36A</color>
+    <color name="md_theme_light_inverseSurface">#2E312D</color>
+    <color name="md_theme_light_onBackground">#1A1C19</color>
+    <color name="md_theme_light_onError">#FFFFFF</color>
+    <color name="md_theme_light_onErrorContainer">#410002</color>
+    <color name="md_theme_light_onPrimary">#FFFFFF</color>
+    <color name="md_theme_light_onPrimaryContainer">#002108</color>
+    <color name="md_theme_light_onSecondary">#FFFFFF</color>
+    <color name="md_theme_light_onSecondaryContainer">#0F1F11</color>
+    <color name="md_theme_light_onSurface">#1A1C19</color>
+    <color name="md_theme_light_onSurfaceVariant">#424940</color>
+    <color name="md_theme_light_onTertiary">#FFFFFF</color>
+    <color name="md_theme_light_onTertiaryContainer">#001F24</color>
+    <color name="md_theme_light_outline">#727970</color>
+    <color name="md_theme_light_outlineVariant">#C1C9BE</color>
+    <color name="md_theme_light_primary">#006E2C</color>
+    <color name="md_theme_light_primaryContainer">#69FF89</color>
+    <color name="md_theme_light_scrim">#000000</color>
+    <color name="md_theme_light_secondary">#516351</color>
+    <color name="md_theme_light_secondaryContainer">#D4E8D1</color>
+    <color name="md_theme_light_shadow">#000000</color>
+    <color name="md_theme_light_surface">#FCFDF7</color>
+    <color name="md_theme_light_surfaceTint">#006E2C</color>
+    <color name="md_theme_light_surfaceVariant">#DDE5D9</color>
+    <color name="md_theme_light_tertiary">#39656C</color>
+    <color name="md_theme_light_tertiaryContainer">#BDEAF3</color>
+    <color name="seed">#1ED760</color>
     <string name="app_name">Spotify wrapped group 5</string>
-    <string name="email_id">Email ID: </string>
-    <string name="first_name">First Name: </string>
+    <string name="email">Email: </string>
+    <string name="firebase_database_url" translatable="false">https://spotify-wrapped-group-5-default-rtdb.firebaseio.com</string>
+    <string name="full_name">Full Name: </string>
     <string name="gcm_defaultSenderId" translatable="false">223762700244</string>
     <string name="google_api_key" translatable="false">AIzaSyCRywH-OVAWVAOxB_0icJHI2uRENPe2c20</string>
     <string name="google_app_id" translatable="false">1:223762700244:android:a345460850fbeb7c9e6841</string>
     <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCRywH-OVAWVAOxB_0icJHI2uRENPe2c20</string>
     <string name="google_storage_bucket" translatable="false">spotify-wrapped-group-5.appspot.com</string>
-    <string name="last_name">Last Name: </string>
-    <string name="login_button">Login</string>
+    <string name="login_button">Log in</string>
     <string name="password">Password: </string>
     <string name="project_id" translatable="false">spotify-wrapped-group-5</string>
     <string name="signup_button">Sign up</string>
     <string name="submit">Submit</string>
     <string name="username">Username: </string>
     <string name="verify">Verify Password: </string>
-    <style name="Base.Theme.SpotifyWrappedGroup5" parent="Theme.Material3.DayNight.NoActionBar">
-        
-        
+    <style name="AppTheme" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/md_theme_light_primary</item>
+        <item name="colorOnPrimary">@color/md_theme_light_onPrimary</item>
+        <item name="colorPrimaryContainer">@color/md_theme_light_primaryContainer</item>
+        <item name="colorOnPrimaryContainer">@color/md_theme_light_onPrimaryContainer</item>
+        <item name="colorSecondary">@color/md_theme_light_secondary</item>
+        <item name="colorOnSecondary">@color/md_theme_light_onSecondary</item>
+        <item name="colorSecondaryContainer">@color/md_theme_light_secondaryContainer</item>
+        <item name="colorOnSecondaryContainer">@color/md_theme_light_onSecondaryContainer</item>
+        <item name="colorTertiary">@color/md_theme_light_tertiary</item>
+        <item name="colorOnTertiary">@color/md_theme_light_onTertiary</item>
+        <item name="colorTertiaryContainer">@color/md_theme_light_tertiaryContainer</item>
+        <item name="colorOnTertiaryContainer">@color/md_theme_light_onTertiaryContainer</item>
+        <item name="colorError">@color/md_theme_light_error</item>
+        <item name="colorErrorContainer">@color/md_theme_light_errorContainer</item>
+        <item name="colorOnError">@color/md_theme_light_onError</item>
+        <item name="colorOnErrorContainer">@color/md_theme_light_onErrorContainer</item>
+        <item name="android:colorBackground">@color/md_theme_light_background</item>
+        <item name="colorOnBackground">@color/md_theme_light_onBackground</item>
+        <item name="colorSurface">@color/md_theme_light_surface</item>
+        <item name="colorOnSurface">@color/md_theme_light_onSurface</item>
+        <item name="colorSurfaceVariant">@color/md_theme_light_surfaceVariant</item>
+        <item name="colorOnSurfaceVariant">@color/md_theme_light_onSurfaceVariant</item>
+        <item name="colorOutline">@color/md_theme_light_outline</item>
+        <item name="colorOnSurfaceInverse">@color/md_theme_light_inverseOnSurface</item>
+        <item name="colorSurfaceInverse">@color/md_theme_light_inverseSurface</item>
+        <item name="colorPrimaryInverse">@color/md_theme_light_inversePrimary</item>
+        <item name="android:fontFamily">@font/montserrat_medium</item>
     </style>
-    <style name="Theme.SpotifyWrappedGroup5" parent="Base.Theme.SpotifyWrappedGroup5"/>
 </resources>

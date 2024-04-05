@@ -18,12 +18,21 @@ import android.graphics.BitmapFactory;
 import android.os.Handler;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
 import com.example.spotifywrappedgroup5.databinding.SpotifySummaryBinding;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 import com.spotify.sdk.android.auth.AuthorizationClient;
 import com.spotify.sdk.android.auth.AuthorizationRequest;
 import com.spotify.sdk.android.auth.AuthorizationResponse;
+import com.spotify.sdk.android.auth.LoginActivity;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -35,6 +44,7 @@ import java.net.URL;
 import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 import okhttp3.Call;
@@ -54,11 +64,17 @@ public class SpotifySummary extends Fragment {
     private String mAccessToken, mAccessCode;
     private Call mCall;
     private @NonNull SpotifySummaryBinding binding;
+
+    private FirebaseAuth auth;
+    private FirebaseDatabase database;
+    private DatabaseReference reference;
     private Handler mainHandler = new Handler();
 
     //** put all views here to make them global**
     //** views that aren't global variables can't be accessed by function **
     ProgressBar progressBar;
+
+    ConstraintLayout container;
     private TextView usernameTextView;
     private ImageView profilePicImageView;
     private TextView test;
@@ -73,15 +89,48 @@ public class SpotifySummary extends Fragment {
 
     }
 
+
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        auth = FirebaseAuth.getInstance();
+        database = FirebaseDatabase.getInstance();
+        reference = database.getReference("users");
+
+        String uid = auth.getCurrentUser().getUid();
+        //System.out.println(uid);
+        HashMap userData = new HashMap<>();
+
+        Query checkUserDatabase = reference.orderByChild("uid").equalTo(uid);
+        checkUserDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+                    String nameFromDB = snapshot.child(uid).child("name").getValue(String.class);
+                    String emailFromDB = snapshot.child(uid).child("email").getValue(String.class);
+                    String accessCodeFromDB = snapshot.child(uid).child("accessCode").getValue(String.class);
+
+                    userData.put("name",  nameFromDB);
+                    userData.put("email",  emailFromDB);
+                    userData.put("accessCode",  accessCodeFromDB);
+                    //System.out.println(userData.get("name"));
+                } else {
+                    System.out.println("snapshot does not exists");
+                }
+
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
         getToken();
-
         // **instantiate all views here**
         // **make sure the views are also global variables**
         progressBar = view.findViewById(R.id.progressbar);
+        container = view.findViewById(R.id.main_layout);
         progressBar.setVisibility(View.VISIBLE);
+        container.setVisibility(View.GONE);
 
         usernameTextView = view.findViewById(R.id.usernameTextView);
         profilePicImageView = view.findViewById(R.id.userProfilePic);
@@ -94,6 +143,7 @@ public class SpotifySummary extends Fragment {
 
         displayUserProfile();
         progressBar.setVisibility(View.INVISIBLE);
+        container.setVisibility(View.VISIBLE);
     }
 
     /**
@@ -161,9 +211,7 @@ public class SpotifySummary extends Fragment {
             return null;
         }
 
-        // Create a request to get the user profile
         final Request request = new Request.Builder()
-                // URL here. Added artists
                 .url(url)
                 .addHeader("Authorization", "Bearer " + mAccessToken)
                 .build();
@@ -221,7 +269,7 @@ public class SpotifySummary extends Fragment {
     private AuthorizationRequest getAuthenticationRequest(AuthorizationResponse.Type type) {
         return new AuthorizationRequest.Builder(CLIENT_ID, type, getRedirectUri().toString())
                 .setShowDialog(false)
-                .setScopes(new String[] { "user-top-read" }) // <--- Change the scope of your requested token here
+                .setScopes(new String[] { "user-top-read", "offline_access" }) // <--- Change the scope of your requested token here
                 .setCampaign("your-campaign-token")
                 .build();
     }

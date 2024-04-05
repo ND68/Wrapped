@@ -1,6 +1,0 @@
-com.example.spotifywrappedgroup5.test.app-core-1.5.0-0 /Users/nathand/.gradle/caches/transforms-3/12d5e810a4fa668bc34673176b6700ae/transformed/core-1.5.0/res
-com.example.spotifywrappedgroup5.test.app-annotation-experimental-1.3.0-1 /Users/nathand/.gradle/caches/transforms-3/b1e613e7ab23178015b49d49ebaafd22/transformed/annotation-experimental-1.3.0/res
-com.example.spotifywrappedgroup5.test.app-androidTest-2 /Users/nathand/Documents/School/Spring 2024/CS_2340/SpotifyWrappedProj/Spotify-wrapped-group-5/Spotifywrappedgroup5/app/build/generated/res/resValues/androidTest/debug
-com.example.spotifywrappedgroup5.test.app-mergeDebugAndroidTestResources-3 /Users/nathand/Documents/School/Spring 2024/CS_2340/SpotifyWrappedProj/Spotify-wrapped-group-5/Spotifywrappedgroup5/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/merged.dir
-com.example.spotifywrappedgroup5.test.app-mergeDebugAndroidTestResources-4 /Users/nathand/Documents/School/Spring 2024/CS_2340/SpotifyWrappedProj/Spotify-wrapped-group-5/Spotifywrappedgroup5/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/stripped.dir
-com.example.spotifywrappedgroup5.test.app-merged_res-5 /Users/nathand/Documents/School/Spring 2024/CS_2340/SpotifyWrappedProj/Spotify-wrapped-group-5/Spotifywrappedgroup5/app/build/intermediates/merged_res/debugAndroidTest

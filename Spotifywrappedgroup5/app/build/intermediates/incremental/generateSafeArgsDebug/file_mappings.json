@@ -1,1 +1,1 @@
-[{"navFile":"src/main/res/navigation/nav_graph.xml","javaFiles":["com.example.spotifywrappedgroup5.LandingPageDirections","com.example.spotifywrappedgroup5.SignupPageDirections"]}]
+[{"navFile":"src/main/res/navigation/nav_graph.xml","javaFiles":["com.example.spotifywrappedgroup5.NavGraphDirections","com.example.spotifywrappedgroup5.LandingPageDirections","com.example.spotifywrappedgroup5.SignupPageDirections","com.example.spotifywrappedgroup5.SpotifySummaryDirections","com.example.spotifywrappedgroup5.SettingsPageDirections"]}]
