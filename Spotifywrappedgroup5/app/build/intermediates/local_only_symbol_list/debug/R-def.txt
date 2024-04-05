@@ -70,9 +70,7 @@ drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable music_note
 drawable settings
-font montserrat_italic_variablefont_wght
 font montserrat_medium
-font montserrat_variablefont_wght
 id LandingPage
 id SignUpPage
 id SpotifySummary
@@ -81,6 +79,7 @@ id action_LandingPage_to_SpotifySummary
 id action_SignUpPage_to_LandingPage
 id action_global_SpotifySummary
 id action_global_settingsPage
+id artistname
 id bottom_navigation
 id delete_account
 id email

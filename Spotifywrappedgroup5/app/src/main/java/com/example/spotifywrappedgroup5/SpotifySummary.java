@@ -20,6 +20,7 @@ import android.os.Handler;
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.spotifywrappedgroup5.databinding.SpotifySummaryBinding;
 import com.google.firebase.auth.FirebaseAuth;
@@ -34,6 +35,7 @@ import com.spotify.sdk.android.auth.AuthorizationRequest;
 import com.spotify.sdk.android.auth.AuthorizationResponse;
 import com.spotify.sdk.android.auth.LoginActivity;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -77,7 +79,8 @@ public class SpotifySummary extends Fragment {
     ConstraintLayout container;
     private TextView usernameTextView;
     private ImageView profilePicImageView;
-    private TextView test;
+    private TextView artistname;
+    private RecyclerView topArtistsRecyclerView;
 
     @Override
     public View onCreateView(
@@ -134,6 +137,8 @@ public class SpotifySummary extends Fragment {
 
         usernameTextView = view.findViewById(R.id.usernameTextView);
         profilePicImageView = view.findViewById(R.id.userProfilePic);
+
+        artistname = view.findViewById(R.id.artistname);
     }
 
 
@@ -142,6 +147,7 @@ public class SpotifySummary extends Fragment {
         // **put actual function code at the bottom of the page**
 
         displayUserProfile();
+        displayTopArtists();
         progressBar.setVisibility(View.INVISIBLE);
         container.setVisibility(View.VISIBLE);
     }
@@ -269,7 +275,7 @@ public class SpotifySummary extends Fragment {
     private AuthorizationRequest getAuthenticationRequest(AuthorizationResponse.Type type) {
         return new AuthorizationRequest.Builder(CLIENT_ID, type, getRedirectUri().toString())
                 .setShowDialog(false)
-                .setScopes(new String[] { "user-top-read", "offline_access" }) // <--- Change the scope of your requested token here
+                .setScopes(new String[] {"user-top-read" }) // <--- Change the scope of your requested token here
                 .setCampaign("your-campaign-token")
                 .build();
     }
@@ -346,4 +352,32 @@ public class SpotifySummary extends Fragment {
         }
     }
 
+    public void displayTopArtists() {
+        JSONObject topArtists = getJSON("https://api.spotify.com/v1/me/top/artists");
+        try {
+            JSONArray items = topArtists.getJSONArray("items");
+            ArrayList<String> artistsNames = new ArrayList<>();
+            for (int i = 0; i < items.length(); i++) {
+                JSONObject artist = items.getJSONObject(i);
+                String name = artist.getString("name");
+                JSONArray genresArray = artist.getJSONArray("genres");
+                StringBuilder genresStringBuilder = new StringBuilder();
+                for (int j = 0; j < genresArray.length(); j++) {
+                    genresStringBuilder.append(genresArray.getString(j));
+                    if (j < genresArray.length() - 1) {
+                        genresStringBuilder.append(", ");
+                    }
+                }
+                String genres = genresStringBuilder.toString();
+                int popularity = artist.getInt("popularity");
+                TextView artistInfoTextView = new TextView(getActivity());
+                artistInfoTextView.setText(String.format("%s\nGenres: %s\nPopularity: %d\n\n", name, genres, popularity));
+                artistsNames.add(name);
+                setTextAsync(artistsNames.toString(), artistname);
+            }
+        } catch (Exception e) {
+            Toast.makeText(getActivity(), "Error displaying data" + e, Toast.LENGTH_LONG).show();
+            System.out.println(e);
+        }
+    }
 }

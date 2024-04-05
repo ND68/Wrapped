@@ -22,6 +22,9 @@ public final class SpotifySummaryBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
+  public final TextView artistname;
+
+  @NonNull
   public final ConstraintLayout mainLayout;
 
   @NonNull
@@ -33,10 +36,11 @@ public final class SpotifySummaryBinding implements ViewBinding {
   @NonNull
   public final TextView usernameTextView;
 
-  private SpotifySummaryBinding(@NonNull ConstraintLayout rootView,
+  private SpotifySummaryBinding(@NonNull ConstraintLayout rootView, @NonNull TextView artistname,
       @NonNull ConstraintLayout mainLayout, @NonNull CircularProgressIndicator progressbar,
       @NonNull ImageView userProfilePic, @NonNull TextView usernameTextView) {
     this.rootView = rootView;
+    this.artistname = artistname;
     this.mainLayout = mainLayout;
     this.progressbar = progressbar;
     this.userProfilePic = userProfilePic;
@@ -70,6 +74,12 @@ public final class SpotifySummaryBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.artistname;
+      TextView artistname = ViewBindings.findChildViewById(rootView, id);
+      if (artistname == null) {
+        break missingId;
+      }
+
       id = R.id.main_layout;
       ConstraintLayout mainLayout = ViewBindings.findChildViewById(rootView, id);
       if (mainLayout == null) {
@@ -94,8 +104,8 @@ public final class SpotifySummaryBinding implements ViewBinding {
         break missingId;
       }
 
-      return new SpotifySummaryBinding((ConstraintLayout) rootView, mainLayout, progressbar,
-          userProfilePic, usernameTextView);
+      return new SpotifySummaryBinding((ConstraintLayout) rootView, artistname, mainLayout,
+          progressbar, userProfilePic, usernameTextView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
