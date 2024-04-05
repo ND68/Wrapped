@@ -18,6 +18,7 @@ import android.graphics.BitmapFactory;
 import android.os.Handler;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
 import com.example.spotifywrappedgroup5.databinding.SpotifySummaryBinding;
@@ -71,6 +72,8 @@ public class SpotifySummary extends Fragment {
     //** put all views here to make them global**
     //** views that aren't global variables can't be accessed by function **
     ProgressBar progressBar;
+
+    ConstraintLayout container;
     private TextView usernameTextView;
     private ImageView profilePicImageView;
 
@@ -123,7 +126,9 @@ public class SpotifySummary extends Fragment {
         // **instantiate all views here**
         // **make sure the views are also global variables**
         progressBar = view.findViewById(R.id.progressbar);
+        container = view.findViewById(R.id.main_layout);
         progressBar.setVisibility(View.VISIBLE);
+        container.setVisibility(View.GONE);
 
         usernameTextView = view.findViewById(R.id.usernameTextView);
         profilePicImageView = view.findViewById(R.id.userProfilePic);
@@ -136,6 +141,7 @@ public class SpotifySummary extends Fragment {
 
         displayUserProfile();
         progressBar.setVisibility(View.INVISIBLE);
+        container.setVisibility(View.VISIBLE);
     }
 
     /**

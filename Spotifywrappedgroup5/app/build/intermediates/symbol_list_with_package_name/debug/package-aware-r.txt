@@ -3132,6 +3132,9 @@ drawable edittext_box
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable green_wallpaper
+drawable green_wallpaper2
+drawable green_wallpaper3
+drawable green_wallpaper4
 drawable ic_arrow_back_black_24
 drawable ic_clear_black_24
 drawable ic_clock_black_24dp
@@ -3204,6 +3207,7 @@ drawable mtrl_switch_thumb_unchecked_pressed
 drawable mtrl_switch_track
 drawable mtrl_switch_track_decoration
 drawable mtrl_tabs_default_indicator
+drawable music_note
 drawable navigation_empty_icon
 drawable notification_action_background
 drawable notification_bg
@@ -3217,6 +3221,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable settings
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -3326,6 +3331,7 @@ id beginning
 id bestChoice
 id blocking
 id bottom
+id bottom_navigation
 id bounce
 id bounceBoth
 id bounceEnd
@@ -3420,7 +3426,6 @@ id enterAlwaysCollapsed
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
-id fab
 id fade
 id fill
 id fill_horizontal
@@ -3461,6 +3466,7 @@ id ignore
 id ignoreRequest
 id image
 id immediateStop
+id include2
 id included
 id indeterminate
 id info
@@ -3487,6 +3493,7 @@ id login
 id loginButton
 id ltr
 id m3_side_sheet
+id main_layout
 id marquee
 id masked
 id match_constraint
@@ -3644,6 +3651,7 @@ id search_voice_btn
 id select_dialog_listview
 id selected
 id selection_type
+id settings
 id sharedValueSet
 id sharedValueUnset
 id shortcut
@@ -3762,6 +3770,7 @@ id withinBounds
 id wrap
 id wrap_content
 id wrap_content_constrained
+id wrapped
 id x_left
 id x_right
 integer abc_config_activityDefaultDur
@@ -3967,6 +3976,7 @@ layout select_dialog_singlechoice_material
 layout signup_page
 layout spotify_summary
 layout support_simple_spinner_dropdown_item
+menu bottom_navigation_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
 navigation nav_graph
