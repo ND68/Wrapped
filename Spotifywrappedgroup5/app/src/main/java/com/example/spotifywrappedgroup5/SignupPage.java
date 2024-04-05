@@ -57,6 +57,14 @@ public class SignupPage extends Fragment {
         EditText signupPass = view.findViewById(R.id.password);
         EditText signupVerifyPass = view.findViewById(R.id.verify_password);
         Button signupButton = view.findViewById(R.id.submit_signup);
+
+        view.findViewById(R.id.login).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(SignupPage.this)
+                        .navigate(R.id.action_SignUpPage_to_LandingPage);
+            }
+        });
         signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
