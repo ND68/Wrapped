@@ -23,7 +23,6 @@ id passwordInput
 id progressbar
 id singup
 id submit_signup
-id test
 id toolbar
 id userNameInput
 id userProfilePic

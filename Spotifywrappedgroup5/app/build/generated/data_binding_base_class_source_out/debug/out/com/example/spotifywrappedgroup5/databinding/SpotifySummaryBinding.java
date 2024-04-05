@@ -25,20 +25,16 @@ public final class SpotifySummaryBinding implements ViewBinding {
   public final ProgressBar progressbar;
 
   @NonNull
-  public final TextView test;
-
-  @NonNull
   public final ImageView userProfilePic;
 
   @NonNull
   public final TextView usernameTextView;
 
   private SpotifySummaryBinding(@NonNull ConstraintLayout rootView,
-      @NonNull ProgressBar progressbar, @NonNull TextView test, @NonNull ImageView userProfilePic,
+      @NonNull ProgressBar progressbar, @NonNull ImageView userProfilePic,
       @NonNull TextView usernameTextView) {
     this.rootView = rootView;
     this.progressbar = progressbar;
-    this.test = test;
     this.userProfilePic = userProfilePic;
     this.usernameTextView = usernameTextView;
   }
@@ -76,12 +72,6 @@ public final class SpotifySummaryBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.test;
-      TextView test = ViewBindings.findChildViewById(rootView, id);
-      if (test == null) {
-        break missingId;
-      }
-
       id = R.id.userProfilePic;
       ImageView userProfilePic = ViewBindings.findChildViewById(rootView, id);
       if (userProfilePic == null) {
@@ -94,8 +84,8 @@ public final class SpotifySummaryBinding implements ViewBinding {
         break missingId;
       }
 
-      return new SpotifySummaryBinding((ConstraintLayout) rootView, progressbar, test,
-          userProfilePic, usernameTextView);
+      return new SpotifySummaryBinding((ConstraintLayout) rootView, progressbar, userProfilePic,
+          usernameTextView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
