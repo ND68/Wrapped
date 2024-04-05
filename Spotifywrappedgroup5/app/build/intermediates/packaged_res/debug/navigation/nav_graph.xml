@@ -12,10 +12,14 @@
         tools:layout="@layout/landing_page">
         <action
             android:id="@+id/action_LandingPage_to_SignUpPage"
-            app:destination="@id/SignUpPage" />
+            app:destination="@id/SignUpPage"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
         <action
             android:id="@+id/action_LandingPage_to_SpotifySummary"
-            app:destination="@id/SpotifySummary" />
+            app:destination="@id/SpotifySummary"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
     </fragment>
 
     <fragment
@@ -25,7 +29,9 @@
         tools:layout="@layout/landing_page">
         <action
             android:id="@+id/action_SignUpPage_to_LandingPage"
-            app:destination="@id/LandingPage" />
+            app:destination="@id/LandingPage"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
     </fragment>
 
     <fragment
