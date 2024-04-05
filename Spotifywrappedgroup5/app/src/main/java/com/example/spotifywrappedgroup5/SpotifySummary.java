@@ -33,6 +33,7 @@ import java.io.InputStream;
 import java.net.URI;
 import java.net.URL;
 import java.sql.SQLOutput;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicBoolean;
 
@@ -60,6 +61,7 @@ public class SpotifySummary extends Fragment {
     ProgressBar progressBar;
     private TextView usernameTextView;
     private ImageView profilePicImageView;
+    private TextView test;
 
     @Override
     public View onCreateView(
@@ -131,6 +133,7 @@ public class SpotifySummary extends Fragment {
      * When the app leaves this activity to momentarily get a token/code, this function
      * fetches the result of that external activity to get the response from Spotify
      */
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -294,4 +297,5 @@ public class SpotifySummary extends Fragment {
             System.out.println(e);
         }
     }
+
 }
