@@ -34,5 +34,18 @@
         android:label="Summary"
         tools:layout="@layout/spotify_summary">
     </fragment>
+    <action
+        android:id="@+id/action_global_SpotifySummary"
+        app:destination="@id/SpotifySummary" />
+    <fragment
+        android:id="@+id/settingsPage"
+        android:name="com.example.spotifywrappedgroup5.SettingsPage"
+        android:label="settings_page"
+        tools:layout="@layout/settings_page" />
+    <action
+        android:id="@+id/action_global_settingsPage"
+        app:destination="@id/settingsPage"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim" />
 
 </navigation>

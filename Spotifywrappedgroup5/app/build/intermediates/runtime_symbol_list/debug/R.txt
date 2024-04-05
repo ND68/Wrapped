@@ -3294,6 +3294,8 @@ int id action_bar_title 0x7f09003f
 int id action_container 0x7f090040
 int id action_context_bar 0x7f090041
 int id action_divider 0x7f090042
+int id action_global_SpotifySummary 0x7f090224
+int id action_global_settingsPage 0x7f090226
 int id action_image 0x7f090043
 int id action_menu_divider 0x7f090044
 int id action_menu_presenter 0x7f090045
@@ -3651,6 +3653,7 @@ int id select_dialog_listview 0x7f0901a7
 int id selected 0x7f0901a8
 int id selection_type 0x7f0901a9
 int id settings 0x7f090222
+int id settingsPage 0x7f090225
 int id sharedValueSet 0x7f0901aa
 int id sharedValueUnset 0x7f0901ab
 int id shortcut 0x7f0901ac
@@ -3972,6 +3975,7 @@ int layout notification_template_part_time 0x7f0c006c
 int layout select_dialog_item_material 0x7f0c006d
 int layout select_dialog_multichoice_material 0x7f0c006e
 int layout select_dialog_singlechoice_material 0x7f0c006f
+int layout settings_page 0x7f0c0073
 int layout signup_page 0x7f0c0070
 int layout spotify_summary 0x7f0c0071
 int layout support_simple_spinner_dropdown_item 0x7f0c0072
@@ -4058,6 +4062,7 @@ int string google_api_key 0x7f130049
 int string google_app_id 0x7f13004a
 int string google_crash_reporting_api_key 0x7f13004b
 int string google_storage_bucket 0x7f13004c
+int string hello_blank_fragment 0x7f1300c9
 int string hide_bottom_view_on_scroll_behavior 0x7f13004d
 int string icon_content_description 0x7f13004e
 int string item_view_role_description 0x7f13004f

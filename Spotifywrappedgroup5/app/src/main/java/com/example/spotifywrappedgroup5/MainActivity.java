@@ -78,9 +78,9 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView.setOnItemSelectedListener(item -> {
             int itemId = item.getItemId();
             if (itemId == R.id.wrapped) {
-
+                navController.navigate(R.id.action_global_SpotifySummary);
             } else if (itemId == R.id.settings) {
-
+                navController.navigate(R.id.action_global_settingsPage);
             }
             return true;
         });

@@ -1,9 +1,5 @@
 [
     {
-        "merged": "com.example.spotifywrappedgroup5.app-mergeDebugResources-48:/layout/activity_main.xml",
-        "source": "com.example.spotifywrappedgroup5.app-main-51:/layout/activity_main.xml"
-    },
-    {
         "merged": "/Users/nathand/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-mergeDebugResources-48:/layout/landing_page.xml",
         "source": "/Users/nathand/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-main-51:/layout/landing_page.xml"
     },
@@ -22,6 +18,10 @@
     {
         "merged": "/Users/nathand/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-mergeDebugResources-48:/layout/activity_main.xml",
         "source": "/Users/nathand/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-main-51:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.spotifywrappedgroup5.app-mergeDebugResources-48:/layout/settings_page.xml",
+        "source": "com.example.spotifywrappedgroup5.app-main-51:/layout/settings_page.xml"
     },
     {
         "merged": "/Users/nathand/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-mergeDebugResources-48:/layout/spotify_summary.xml",

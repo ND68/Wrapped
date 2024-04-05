@@ -3295,6 +3295,8 @@ id action_bar_title
 id action_container
 id action_context_bar
 id action_divider
+id action_global_SpotifySummary
+id action_global_settingsPage
 id action_image
 id action_menu_divider
 id action_menu_presenter
@@ -3652,6 +3654,7 @@ id select_dialog_listview
 id selected
 id selection_type
 id settings
+id settingsPage
 id sharedValueSet
 id sharedValueUnset
 id shortcut
@@ -3973,6 +3976,7 @@ layout notification_template_part_time
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
+layout settings_page
 layout signup_page
 layout spotify_summary
 layout support_simple_spinner_dropdown_item
@@ -4059,6 +4063,7 @@ string google_api_key
 string google_app_id
 string google_crash_reporting_api_key
 string google_storage_bucket
+string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
 string item_view_role_description

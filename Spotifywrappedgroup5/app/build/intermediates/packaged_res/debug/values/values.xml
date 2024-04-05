@@ -70,6 +70,7 @@
     <string name="google_app_id" translatable="false">1:223762700244:android:a345460850fbeb7c9e6841</string>
     <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCRywH-OVAWVAOxB_0icJHI2uRENPe2c20</string>
     <string name="google_storage_bucket" translatable="false">spotify-wrapped-group-5.appspot.com</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="login_button">Log in</string>
     <string name="password">Password: </string>
     <string name="project_id" translatable="false">spotify-wrapped-group-5</string>
