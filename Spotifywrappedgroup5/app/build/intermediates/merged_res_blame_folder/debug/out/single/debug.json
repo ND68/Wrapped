@@ -4,10 +4,6 @@
         "source": "/Users/nathand/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-main-51:/drawable/green_wallpaper4.jpeg"
     },
     {
-        "merged": "com.example.spotifywrappedgroup5.app-merged_res-49:/navigation_nav_graph.xml.flat",
-        "source": "com.example.spotifywrappedgroup5.app-main-51:/navigation/nav_graph.xml"
-    },
-    {
         "merged": "/Users/nathand/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-merged_res-49:/mipmap-xhdpi_ic_launcher.webp.flat",
         "source": "/Users/nathand/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-main-51:/mipmap-xhdpi/ic_launcher.webp"
     },
@@ -82,6 +78,10 @@
     {
         "merged": "/Users/nathand/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-merged_res-49:/xml_backup_rules.xml.flat",
         "source": "/Users/nathand/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-main-51:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "com.example.spotifywrappedgroup5.app-merged_res-49:/layout_settings_page.xml.flat",
+        "source": "com.example.spotifywrappedgroup5.app-main-51:/layout/settings_page.xml"
     },
     {
         "merged": "/Users/nathand/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-merged_res-49:/font_montserrat_medium.ttf.flat",

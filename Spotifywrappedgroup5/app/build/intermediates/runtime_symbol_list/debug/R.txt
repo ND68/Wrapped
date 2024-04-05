@@ -3387,6 +3387,7 @@ int id decelerate 0x7f09009a
 int id decelerateAndComplete 0x7f09009b
 int id decor_content_parent 0x7f09009c
 int id default_activity_button 0x7f09009d
+int id delete_account 0x7f090227
 int id deltaRelative 0x7f09009e
 int id dependency_ordering 0x7f09009f
 int id design_bottom_sheet 0x7f0900a0
@@ -3750,6 +3751,7 @@ int id unchecked 0x7f090206
 int id uniform 0x7f090207
 int id unlabeled 0x7f090208
 int id up 0x7f090209
+int id update_info 0x7f090228
 int id useLogo 0x7f09020a
 int id userNameInput 0x7f09020b
 int id userProfilePic 0x7f09020c
@@ -4062,7 +4064,6 @@ int string google_api_key 0x7f130049
 int string google_app_id 0x7f13004a
 int string google_crash_reporting_api_key 0x7f13004b
 int string google_storage_bucket 0x7f13004c
-int string hello_blank_fragment 0x7f1300c9
 int string hide_bottom_view_on_scroll_behavior 0x7f13004d
 int string icon_content_description 0x7f13004e
 int string item_view_role_description 0x7f13004f

@@ -82,6 +82,7 @@ id action_SignUpPage_to_LandingPage
 id action_global_SpotifySummary
 id action_global_settingsPage
 id bottom_navigation
+id delete_account
 id email
 id full_name
 id include2
@@ -103,6 +104,7 @@ id textView
 id textView2
 id textView3
 id toolbar
+id update_info
 id userNameInput
 id userProfilePic
 id usernameTextView
@@ -128,7 +130,6 @@ string google_api_key
 string google_app_id
 string google_crash_reporting_api_key
 string google_storage_bucket
-string hello_blank_fragment
 string login_button
 string password
 string project_id
