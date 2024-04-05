@@ -146,7 +146,7 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/nathand/.gradle/cach
 	android:allowBackup
 		ADDED from /Users/nathand/Documents/School/Spring 2024/CS_2340/SpotifyWrappedProj/Spotify-wrapped-group-5/Spotifywrappedgroup5/app/src/main/AndroidManifest.xml:6:9-35
 	android:theme
-		ADDED from /Users/nathand/Documents/School/Spring 2024/CS_2340/SpotifyWrappedProj/Spotify-wrapped-group-5/Spotifywrappedgroup5/app/src/main/AndroidManifest.xml:13:9-58
+		ADDED from /Users/nathand/Documents/School/Spring 2024/CS_2340/SpotifyWrappedProj/Spotify-wrapped-group-5/Spotifywrappedgroup5/app/src/main/AndroidManifest.xml:13:9-40
 	android:dataExtractionRules
 		ADDED from /Users/nathand/Documents/School/Spring 2024/CS_2340/SpotifyWrappedProj/Spotify-wrapped-group-5/Spotifywrappedgroup5/app/src/main/AndroidManifest.xml:7:9-65
 activity#com.example.spotifywrappedgroup5.MainActivity

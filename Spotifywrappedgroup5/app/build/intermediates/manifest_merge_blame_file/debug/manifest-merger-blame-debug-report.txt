@@ -84,8 +84,8 @@
 49        android:supportsRtl="true"
 49-->/Users/nathand/Documents/School/Spring 2024/CS_2340/SpotifyWrappedProj/Spotify-wrapped-group-5/Spotifywrappedgroup5/app/src/main/AndroidManifest.xml:12:9-35
 50        android:testOnly="true"
-51        android:theme="@style/Theme.SpotifyWrappedGroup5" >
-51-->/Users/nathand/Documents/School/Spring 2024/CS_2340/SpotifyWrappedProj/Spotify-wrapped-group-5/Spotifywrappedgroup5/app/src/main/AndroidManifest.xml:13:9-58
+51        android:theme="@style/AppTheme" >
+51-->/Users/nathand/Documents/School/Spring 2024/CS_2340/SpotifyWrappedProj/Spotify-wrapped-group-5/Spotifywrappedgroup5/app/src/main/AndroidManifest.xml:13:9-40
 52        <activity
 52-->/Users/nathand/Documents/School/Spring 2024/CS_2340/SpotifyWrappedProj/Spotify-wrapped-group-5/Spotifywrappedgroup5/app/src/main/AndroidManifest.xml:15:9-23:20
 53            android:name="com.example.spotifywrappedgroup5.MainActivity"

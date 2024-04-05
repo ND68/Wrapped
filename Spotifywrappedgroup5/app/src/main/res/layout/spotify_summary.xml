@@ -34,8 +34,6 @@
         style="@style/Widget.AppCompat.ProgressBar"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:background="#FFFFFF"
-        android:backgroundTint="@color/white"
         android:indeterminate="true"
         android:indeterminateTint="#484479"
         android:max="100"
