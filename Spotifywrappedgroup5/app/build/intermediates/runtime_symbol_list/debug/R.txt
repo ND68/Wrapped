@@ -3317,7 +3317,7 @@ int id animateToStart 0x7f090058
 int id antiClockwise 0x7f090059
 int id anticipate 0x7f09005a
 int id arc 0x7f09005b
-int id artistname 0x7f090226
+int id artistsview 0x7f090227
 int id asConfigured 0x7f09005c
 int id async 0x7f09005d
 int id auto 0x7f09005e

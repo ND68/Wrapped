@@ -79,7 +79,7 @@ id action_LandingPage_to_SpotifySummary
 id action_SignUpPage_to_LandingPage
 id action_global_SpotifySummary
 id action_global_settingsPage
-id artistname
+id artistsview
 id bottom_navigation
 id delete_account
 id email

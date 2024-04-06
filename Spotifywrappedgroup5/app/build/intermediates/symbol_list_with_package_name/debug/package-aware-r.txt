@@ -3318,7 +3318,7 @@ id animateToStart
 id antiClockwise
 id anticipate
 id arc
-id artistname
+id artistsview
 id asConfigured
 id async
 id auto

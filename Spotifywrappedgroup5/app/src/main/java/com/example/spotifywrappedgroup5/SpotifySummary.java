@@ -1,6 +1,5 @@
 package com.example.spotifywrappedgroup5;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -10,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.graphics.Bitmap;
@@ -33,7 +31,6 @@ import com.google.firebase.database.ValueEventListener;
 import com.spotify.sdk.android.auth.AuthorizationClient;
 import com.spotify.sdk.android.auth.AuthorizationRequest;
 import com.spotify.sdk.android.auth.AuthorizationResponse;
-import com.spotify.sdk.android.auth.LoginActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -41,19 +38,17 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.URI;
 import java.net.URL;
-import java.sql.SQLOutput;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+import androidx.recyclerview.widget.LinearLayoutManager;
+
 
 public class SpotifySummary extends Fragment {
     public static final String CLIENT_ID = "4cf685333f204e4fadde2561002b308a";
@@ -80,7 +75,7 @@ public class SpotifySummary extends Fragment {
     private TextView usernameTextView;
     private ImageView profilePicImageView;
     private TextView artistname;
-    private RecyclerView topArtistsRecyclerView;
+    private RecyclerView artistsview;
 
     @Override
     public View onCreateView(
@@ -137,8 +132,8 @@ public class SpotifySummary extends Fragment {
 
         usernameTextView = view.findViewById(R.id.usernameTextView);
         profilePicImageView = view.findViewById(R.id.userProfilePic);
+        artistsview = view.findViewById(R.id.artistsview);
 
-        artistname = view.findViewById(R.id.artistname);
     }
 
 
@@ -373,8 +368,11 @@ public class SpotifySummary extends Fragment {
                 TextView artistInfoTextView = new TextView(getActivity());
                 artistInfoTextView.setText(String.format("%s\nGenres: %s\nPopularity: %d\n\n", name, genres, popularity));
                 artistsNames.add(name);
-                setTextAsync(artistsNames.toString(), artistname);
             }
+            ArtistsAdapter adapter = new ArtistsAdapter(artistsNames);
+            artistsview.setAdapter(adapter);
+            artistsview.setLayoutManager(new LinearLayoutManager(getActivity())); // Don't forget to set the LayoutManager
+
         } catch (Exception e) {
             Toast.makeText(getActivity(), "Error displaying data" + e, Toast.LENGTH_LONG).show();
             System.out.println(e);
