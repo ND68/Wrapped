@@ -11,7 +11,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.spotifywrappedgroup5.R;
 import com.google.android.material.appbar.MaterialToolbar;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -21,15 +21,20 @@ public final class ActivityMainBinding implements ViewBinding {
   private final CoordinatorLayout rootView;
 
   @NonNull
-  public final FloatingActionButton fab;
+  public final BottomNavigationView bottomNavigation;
+
+  @NonNull
+  public final ContentMainBinding include2;
 
   @NonNull
   public final MaterialToolbar toolbar;
 
   private ActivityMainBinding(@NonNull CoordinatorLayout rootView,
-      @NonNull FloatingActionButton fab, @NonNull MaterialToolbar toolbar) {
+      @NonNull BottomNavigationView bottomNavigation, @NonNull ContentMainBinding include2,
+      @NonNull MaterialToolbar toolbar) {
     this.rootView = rootView;
-    this.fab = fab;
+    this.bottomNavigation = bottomNavigation;
+    this.include2 = include2;
     this.toolbar = toolbar;
   }
 
@@ -60,11 +65,18 @@ public final class ActivityMainBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.fab;
-      FloatingActionButton fab = ViewBindings.findChildViewById(rootView, id);
-      if (fab == null) {
+      id = R.id.bottom_navigation;
+      BottomNavigationView bottomNavigation = ViewBindings.findChildViewById(rootView, id);
+      if (bottomNavigation == null) {
         break missingId;
       }
+
+      id = R.id.include2;
+      View include2 = ViewBindings.findChildViewById(rootView, id);
+      if (include2 == null) {
+        break missingId;
+      }
+      ContentMainBinding binding_include2 = ContentMainBinding.bind(include2);
 
       id = R.id.toolbar;
       MaterialToolbar toolbar = ViewBindings.findChildViewById(rootView, id);
@@ -72,7 +84,8 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityMainBinding((CoordinatorLayout) rootView, fab, toolbar);
+      return new ActivityMainBinding((CoordinatorLayout) rootView, bottomNavigation,
+          binding_include2, toolbar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

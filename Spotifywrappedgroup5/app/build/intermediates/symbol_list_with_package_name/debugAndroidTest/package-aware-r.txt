@@ -1,3 +1,0 @@
-com.example.spotifywrappedgroup5.test
-style WhiteBackgroundDialogTheme
-style WhiteBackgroundTheme

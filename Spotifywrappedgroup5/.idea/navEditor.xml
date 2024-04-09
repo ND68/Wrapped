@@ -24,6 +24,11 @@
                                 <LayoutPositions />
                               </value>
                             </entry>
+                            <entry key="action_LandingPage_to_SpotifySummary">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
                           </map>
                         </option>
                       </LayoutPositions>
@@ -34,8 +39,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="179" />
-                            <option name="y" value="-128" />
+                            <option name="x" value="38" />
+                            <option name="y" value="257" />
                           </Point>
                         </option>
                         <option name="myPositions">
@@ -55,18 +60,26 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="-267" />
-                            <option name="y" value="271" />
+                            <option name="x" value="37" />
+                            <option name="y" value="-246" />
                           </Point>
                         </option>
-                        <option name="myPositions">
-                          <map>
-                            <entry key="action_LandingPage_to_SignUpPage">
-                              <value>
-                                <LayoutPositions />
-                              </value>
-                            </entry>
-                          </map>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="action_global_SpotifySummary">
+                    <value>
+                      <LayoutPositions />
+                    </value>
+                  </entry>
+                  <entry key="settingsPage">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="38" />
+                            <option name="y" value="-576" />
+                          </Point>
                         </option>
                       </LayoutPositions>
                     </value>

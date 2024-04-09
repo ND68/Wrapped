@@ -4,7 +4,7 @@
             "outputFile": "com.example.spotifywrappedgroup5.app-mergeDebugResources-47:/values-bs/values-bs.xml",
             "map": [
                 {
-                    "source": "/Users/nathand/.gradle/caches/transforms-3/bd739a090d307c30b9b42230c540cfec/transformed/play-services-basement-18.1.0/res/values-bs/values.xml",
+                    "source": "/Users/govindnarainkhandelwal/.gradle/caches/transforms-3/e5201c23496d6bdaf3ee4e074422c5a3/transformed/play-services-basement-18.3.0/res/values-bs/values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -21,24 +21,7 @@
                     }
                 },
                 {
-                    "source": "/Users/nathand/.gradle/caches/transforms-3/a80d85e10d2455ddbefb705026db6f05/transformed/navigation-ui-2.7.7/res/values-bs/values-bs.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,158",
-                        "endColumns": "102,124",
-                        "endOffsets": "153,278"
-                    },
-                    "to": {
-                        "startLines": "123,124",
-                        "startColumns": "4,4",
-                        "startOffsets": "11165,11268",
-                        "endColumns": "102,124",
-                        "endOffsets": "11263,11388"
-                    }
-                },
-                {
-                    "source": "/Users/nathand/.gradle/caches/transforms-3/ac1b0f3bbb39696f5f3dbdf2dcef2fc3/transformed/appcompat-1.6.1/res/values-bs/values-bs.xml",
+                    "source": "/Users/govindnarainkhandelwal/.gradle/caches/transforms-3/ac1b0f3bbb39696f5f3dbdf2dcef2fc3/transformed/appcompat-1.6.1/res/values-bs/values-bs.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -55,24 +38,7 @@
                     }
                 },
                 {
-                    "source": "/Users/nathand/.gradle/caches/transforms-3/515f3302060a0a7f1aea236cb05fb870/transformed/core-1.9.0/res/values-bs/values-bs.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "127",
-                        "startColumns": "4",
-                        "startOffsets": "11560",
-                        "endColumns": "100",
-                        "endOffsets": "11656"
-                    }
-                },
-                {
-                    "source": "/Users/nathand/.gradle/caches/transforms-3/45adddc68b13790a6b3d54920b50ff8e/transformed/play-services-base-18.0.1/res/values-bs/values.xml",
+                    "source": "/Users/govindnarainkhandelwal/.gradle/caches/transforms-3/f102ded2c1a76541527bbb4649ccb53b/transformed/play-services-base-18.1.0/res/values-bs/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -89,7 +55,7 @@
                     }
                 },
                 {
-                    "source": "/Users/nathand/.gradle/caches/transforms-3/ef1d107286681c397c32c0470a3f9537/transformed/material-1.11.0/res/values-bs/values-bs.xml",
+                    "source": "/Users/govindnarainkhandelwal/.gradle/caches/transforms-3/ef1d107286681c397c32c0470a3f9537/transformed/material-1.11.0/res/values-bs/values-bs.xml",
                     "from": {
                         "startLines": "2,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -108,7 +74,41 @@
                     }
                 },
                 {
-                    "source": "/Users/nathand/.gradle/caches/transforms-3/9cf0d7dc509f7f206a9361f474751070/transformed/browser-1.5.0/res/values-bs/values-bs.xml",
+                    "source": "/Users/govindnarainkhandelwal/.gradle/caches/transforms-3/a80d85e10d2455ddbefb705026db6f05/transformed/navigation-ui-2.7.7/res/values-bs/values-bs.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,158",
+                        "endColumns": "102,124",
+                        "endOffsets": "153,278"
+                    },
+                    "to": {
+                        "startLines": "123,124",
+                        "startColumns": "4,4",
+                        "startOffsets": "11165,11268",
+                        "endColumns": "102,124",
+                        "endOffsets": "11263,11388"
+                    }
+                },
+                {
+                    "source": "/Users/govindnarainkhandelwal/.gradle/caches/transforms-3/515f3302060a0a7f1aea236cb05fb870/transformed/core-1.9.0/res/values-bs/values-bs.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "127",
+                        "startColumns": "4",
+                        "startOffsets": "11560",
+                        "endColumns": "100",
+                        "endOffsets": "11656"
+                    }
+                },
+                {
+                    "source": "/Users/govindnarainkhandelwal/.gradle/caches/transforms-3/9cf0d7dc509f7f206a9361f474751070/transformed/browser-1.5.0/res/values-bs/values-bs.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

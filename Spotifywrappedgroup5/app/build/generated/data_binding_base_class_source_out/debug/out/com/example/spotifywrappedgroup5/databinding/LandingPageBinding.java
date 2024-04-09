@@ -6,6 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -21,6 +23,9 @@ public final class LandingPageBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
+  public final LinearLayout linearLayout;
+
+  @NonNull
   public final Button loginButton;
 
   @NonNull
@@ -30,14 +35,29 @@ public final class LandingPageBinding implements ViewBinding {
   public final Button singup;
 
   @NonNull
+  public final TextView textView;
+
+  @NonNull
+  public final TextView textView2;
+
+  @NonNull
+  public final TextView textView3;
+
+  @NonNull
   public final EditText userNameInput;
 
-  private LandingPageBinding(@NonNull ConstraintLayout rootView, @NonNull Button loginButton,
-      @NonNull EditText passwordInput, @NonNull Button singup, @NonNull EditText userNameInput) {
+  private LandingPageBinding(@NonNull ConstraintLayout rootView, @NonNull LinearLayout linearLayout,
+      @NonNull Button loginButton, @NonNull EditText passwordInput, @NonNull Button singup,
+      @NonNull TextView textView, @NonNull TextView textView2, @NonNull TextView textView3,
+      @NonNull EditText userNameInput) {
     this.rootView = rootView;
+    this.linearLayout = linearLayout;
     this.loginButton = loginButton;
     this.passwordInput = passwordInput;
     this.singup = singup;
+    this.textView = textView;
+    this.textView2 = textView2;
+    this.textView3 = textView3;
     this.userNameInput = userNameInput;
   }
 
@@ -68,6 +88,12 @@ public final class LandingPageBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.linearLayout;
+      LinearLayout linearLayout = ViewBindings.findChildViewById(rootView, id);
+      if (linearLayout == null) {
+        break missingId;
+      }
+
       id = R.id.loginButton;
       Button loginButton = ViewBindings.findChildViewById(rootView, id);
       if (loginButton == null) {
@@ -86,14 +112,32 @@ public final class LandingPageBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.textView;
+      TextView textView = ViewBindings.findChildViewById(rootView, id);
+      if (textView == null) {
+        break missingId;
+      }
+
+      id = R.id.textView2;
+      TextView textView2 = ViewBindings.findChildViewById(rootView, id);
+      if (textView2 == null) {
+        break missingId;
+      }
+
+      id = R.id.textView3;
+      TextView textView3 = ViewBindings.findChildViewById(rootView, id);
+      if (textView3 == null) {
+        break missingId;
+      }
+
       id = R.id.userNameInput;
       EditText userNameInput = ViewBindings.findChildViewById(rootView, id);
       if (userNameInput == null) {
         break missingId;
       }
 
-      return new LandingPageBinding((ConstraintLayout) rootView, loginButton, passwordInput, singup,
-          userNameInput);
+      return new LandingPageBinding((ConstraintLayout) rootView, linearLayout, loginButton,
+          passwordInput, singup, textView, textView2, textView3, userNameInput);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
