@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.spotifywrappedgroup5.R;
@@ -20,6 +21,9 @@ import java.lang.String;
 public final class SpotifySummaryBinding implements ViewBinding {
   @NonNull
   private final ConstraintLayout rootView;
+
+  @NonNull
+  public final RecyclerView artistsview;
 
   @NonNull
   public final ConstraintLayout mainLayout;
@@ -34,9 +38,11 @@ public final class SpotifySummaryBinding implements ViewBinding {
   public final TextView usernameTextView;
 
   private SpotifySummaryBinding(@NonNull ConstraintLayout rootView,
-      @NonNull ConstraintLayout mainLayout, @NonNull CircularProgressIndicator progressbar,
-      @NonNull ImageView userProfilePic, @NonNull TextView usernameTextView) {
+      @NonNull RecyclerView artistsview, @NonNull ConstraintLayout mainLayout,
+      @NonNull CircularProgressIndicator progressbar, @NonNull ImageView userProfilePic,
+      @NonNull TextView usernameTextView) {
     this.rootView = rootView;
+    this.artistsview = artistsview;
     this.mainLayout = mainLayout;
     this.progressbar = progressbar;
     this.userProfilePic = userProfilePic;
@@ -70,6 +76,12 @@ public final class SpotifySummaryBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.artistsview;
+      RecyclerView artistsview = ViewBindings.findChildViewById(rootView, id);
+      if (artistsview == null) {
+        break missingId;
+      }
+
       id = R.id.main_layout;
       ConstraintLayout mainLayout = ViewBindings.findChildViewById(rootView, id);
       if (mainLayout == null) {
@@ -94,8 +106,8 @@ public final class SpotifySummaryBinding implements ViewBinding {
         break missingId;
       }
 
-      return new SpotifySummaryBinding((ConstraintLayout) rootView, mainLayout, progressbar,
-          userProfilePic, usernameTextView);
+      return new SpotifySummaryBinding((ConstraintLayout) rootView, artistsview, mainLayout,
+          progressbar, userProfilePic, usernameTextView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
