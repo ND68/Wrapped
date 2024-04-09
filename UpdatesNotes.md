@@ -21,6 +21,7 @@
 2024 Apr. 2   <br>
 1. Fixed merge errors
 2. Decided to create music-wrap reports based on top artists.
+3. Designed a new UI for the login page.
 
 2024 Apr. 4  <br>
 1. Carried out a phase test: some exceptions were not handled properly.
@@ -28,3 +29,4 @@
 
 2024 Apr. 9  <br>
 1. Completed functions that get and process top artists.
+2. Clean the UI and implement the UI design.
