@@ -48,8 +48,14 @@
     <fragment
         android:id="@+id/settingsPage"
         android:name="com.example.spotifywrappedgroup5.SettingsPage"
-        android:label="settings_page"
-        tools:layout="@layout/settings_page" />
+        android:label="Settings"
+        tools:layout="@layout/settings_page" >
+        <action
+            android:id="@+id/action_settingsPage_to_LandingPage"
+            app:destination="@id/LandingPage"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
     <action
         android:id="@+id/action_global_settingsPage"
         app:destination="@id/settingsPage"

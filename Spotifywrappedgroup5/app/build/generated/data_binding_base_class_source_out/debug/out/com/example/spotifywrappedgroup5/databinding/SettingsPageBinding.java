@@ -31,15 +31,20 @@ public final class SettingsPageBinding implements ViewBinding {
   public final TextView textView;
 
   @NonNull
-  public final Button updateInfo;
+  public final Button updateEmail;
+
+  @NonNull
+  public final Button updatePass;
 
   private SettingsPageBinding(@NonNull ConstraintLayout rootView, @NonNull Button deleteAccount,
-      @NonNull LinearLayout linearLayout, @NonNull TextView textView, @NonNull Button updateInfo) {
+      @NonNull LinearLayout linearLayout, @NonNull TextView textView, @NonNull Button updateEmail,
+      @NonNull Button updatePass) {
     this.rootView = rootView;
     this.deleteAccount = deleteAccount;
     this.linearLayout = linearLayout;
     this.textView = textView;
-    this.updateInfo = updateInfo;
+    this.updateEmail = updateEmail;
+    this.updatePass = updatePass;
   }
 
   @Override
@@ -87,14 +92,20 @@ public final class SettingsPageBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.update_info;
-      Button updateInfo = ViewBindings.findChildViewById(rootView, id);
-      if (updateInfo == null) {
+      id = R.id.update_email;
+      Button updateEmail = ViewBindings.findChildViewById(rootView, id);
+      if (updateEmail == null) {
+        break missingId;
+      }
+
+      id = R.id.update_pass;
+      Button updatePass = ViewBindings.findChildViewById(rootView, id);
+      if (updatePass == null) {
         break missingId;
       }
 
       return new SettingsPageBinding((ConstraintLayout) rootView, deleteAccount, linearLayout,
-          textView, updateInfo);
+          textView, updateEmail, updatePass);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

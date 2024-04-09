@@ -27,21 +27,28 @@
         android:textSize="34sp" />
 
     <Button
-        android:id="@+id/update_info"
+        android:id="@+id/update_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Update Information"
+        android:text="Update Email"
         android:layout_marginTop="20dp" />
 
-        <Button
-            android:id="@+id/delete_account"
-            style="@style/Widget.Material3.Button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:backgroundTint="@color/md_theme_dark_errorContainer"
-            android:color="@color/md_theme_dark_onErrorContainer"
-            android:text="Delete Account" />
+    <Button
+        android:id="@+id/update_pass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Update Password"
+        android:layout_marginTop="20dp" />
+
+    <Button
+        android:id="@+id/delete_account"
+        style="@style/Widget.Material3.Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/md_theme_dark_errorContainer"
+        android:color="@color/md_theme_dark_onErrorContainer"
+        android:text="Delete Account" />
 
     </LinearLayout>
 

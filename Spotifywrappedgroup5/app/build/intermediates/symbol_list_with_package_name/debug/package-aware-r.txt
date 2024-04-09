@@ -3225,7 +3225,9 @@ drawable settings
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+font montserrat_italic_variablefont_wght
 font montserrat_medium
+font montserrat_variablefont_wght
 id ALT
 id BOTTOM_END
 id BOTTOM_START
@@ -3301,6 +3303,7 @@ id action_menu_presenter
 id action_mode_bar
 id action_mode_bar_stub
 id action_mode_close_button
+id action_settingsPage_to_LandingPage
 id action_text
 id actions
 id activity_chooser_view_content
@@ -3377,6 +3380,8 @@ id coordinator
 id cos
 id counterclockwise
 id cradle
+id currEmail
+id currPass
 id currentState
 id custom
 id customPanel
@@ -3570,6 +3575,8 @@ id navigation_header_container
 id never
 id neverCompleteToEnd
 id neverCompleteToStart
+id newEmail
+id newPass
 id noScroll
 id noState
 id none
@@ -3751,7 +3758,8 @@ id unchecked
 id uniform
 id unlabeled
 id up
-id update_info
+id update_email
+id update_pass
 id useLogo
 id userNameInput
 id userProfilePic
@@ -3900,6 +3908,7 @@ layout com_spotify_sdk_login_activity
 layout com_spotify_sdk_login_dialog
 layout content_main
 layout custom_dialog
+layout delete_account_popup
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
@@ -3981,6 +3990,8 @@ layout settings_page
 layout signup_page
 layout spotify_summary
 layout support_simple_spinner_dropdown_item
+layout update_email_popup
+layout update_pass_popup
 menu bottom_navigation_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
