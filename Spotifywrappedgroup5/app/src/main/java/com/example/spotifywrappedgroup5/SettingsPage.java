@@ -160,6 +160,8 @@ public class SettingsPage extends Fragment {
             @Override
             public void onClick(View v) {
                 View popup = LayoutInflater.from(getContext()).inflate(R.layout.delete_account_popup, null);
+                final EditText currEmail = popup.findViewById(R.id.currEmail);
+                final EditText currPass = popup.findViewById(R.id.currPass);
                 AlertDialog dialog = new MaterialAlertDialogBuilder(getContext())
                         .setTitle("Update Pass")
                         .setMessage("Are you sure you want to delete your account? Input credentials to continue")
@@ -167,9 +169,36 @@ public class SettingsPage extends Fragment {
                         .setPositiveButton("Delete", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                Toast.makeText(getActivity(), "Account Deleted", Toast.LENGTH_SHORT).show();
-                                NavHostFragment.findNavController(SettingsPage.this)
-                                        .navigate(R.id.action_settingsPage_to_LandingPage);
+                                FirebaseUser user = auth.getCurrentUser();
+                                // Get auth credentials from the user for re-authentication
+                                AuthCredential credential = EmailAuthProvider
+                                        .getCredential(currEmail.getText().toString().trim(), currPass.getText().toString().trim()); // Current Login Credentials \\
+                                // Prompt the user to re-provide their sign-in credentials
+                                user.reauthenticate(credential)
+                                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                            @Override
+                                            public void onComplete(@NonNull Task<Void> task) {
+                                                Log.d("TAG", "User re-authenticated.");
+                                                //Now change your email address \\
+                                                //----------------Code for Changing Email Address----------\\
+                                                FirebaseUser user = auth.getCurrentUser();
+                                                user.delete()
+                                                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                            @Override
+                                                            public void onComplete(@NonNull Task<Void> task) {
+                                                                if (task.isSuccessful()) {
+                                                                    Toast.makeText(getActivity(), "Account Deleted", Toast.LENGTH_SHORT).show();
+                                                                    NavHostFragment.findNavController(SettingsPage.this)
+                                                                            .navigate(R.id.action_settingsPage_to_LandingPage);
+                                                                    Log.d("TAG", "User deleted.");
+                                                                } else {
+                                                                    Toast.makeText(getActivity(), "Deletion Failed, please try again", Toast.LENGTH_SHORT).show();
+                                                                    Log.d("TAG", "User not deleted.");
+                                                                }
+                                                            }
+                                                        });
+                                            }
+                                        });
                             }
                         })
                         .setNegativeButton("Close", new DialogInterface.OnClickListener() {

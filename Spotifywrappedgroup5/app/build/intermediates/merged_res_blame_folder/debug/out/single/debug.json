@@ -4,8 +4,8 @@
         "source": "/Users/nathand/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-main-51:/drawable/green_wallpaper4.jpeg"
     },
     {
-        "merged": "com.example.spotifywrappedgroup5.app-merged_res-49:/navigation_nav_graph.xml.flat",
-        "source": "com.example.spotifywrappedgroup5.app-main-51:/navigation/nav_graph.xml"
+        "merged": "com.example.spotifywrappedgroup5.app-merged_res-49:/layout_delete_account_popup.xml.flat",
+        "source": "com.example.spotifywrappedgroup5.app-main-51:/layout/delete_account_popup.xml"
     },
     {
         "merged": "/Users/nathand/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-merged_res-49:/mipmap-xhdpi_ic_launcher.webp.flat",
@@ -60,8 +60,16 @@
         "source": "/Users/nathand/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-main-51:/navigation/nav_graph.xml"
     },
     {
+        "merged": "com.example.spotifywrappedgroup5.app-merged_res-49:/layout_update_email_popup.xml.flat",
+        "source": "com.example.spotifywrappedgroup5.app-main-51:/layout/update_email_popup.xml"
+    },
+    {
         "merged": "/Users/nathand/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-merged_res-49:/layout_update_email_popup.xml.flat",
         "source": "/Users/nathand/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-main-51:/layout/update_email_popup.xml"
+    },
+    {
+        "merged": "com.example.spotifywrappedgroup5.app-merged_res-49:/layout_update_pass_popup.xml.flat",
+        "source": "com.example.spotifywrappedgroup5.app-main-51:/layout/update_pass_popup.xml"
     },
     {
         "merged": "/Users/nathand/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-merged_res-49:/mipmap-hdpi_ic_launcher.webp.flat",
