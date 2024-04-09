@@ -3745,6 +3745,7 @@ id toggle
 id toolbar
 id top
 id topPanel
+id topartiststextview
 id touch_outside
 id transitionToEnd
 id transitionToStart
@@ -4028,6 +4029,7 @@ string abc_toolbar_collapse_description
 string androidx_startup
 string app_name
 string appbar_scrolling_view_behavior
+string artists
 string bottom_sheet_behavior
 string bottomsheet_action_collapse
 string bottomsheet_action_expand

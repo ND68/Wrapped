@@ -110,6 +110,7 @@ id textView
 id textView2
 id textView3
 id toolbar
+id topartiststextview
 id update_email
 id update_pass
 id userNameInput
@@ -132,6 +133,7 @@ mipmap ic_launcher
 mipmap ic_launcher_round
 navigation nav_graph
 string app_name
+string artists
 string email
 string firebase_database_url
 string full_name
