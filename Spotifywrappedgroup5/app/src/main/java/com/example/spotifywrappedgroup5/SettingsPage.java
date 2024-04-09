@@ -63,7 +63,34 @@ public class SettingsPage extends Fragment {
                         .setPositiveButton("Update", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-
+                                FirebaseUser user = auth.getCurrentUser();
+                                // Get auth credentials from the user for re-authentication
+                                AuthCredential credential = EmailAuthProvider
+                                        .getCredential(currEmail.getText().toString().trim(), currPass.getText().toString().trim()); // Current Login Credentials \\
+                                // Prompt the user to re-provide their sign-in credentials
+                                user.reauthenticate(credential)
+                                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                            @Override
+                                            public void onComplete(@NonNull Task<Void> task) {
+                                                Log.d("TAG", "User re-authenticated.");
+                                                //Now change your email address \\
+                                                //----------------Code for Changing Email Address----------\\
+                                                FirebaseUser user = auth.getCurrentUser();
+                                                user.verifyBeforeUpdateEmail(newEmail.getText().toString().trim())
+                                                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                            @Override
+                                                            public void onComplete(@NonNull Task<Void> task) {
+                                                                if (task.isSuccessful()) {
+                                                                    Toast.makeText(getActivity(), "Check new email for verification", Toast.LENGTH_SHORT).show();
+                                                                    Log.d("TAG", "User email address updated.");
+                                                                } else {
+                                                                    Toast.makeText(getActivity(), "Update Failed, please try again", Toast.LENGTH_SHORT).show();
+                                                                    Log.d("TAG", "User email not updated.");
+                                                                }
+                                                            }
+                                                        });
+                                            }
+                                        });
                             }
                         })
                         .setNegativeButton("Close", new DialogInterface.OnClickListener() {
