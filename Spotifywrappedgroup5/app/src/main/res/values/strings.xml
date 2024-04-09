@@ -8,5 +8,6 @@
     <string name="password">Password: </string>
     <string name="verify">Verify Password: </string>
     <string name="submit">Submit</string>
+    <string name="artists">Your top artists:</string>
 
 </resources>

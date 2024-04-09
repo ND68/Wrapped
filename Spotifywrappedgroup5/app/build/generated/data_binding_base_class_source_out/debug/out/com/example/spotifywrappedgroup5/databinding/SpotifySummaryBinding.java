@@ -32,6 +32,9 @@ public final class SpotifySummaryBinding implements ViewBinding {
   public final CircularProgressIndicator progressbar;
 
   @NonNull
+  public final TextView topartiststextview;
+
+  @NonNull
   public final ImageView userProfilePic;
 
   @NonNull
@@ -39,12 +42,13 @@ public final class SpotifySummaryBinding implements ViewBinding {
 
   private SpotifySummaryBinding(@NonNull ConstraintLayout rootView,
       @NonNull RecyclerView artistsview, @NonNull ConstraintLayout mainLayout,
-      @NonNull CircularProgressIndicator progressbar, @NonNull ImageView userProfilePic,
-      @NonNull TextView usernameTextView) {
+      @NonNull CircularProgressIndicator progressbar, @NonNull TextView topartiststextview,
+      @NonNull ImageView userProfilePic, @NonNull TextView usernameTextView) {
     this.rootView = rootView;
     this.artistsview = artistsview;
     this.mainLayout = mainLayout;
     this.progressbar = progressbar;
+    this.topartiststextview = topartiststextview;
     this.userProfilePic = userProfilePic;
     this.usernameTextView = usernameTextView;
   }
@@ -94,6 +98,12 @@ public final class SpotifySummaryBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.topartiststextview;
+      TextView topartiststextview = ViewBindings.findChildViewById(rootView, id);
+      if (topartiststextview == null) {
+        break missingId;
+      }
+
       id = R.id.userProfilePic;
       ImageView userProfilePic = ViewBindings.findChildViewById(rootView, id);
       if (userProfilePic == null) {
@@ -107,7 +117,7 @@ public final class SpotifySummaryBinding implements ViewBinding {
       }
 
       return new SpotifySummaryBinding((ConstraintLayout) rootView, artistsview, mainLayout,
-          progressbar, userProfilePic, usernameTextView);
+          progressbar, topartiststextview, userProfilePic, usernameTextView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -355,6 +355,7 @@ public class SpotifySummary extends Fragment {
             for (int i = 0; i < items.length(); i++) {
                 JSONObject artist = items.getJSONObject(i);
                 String name = artist.getString("name");
+                artistsNames.add(name);
                 JSONArray genresArray = artist.getJSONArray("genres");
                 StringBuilder genresStringBuilder = new StringBuilder();
                 for (int j = 0; j < genresArray.length(); j++) {
@@ -367,7 +368,40 @@ public class SpotifySummary extends Fragment {
                 int popularity = artist.getInt("popularity");
                 TextView artistInfoTextView = new TextView(getActivity());
                 artistInfoTextView.setText(String.format("%s\nGenres: %s\nPopularity: %d\n\n", name, genres, popularity));
+
+            }
+            ArtistsAdapter adapter = new ArtistsAdapter(artistsNames);
+            artistsview.setAdapter(adapter);
+            artistsview.setLayoutManager(new LinearLayoutManager(getActivity())); // Don't forget to set the LayoutManager
+
+        } catch (Exception e) {
+            Toast.makeText(getActivity(), "Error displaying data" + e, Toast.LENGTH_LONG).show();
+            System.out.println(e);
+        }
+
+    }
+    public void displayTopGenres() {
+        JSONObject topArtists = getJSON("https://api.spotify.com/v1/me/top/artists");
+        try {
+            JSONArray items = topArtists.getJSONArray("items");
+            ArrayList<String> artistsNames = new ArrayList<>();
+            for (int i = 0; i < items.length(); i++) {
+                JSONObject artist = items.getJSONObject(i);
+                String name = artist.getString("name");
                 artistsNames.add(name);
+                JSONArray genresArray = artist.getJSONArray("genres");
+                StringBuilder genresStringBuilder = new StringBuilder();
+                for (int j = 0; j < genresArray.length(); j++) {
+                    genresStringBuilder.append(genresArray.getString(j));
+                    if (j < genresArray.length() - 1) {
+                        genresStringBuilder.append(", ");
+                    }
+                }
+                String genres = genresStringBuilder.toString();
+                int popularity = artist.getInt("popularity");
+                TextView artistInfoTextView = new TextView(getActivity());
+                artistInfoTextView.setText(String.format("%s\nGenres: %s\nPopularity: %d\n\n", name, genres, popularity));
+
             }
             ArtistsAdapter adapter = new ArtistsAdapter(artistsNames);
             artistsview.setAdapter(adapter);
