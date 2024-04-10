@@ -77,7 +77,7 @@ public class SpotifySummary extends Fragment {
     ProgressBar progressBar;
     ConstraintLayout container;
     private TextView usernameTextView;
-    private ImageView profilePicImageView;
+    //private ImageView profilePicImageView;
     private TextView artistname;
     private RecyclerView artistsview;
     private ImageView topTrackImageView;
@@ -138,7 +138,7 @@ public class SpotifySummary extends Fragment {
         container.setVisibility(View.GONE);
 
         usernameTextView = view.findViewById(R.id.usernameTextView);
-        profilePicImageView = view.findViewById(R.id.userProfilePic);
+        //profilePicImageView = view.findViewById(R.id.userProfilePic);
         artistsview = view.findViewById(R.id.artistsview);
 
         topTrackImageView = view.findViewById(R.id.topTrackImageView);
@@ -372,16 +372,18 @@ public class SpotifySummary extends Fragment {
         }
     }
 
+
+
     public void displayUserProfile() {
         JSONObject profileJSON = getJSON("https://api.spotify.com/v1/me");
 
         // Set to text in profileTextView.
         try {
             String userName = profileJSON.get("display_name").toString();
-            setTextAsync(userName, usernameTextView);
+            setTextAsync(String.format("%s,", userName), usernameTextView);
 
-            String picURL = profileJSON.getJSONArray("images").getJSONObject(0).get("url").toString();
-            new FetchImage(profilePicImageView, picURL).start();
+//            String picURL = profileJSON.getJSONArray("images").getJSONObject(0).get("url").toString();
+//            new FetchImage(profilePicImageView, picURL).start();
 
         } catch (Exception e) {
             Toast.makeText(getActivity(), "Error displaying data" + e, Toast.LENGTH_LONG).show();
