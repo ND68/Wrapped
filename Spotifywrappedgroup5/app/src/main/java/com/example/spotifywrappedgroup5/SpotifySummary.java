@@ -325,6 +325,7 @@ public class SpotifySummary extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
+        stopPlaying();
         binding = null;
     }
 
@@ -372,7 +373,14 @@ public class SpotifySummary extends Fragment {
         }
     }
 
-
+    private void stopPlaying() {
+        if (m != null && m.isPlaying()) {
+            m.stop();
+            m.release();
+            m = new MediaPlayer();
+            m.reset();
+        }
+    }
 
     public void displayUserProfile() {
         JSONObject profileJSON = getJSON("https://api.spotify.com/v1/me");
