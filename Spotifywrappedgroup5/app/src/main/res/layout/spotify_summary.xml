@@ -23,52 +23,83 @@
         android:id="@+id/main_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="-127dp"
-        tools:layout_editor_absoluteY="16dp">
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
 
-        <TextView
-            android:id="@+id/usernameTextView"
+        <LinearLayout
+            android:id="@+id/linearLayout2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textSize="34sp"
-            app:layout_constraintBottom_toTopOf="@+id/userProfilePic"
+            android:gravity="center"
+            android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/userProfilePic"
-            android:layout_width="300dp"
-            android:layout_height="300dp"
-            android:contentDescription="user profile pic"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/usernameTextView"
-            app:srcCompat="@drawable/ic_launcher_foreground" />
+            <TextView
+                android:id="@+id/usernameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textSize="34sp" />
+
+            <ImageView
+                android:id="@+id/userProfilePic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="user profile pic"
+                app:srcCompat="@drawable/ic_launcher_foreground" />
+        </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/artistsview"
             android:layout_width="186dp"
             android:layout_height="190dp"
-            android:layout_marginStart="156dp"
-            android:layout_marginBottom="104dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/userProfilePic"
-            app:layout_constraintVertical_bias="0.695" />
+            app:layout_constraintTop_toBottomOf="@+id/topartiststextview" />
 
         <TextView
             android:id="@+id/topartiststextview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/artists"
-            app:layout_constraintBottom_toTopOf="@+id/artistsview"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/userProfilePic"
-            app:layout_constraintVertical_bias="0.097" />
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/artistsview">
+
+            <TextView
+                android:id="@+id/topTrackName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:text="TextView" />
+
+            <ImageView
+                android:id="@+id/topTrackImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_launcher_foreground" />
+
+            <TextView
+                android:id="@+id/topTrackBy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:text="TextView" />
+        </LinearLayout>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

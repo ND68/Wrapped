@@ -3493,6 +3493,7 @@ id line1
 id line3
 id linear
 id linearLayout
+id linearLayout2
 id listMode
 id list_item
 id locale
@@ -3745,6 +3746,9 @@ id toggle
 id toolbar
 id top
 id topPanel
+id topTrackBy
+id topTrackImageView
+id topTrackName
 id topartiststextview
 id touch_outside
 id transitionToEnd
