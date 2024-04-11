@@ -1,6 +1,8 @@
 package com.example.spotifywrappedgroup5;
 
 import android.content.Intent;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -39,6 +41,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -67,15 +70,19 @@ public class SpotifySummary extends Fragment {
     private DatabaseReference reference;
     private Handler mainHandler = new Handler();
 
+    MediaPlayer m;
+
     //** put all views here to make them global**
     //** views that aren't global variables can't be accessed by function **
     ProgressBar progressBar;
-
     ConstraintLayout container;
     private TextView usernameTextView;
-    private ImageView profilePicImageView;
+    //private ImageView profilePicImageView;
     private TextView artistname;
     private RecyclerView artistsview;
+    private ImageView topTrackImageView;
+    private TextView topTrackName;
+    private TextView topTrackBy;
 
     @Override
     public View onCreateView(
@@ -131,9 +138,12 @@ public class SpotifySummary extends Fragment {
         container.setVisibility(View.GONE);
 
         usernameTextView = view.findViewById(R.id.usernameTextView);
-        profilePicImageView = view.findViewById(R.id.userProfilePic);
+        //profilePicImageView = view.findViewById(R.id.userProfilePic);
         artistsview = view.findViewById(R.id.artistsview);
 
+        topTrackImageView = view.findViewById(R.id.topTrackImageView);
+        topTrackName = view.findViewById(R.id.topTrackName);
+        topTrackBy = view.findViewById(R.id.topTrackBy);
     }
 
 
@@ -143,6 +153,8 @@ public class SpotifySummary extends Fragment {
 
         displayUserProfile();
         displayTopArtists();
+        displayTopTrack();
+
         progressBar.setVisibility(View.INVISIBLE);
         container.setVisibility(View.VISIBLE);
     }
@@ -221,6 +233,7 @@ public class SpotifySummary extends Fragment {
         mCall = mOkHttpClient.newCall(request);
 
         final JSONObject[] json = new JSONObject[1];
+        boolean loading = true;
 
         mCall.enqueue(new Callback() {
             @Override
@@ -235,6 +248,11 @@ public class SpotifySummary extends Fragment {
                 try {
                     // Access JSON response here.
                     json[0] = new JSONObject(response.body().string());
+//                    if (json[0] == null) {
+//                        System.out.println("JSON is null");
+//                    } else {
+//                        System.out.println(json[0].toString(3));
+//                    }
 
                 } catch (JSONException e) {
                     Log.d("JSON", "Failed to parse data: " + e);
@@ -246,9 +264,16 @@ public class SpotifySummary extends Fragment {
 
         });
 
+        System.out.println("gotten JSON");
         while(json[0] == null) {
+            try {
+                Thread.sleep(200);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
             //wait until json returns before returning json
         }
+        System.out.println("returning JSON");
         return json[0];
     }
 
@@ -300,6 +325,7 @@ public class SpotifySummary extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
+        stopPlaying();
         binding = null;
     }
 
@@ -330,16 +356,42 @@ public class SpotifySummary extends Fragment {
         }
     }
 
+    public void startAudioStream(String url) {
+        if (m == null)
+            m = new MediaPlayer();
+        try {
+            Log.d("TAG", "Playing: " + url);
+            m.setAudioStreamType(AudioManager.STREAM_MUSIC);
+            m.setDataSource(url);
+            //descriptor.close();
+            m.prepare();
+            m.setVolume(1f, 1f);
+            m.setLooping(false);
+            m.start();
+        } catch (Exception e) {
+            Log.d("TAG", "Error playing in SoundHandler: " + e.toString());
+        }
+    }
+
+    private void stopPlaying() {
+        if (m != null && m.isPlaying()) {
+            m.stop();
+            m.release();
+            m = new MediaPlayer();
+            m.reset();
+        }
+    }
+
     public void displayUserProfile() {
         JSONObject profileJSON = getJSON("https://api.spotify.com/v1/me");
 
         // Set to text in profileTextView.
         try {
             String userName = profileJSON.get("display_name").toString();
-            setTextAsync(userName, usernameTextView);
+            setTextAsync(String.format("%s,", userName), usernameTextView);
 
-            String picURL = profileJSON.getJSONArray("images").getJSONObject(0).get("url").toString();
-            new FetchImage(profilePicImageView, picURL).start();
+//            String picURL = profileJSON.getJSONArray("images").getJSONObject(0).get("url").toString();
+//            new FetchImage(profilePicImageView, picURL).start();
 
         } catch (Exception e) {
             Toast.makeText(getActivity(), "Error displaying data" + e, Toast.LENGTH_LONG).show();
@@ -348,7 +400,7 @@ public class SpotifySummary extends Fragment {
     }
 
     public void displayTopArtists() {
-        JSONObject topArtists = getJSON("https://api.spotify.com/v1/me/top/artists");
+        JSONObject topArtists = getJSON("https://api.spotify.com/v1/me/top/artists?limit=5");
         try {
             JSONArray items = topArtists.getJSONArray("items");
             ArrayList<String> artistsNames = new ArrayList<>();
@@ -378,7 +430,6 @@ public class SpotifySummary extends Fragment {
             Toast.makeText(getActivity(), "Error displaying data" + e, Toast.LENGTH_LONG).show();
             System.out.println(e);
         }
-
     }
     public void displayTopGenres() {
         JSONObject topGenres = getJSON("https://api.spotify.com/v1/me/top/artists");
@@ -402,6 +453,34 @@ public class SpotifySummary extends Fragment {
             ArtistsAdapter adapter = new ArtistsAdapter(genresName);
             artistsview.setAdapter(adapter);
             artistsview.setLayoutManager(new LinearLayoutManager(getActivity())); // Don't forget to set the LayoutManager
+
+        } catch (Exception e) {
+            Toast.makeText(getActivity(), "Error displaying data" + e, Toast.LENGTH_LONG).show();
+            System.out.println(e);
+        }
+    }
+
+    public void displayTopTrack() {
+        System.out.println("getting track");
+        JSONObject topTracks = getJSON("https://api.spotify.com/v1/me/top/tracks?offset=1&limit=3");
+        System.out.println("track gotten");
+
+        try {
+            JSONObject trackObject = topTracks.getJSONArray("items").getJSONObject(0);
+            JSONObject album = trackObject.getJSONObject("album");
+
+            String trackName = trackObject.get("name").toString();
+            String albumName = album.get("name").toString();
+            setTextAsync(String.format("%s - %s", trackName, albumName), topTrackName);
+
+            String albumImageURL = album.getJSONArray("images").getJSONObject(0).get("url").toString();
+            new FetchImage(topTrackImageView, albumImageURL).start();
+
+            String trackBy = trackObject.getJSONArray("artists").getJSONObject(0).get("name").toString();
+            setTextAsync(String.format("By: %s", trackBy), topTrackBy);
+
+            String songURL = trackObject.get("preview_url").toString();
+            startAudioStream(songURL);
 
         } catch (Exception e) {
             Toast.makeText(getActivity(), "Error displaying data" + e, Toast.LENGTH_LONG).show();
