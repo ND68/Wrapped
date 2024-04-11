@@ -91,8 +91,10 @@ id email
 id full_name
 id include2
 id linearLayout
+id linearLayout3
 id login
 id loginButton
+id lovinggg
 id main_layout
 id nameTextView
 id nav_graph
@@ -110,11 +112,13 @@ id textView
 id textView2
 id textView3
 id toolbar
+id topTrackBy
+id topTrackImageView
+id topTrackName
 id topartiststextview
 id update_email
 id update_pass
 id userNameInput
-id userProfilePic
 id usernameTextView
 id verify_password
 id wrapped

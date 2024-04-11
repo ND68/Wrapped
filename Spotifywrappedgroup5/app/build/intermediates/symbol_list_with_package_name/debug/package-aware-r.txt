@@ -3493,11 +3493,13 @@ id line1
 id line3
 id linear
 id linearLayout
+id linearLayout3
 id listMode
 id list_item
 id locale
 id login
 id loginButton
+id lovinggg
 id ltr
 id m3_side_sheet
 id main_layout
@@ -3745,6 +3747,9 @@ id toggle
 id toolbar
 id top
 id topPanel
+id topTrackBy
+id topTrackImageView
+id topTrackName
 id topartiststextview
 id touch_outside
 id transitionToEnd
@@ -3763,7 +3768,6 @@ id update_email
 id update_pass
 id useLogo
 id userNameInput
-id userProfilePic
 id usernameTextView
 id verify_password
 id vertical_only
