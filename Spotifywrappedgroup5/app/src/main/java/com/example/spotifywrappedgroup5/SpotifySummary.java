@@ -316,7 +316,7 @@ public class SpotifySummary extends Fragment {
 
             InputStream inputStream = null;
             try {
-                inputStream = new URL(URL).openStream();
+                inputStream = new URL(x).openStream();
                 bitmap = BitmapFactory.decodeStream(inputStream);
             } catch (IOException e) {
                 e.printStackTrace();
@@ -381,14 +381,14 @@ public class SpotifySummary extends Fragment {
 
     }
     public void displayTopGenres() {
-        JSONObject topArtists = getJSON("https://api.spotify.com/v1/me/top/artists");
+        JSONObject topGenres = getJSON("https://api.spotify.com/v1/me/top/artists");
         try {
-            JSONArray items = topArtists.getJSONArray("items");
-            ArrayList<String> artistsNames = new ArrayList<>();
+            JSONArray items = topGenres.getJSONArray("items");
+            ArrayList<String> genresName = new ArrayList<>();
             for (int i = 0; i < items.length(); i++) {
                 JSONObject artist = items.getJSONObject(i);
-                String name = artist.getString("name");
-                artistsNames.add(name);
+                String genres = artist.getString("genres");
+                genresName.add(genres);
                 JSONArray genresArray = artist.getJSONArray("genres");
                 StringBuilder genresStringBuilder = new StringBuilder();
                 for (int j = 0; j < genresArray.length(); j++) {
@@ -397,13 +397,9 @@ public class SpotifySummary extends Fragment {
                         genresStringBuilder.append(", ");
                     }
                 }
-                String genres = genresStringBuilder.toString();
-                int popularity = artist.getInt("popularity");
-                TextView artistInfoTextView = new TextView(getActivity());
-                artistInfoTextView.setText(String.format("%s\nGenres: %s\nPopularity: %d\n\n", name, genres, popularity));
 
             }
-            ArtistsAdapter adapter = new ArtistsAdapter(artistsNames);
+            ArtistsAdapter adapter = new ArtistsAdapter(genresName);
             artistsview.setAdapter(adapter);
             artistsview.setLayoutManager(new LinearLayoutManager(getActivity())); // Don't forget to set the LayoutManager
 
