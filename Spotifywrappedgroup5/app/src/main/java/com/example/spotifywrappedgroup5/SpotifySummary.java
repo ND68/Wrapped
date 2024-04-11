@@ -342,7 +342,7 @@ public class SpotifySummary extends Fragment {
 
             InputStream inputStream = null;
             try {
-                inputStream = new URL(x).openStream();
+                inputStream = new URL(URL).openStream();
                 bitmap = BitmapFactory.decodeStream(inputStream);
             } catch (IOException e) {
                 e.printStackTrace();
