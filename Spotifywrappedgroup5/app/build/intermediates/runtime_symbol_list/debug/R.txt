@@ -3493,6 +3493,7 @@ int id line3 0x7f090106
 int id linear 0x7f090107
 int id linearLayout 0x7f090108
 int id linearLayout3 0x7f090109
+int id linearLayout4 0x7f090232
 int id listMode 0x7f09010a
 int id list_item 0x7f09010b
 int id locale 0x7f09010c
@@ -3745,6 +3746,7 @@ int id title_template 0x7f090202
 int id toggle 0x7f090203
 int id toolbar 0x7f090204
 int id top 0x7f090205
+int id topArtistView 0x7f090233
 int id topPanel 0x7f090206
 int id topTrackBy 0x7f090207
 int id topTrackImageView 0x7f090208

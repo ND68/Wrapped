@@ -3494,6 +3494,7 @@ id line3
 id linear
 id linearLayout
 id linearLayout3
+id linearLayout4
 id listMode
 id list_item
 id locale
@@ -3746,6 +3747,7 @@ id title_template
 id toggle
 id toolbar
 id top
+id topArtistView
 id topPanel
 id topTrackBy
 id topTrackImageView

@@ -81,6 +81,8 @@ public class SpotifySummary extends Fragment {
     private TextView artistname;
     private RecyclerView artistsview;
     private ImageView topTrackImageView;
+    private ImageView topArtistView;
+
     private TextView topTrackName;
     private TextView topTrackBy;
 
@@ -142,6 +144,7 @@ public class SpotifySummary extends Fragment {
         artistsview = view.findViewById(R.id.artistsview);
 
         topTrackImageView = view.findViewById(R.id.topTrackImageView);
+        topArtistView = view.findViewById(R.id.topArtistView);
         topTrackName = view.findViewById(R.id.topTrackName);
         topTrackBy = view.findViewById(R.id.topTrackBy);
     }
@@ -420,6 +423,9 @@ public class SpotifySummary extends Fragment {
                 int popularity = artist.getInt("popularity");
                 TextView artistInfoTextView = new TextView(getActivity());
                 artistInfoTextView.setText(String.format("%s\nGenres: %s\nPopularity: %d\n\n", name, genres, popularity));
+                String Imageurl = artist.getJSONArray("images").getJSONObject(0).get("url").toString();
+                new FetchImage(topArtistView, Imageurl).start();
+
 
             }
             ArtistsAdapter adapter = new ArtistsAdapter(artistsNames);
