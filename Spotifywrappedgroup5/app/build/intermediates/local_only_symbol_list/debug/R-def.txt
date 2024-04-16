@@ -93,6 +93,7 @@ id full_name
 id include2
 id linearLayout
 id linearLayout3
+id linearLayout4
 id login
 id loginButton
 id lovinggg
@@ -114,6 +115,7 @@ id textView
 id textView2
 id textView3
 id toolbar
+id topArtistView
 id topTrackBy
 id topTrackImageView
 id topTrackName

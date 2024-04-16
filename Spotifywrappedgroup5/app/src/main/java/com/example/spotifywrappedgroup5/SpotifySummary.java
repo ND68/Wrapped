@@ -80,6 +80,8 @@ public class SpotifySummary extends Fragment {
     private TextView artistname;
     private RecyclerView artistsview;
     private ImageView topTrackImageView;
+    private ImageView topArtistView;
+
     private TextView topTrackName;
     private TextView topTrackBy;
 
@@ -142,6 +144,7 @@ public class SpotifySummary extends Fragment {
         artistsview = view.findViewById(R.id.artistsview);
 
         topTrackImageView = view.findViewById(R.id.topTrackImageView);
+        topArtistView = view.findViewById(R.id.topArtistView);
         topTrackName = view.findViewById(R.id.topTrackName);
         topTrackBy = view.findViewById(R.id.topTrackBy);
     }
@@ -420,6 +423,9 @@ public class SpotifySummary extends Fragment {
                 int popularity = artist.getInt("popularity");
                 TextView artistInfoTextView = new TextView(getActivity());
                 artistInfoTextView.setText(String.format("%s\nGenres: %s\nPopularity: %d\n\n", name, genres, popularity));
+                String Imageurl = artist.getJSONArray("images").getJSONObject(0).get("url").toString();
+                new FetchImage(topArtistView, Imageurl).start();
+
 
             }
             ArtistsAdapter adapter = new ArtistsAdapter(artistsNames);
@@ -432,14 +438,14 @@ public class SpotifySummary extends Fragment {
         }
     }
     public void displayTopGenres() {
-        JSONObject topArtists = getJSON("https://api.spotify.com/v1/me/top/artists");
+        JSONObject topGenres = getJSON("https://api.spotify.com/v1/me/top/artists");
         try {
-            JSONArray items = topArtists.getJSONArray("items");
-            ArrayList<String> artistsNames = new ArrayList<>();
+            JSONArray items = topGenres.getJSONArray("items");
+            ArrayList<String> genresName = new ArrayList<>();
             for (int i = 0; i < items.length(); i++) {
                 JSONObject artist = items.getJSONObject(i);
-                String name = artist.getString("name");
-                artistsNames.add(name);
+                String genres = artist.getString("genres");
+                genresName.add(genres);
                 JSONArray genresArray = artist.getJSONArray("genres");
                 StringBuilder genresStringBuilder = new StringBuilder();
                 for (int j = 0; j < genresArray.length(); j++) {
@@ -448,13 +454,9 @@ public class SpotifySummary extends Fragment {
                         genresStringBuilder.append(", ");
                     }
                 }
-                String genres = genresStringBuilder.toString();
-                int popularity = artist.getInt("popularity");
-                TextView artistInfoTextView = new TextView(getActivity());
-                artistInfoTextView.setText(String.format("%s\nGenres: %s\nPopularity: %d\n\n", name, genres, popularity));
 
             }
-            ArtistsAdapter adapter = new ArtistsAdapter(artistsNames);
+            ArtistsAdapter adapter = new ArtistsAdapter(genresName);
             artistsview.setAdapter(adapter);
             artistsview.setLayoutManager(new LinearLayoutManager(getActivity())); // Don't forget to set the LayoutManager
 
@@ -488,6 +490,32 @@ public class SpotifySummary extends Fragment {
 
         } catch (Exception e) {
             Toast.makeText(getActivity(), "Error displaying data" + e, Toast.LENGTH_LONG).show();
+            System.out.println(e);
+        }
+    }
+
+    public void getSongRec() {
+
+
+        // Hard coded values (CHANGE THIS TO MEET THE LOGIC OF THE APP):
+        String seedArtists = "4NHQUGzhtTLFvgF5SZesLK";
+        String seedGenres = "classical,country";
+        String seedTracks = "0c6xIDDpzE81m2q797ordA";
+
+        String url = String.format("https://api.spotify.com/v1/recommendations?limit=10&market=US&seed_artists=%s&seed_genres=%s&seed_tracks=%s",
+                seedArtists, seedGenres, seedTracks);
+
+        JSONObject recommendations = getJSON(url);
+        try {
+            JSONArray tracks = recommendations.getJSONArray("tracks");
+            for (int i = 0; i < tracks.length(); i++) {
+                JSONObject track = tracks.getJSONObject(i);
+                String trackName = track.getString("name");
+                String artistName = track.getJSONArray("artists").getJSONObject(0).getString("name");
+                System.out.println("Recommended track: " + trackName + " by " + artistName);
+            }
+        } catch (JSONException e) {
+            Toast.makeText(getActivity(), "Error parsing recommendations: " + e.getMessage(), Toast.LENGTH_LONG).show();
             System.out.println(e);
         }
     }
