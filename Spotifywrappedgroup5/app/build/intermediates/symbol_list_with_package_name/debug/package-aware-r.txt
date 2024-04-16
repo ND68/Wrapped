@@ -3231,6 +3231,7 @@ font montserrat_variablefont_wght
 id ALT
 id BOTTOM_END
 id BOTTOM_START
+id Button1To2
 id CTRL
 id FUNCTION
 id LandingPage
@@ -3502,7 +3503,7 @@ id loginButton
 id lovinggg
 id ltr
 id m3_side_sheet
-id main_layout
+id mainContainer
 id marquee
 id masked
 id match_constraint
@@ -3608,6 +3609,7 @@ id outline
 id outward
 id overshoot
 id packed
+id page1
 id parallax
 id parent
 id parentPanel

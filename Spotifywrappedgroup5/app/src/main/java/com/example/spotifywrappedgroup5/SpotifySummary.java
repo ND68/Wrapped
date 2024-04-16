@@ -41,7 +41,6 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -83,6 +82,7 @@ public class SpotifySummary extends Fragment {
     private ImageView topTrackImageView;
     private TextView topTrackName;
     private TextView topTrackBy;
+
 
     @Override
     public View onCreateView(
@@ -133,7 +133,7 @@ public class SpotifySummary extends Fragment {
         // **instantiate all views here**
         // **make sure the views are also global variables**
         progressBar = view.findViewById(R.id.progressbar);
-        container = view.findViewById(R.id.main_layout);
+        container = view.findViewById(R.id.mainContainer);
         progressBar.setVisibility(View.VISIBLE);
         container.setVisibility(View.GONE);
 

@@ -73,6 +73,7 @@ drawable settings
 font montserrat_italic_variablefont_wght
 font montserrat_medium
 font montserrat_variablefont_wght
+id Button1To2
 id LandingPage
 id SignUpPage
 id SpotifySummary
@@ -95,12 +96,13 @@ id linearLayout3
 id login
 id loginButton
 id lovinggg
-id main_layout
+id mainContainer
 id nameTextView
 id nav_graph
 id nav_host_fragment_content_main
 id newEmail
 id newPass
+id page1
 id password
 id passwordInput
 id progressbar

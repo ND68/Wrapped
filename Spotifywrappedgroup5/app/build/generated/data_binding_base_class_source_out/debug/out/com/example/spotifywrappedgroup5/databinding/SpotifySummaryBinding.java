@@ -4,6 +4,7 @@ package com.example.spotifywrappedgroup5.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -24,6 +25,9 @@ public final class SpotifySummaryBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
+  public final Button Button1To2;
+
+  @NonNull
   public final RecyclerView artistsview;
 
   @NonNull
@@ -33,7 +37,10 @@ public final class SpotifySummaryBinding implements ViewBinding {
   public final TextView lovinggg;
 
   @NonNull
-  public final ConstraintLayout mainLayout;
+  public final ConstraintLayout mainContainer;
+
+  @NonNull
+  public final ConstraintLayout page1;
 
   @NonNull
   public final CircularProgressIndicator progressbar;
@@ -53,17 +60,20 @@ public final class SpotifySummaryBinding implements ViewBinding {
   @NonNull
   public final TextView usernameTextView;
 
-  private SpotifySummaryBinding(@NonNull ConstraintLayout rootView,
+  private SpotifySummaryBinding(@NonNull ConstraintLayout rootView, @NonNull Button Button1To2,
       @NonNull RecyclerView artistsview, @NonNull LinearLayout linearLayout3,
-      @NonNull TextView lovinggg, @NonNull ConstraintLayout mainLayout,
-      @NonNull CircularProgressIndicator progressbar, @NonNull TextView topTrackBy,
-      @NonNull ImageView topTrackImageView, @NonNull TextView topTrackName,
-      @NonNull TextView topartiststextview, @NonNull TextView usernameTextView) {
+      @NonNull TextView lovinggg, @NonNull ConstraintLayout mainContainer,
+      @NonNull ConstraintLayout page1, @NonNull CircularProgressIndicator progressbar,
+      @NonNull TextView topTrackBy, @NonNull ImageView topTrackImageView,
+      @NonNull TextView topTrackName, @NonNull TextView topartiststextview,
+      @NonNull TextView usernameTextView) {
     this.rootView = rootView;
+    this.Button1To2 = Button1To2;
     this.artistsview = artistsview;
     this.linearLayout3 = linearLayout3;
     this.lovinggg = lovinggg;
-    this.mainLayout = mainLayout;
+    this.mainContainer = mainContainer;
+    this.page1 = page1;
     this.progressbar = progressbar;
     this.topTrackBy = topTrackBy;
     this.topTrackImageView = topTrackImageView;
@@ -99,6 +109,12 @@ public final class SpotifySummaryBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.Button1To2;
+      Button Button1To2 = ViewBindings.findChildViewById(rootView, id);
+      if (Button1To2 == null) {
+        break missingId;
+      }
+
       id = R.id.artistsview;
       RecyclerView artistsview = ViewBindings.findChildViewById(rootView, id);
       if (artistsview == null) {
@@ -117,9 +133,15 @@ public final class SpotifySummaryBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.main_layout;
-      ConstraintLayout mainLayout = ViewBindings.findChildViewById(rootView, id);
-      if (mainLayout == null) {
+      id = R.id.mainContainer;
+      ConstraintLayout mainContainer = ViewBindings.findChildViewById(rootView, id);
+      if (mainContainer == null) {
+        break missingId;
+      }
+
+      id = R.id.page1;
+      ConstraintLayout page1 = ViewBindings.findChildViewById(rootView, id);
+      if (page1 == null) {
         break missingId;
       }
 
@@ -159,9 +181,9 @@ public final class SpotifySummaryBinding implements ViewBinding {
         break missingId;
       }
 
-      return new SpotifySummaryBinding((ConstraintLayout) rootView, artistsview, linearLayout3,
-          lovinggg, mainLayout, progressbar, topTrackBy, topTrackImageView, topTrackName,
-          topartiststextview, usernameTextView);
+      return new SpotifySummaryBinding((ConstraintLayout) rootView, Button1To2, artistsview,
+          linearLayout3, lovinggg, mainContainer, page1, progressbar, topTrackBy, topTrackImageView,
+          topTrackName, topartiststextview, usernameTextView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
