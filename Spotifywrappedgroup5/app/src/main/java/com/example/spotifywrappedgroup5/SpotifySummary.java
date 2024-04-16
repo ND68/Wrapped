@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -41,7 +42,6 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -85,6 +85,9 @@ public class SpotifySummary extends Fragment {
 
     private TextView topTrackName;
     private TextView topTrackBy;
+    private ConstraintLayout page1;
+    private ConstraintLayout page2;
+
 
     @Override
     public View onCreateView(
@@ -135,7 +138,7 @@ public class SpotifySummary extends Fragment {
         // **instantiate all views here**
         // **make sure the views are also global variables**
         progressBar = view.findViewById(R.id.progressbar);
-        container = view.findViewById(R.id.main_layout);
+        container = view.findViewById(R.id.mainContainer);
         progressBar.setVisibility(View.VISIBLE);
         container.setVisibility(View.GONE);
 
@@ -147,6 +150,27 @@ public class SpotifySummary extends Fragment {
         topArtistView = view.findViewById(R.id.topArtistView);
         topTrackName = view.findViewById(R.id.topTrackName);
         topTrackBy = view.findViewById(R.id.topTrackBy);
+
+        Button button1to2 = view.findViewById(R.id.button1To2);
+        Button button2to1 = view.findViewById(R.id.button2To1);
+        page1 = view.findViewById(R.id.page1);
+        page2 = view.findViewById(R.id.page2);
+        page2.setVisibility(View.INVISIBLE);
+        button1to2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                page1.setVisibility(View.INVISIBLE);
+                page2.setVisibility(View.VISIBLE);
+            }
+        });
+
+        button2to1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                page2.setVisibility(View.INVISIBLE);
+                page1.setVisibility(View.VISIBLE);
+            }
+        });
     }
 
 
@@ -495,7 +519,6 @@ public class SpotifySummary extends Fragment {
     }
 
     public void getSongRec() {
-
 
         // Hard coded values (CHANGE THIS TO MEET THE LOGIC OF THE APP):
         String seedArtists = "4NHQUGzhtTLFvgF5SZesLK";
