@@ -487,4 +487,30 @@ public class SpotifySummary extends Fragment {
             System.out.println(e);
         }
     }
+
+    public void getSongRec() {
+
+
+        // Hard coded values (CHANGE THIS TO MEET THE LOGIC OF THE APP):
+        String seedArtists = "4NHQUGzhtTLFvgF5SZesLK";
+        String seedGenres = "classical,country";
+        String seedTracks = "0c6xIDDpzE81m2q797ordA";
+
+        String url = String.format("https://api.spotify.com/v1/recommendations?limit=10&market=US&seed_artists=%s&seed_genres=%s&seed_tracks=%s",
+                seedArtists, seedGenres, seedTracks);
+
+        JSONObject recommendations = getJSON(url);
+        try {
+            JSONArray tracks = recommendations.getJSONArray("tracks");
+            for (int i = 0; i < tracks.length(); i++) {
+                JSONObject track = tracks.getJSONObject(i);
+                String trackName = track.getString("name");
+                String artistName = track.getJSONArray("artists").getJSONObject(0).getString("name");
+                System.out.println("Recommended track: " + trackName + " by " + artistName);
+            }
+        } catch (JSONException e) {
+            Toast.makeText(getActivity(), "Error parsing recommendations: " + e.getMessage(), Toast.LENGTH_LONG).show();
+            System.out.println(e);
+        }
+    }
 }
