@@ -73,7 +73,6 @@ drawable settings
 font montserrat_italic_variablefont_wght
 font montserrat_medium
 font montserrat_variablefont_wght
-id Button1To2
 id LandingPage
 id SignUpPage
 id SpotifySummary
@@ -85,6 +84,9 @@ id action_global_settingsPage
 id action_settingsPage_to_LandingPage
 id artistsview
 id bottom_navigation
+id button1To2
+id button2To1
+id button2To3
 id currEmail
 id currPass
 id delete_account
@@ -104,6 +106,7 @@ id nav_host_fragment_content_main
 id newEmail
 id newPass
 id page1
+id page2
 id password
 id passwordInput
 id progressbar

@@ -3231,7 +3231,6 @@ font montserrat_variablefont_wght
 id ALT
 id BOTTOM_END
 id BOTTOM_START
-id Button1To2
 id CTRL
 id FUNCTION
 id LandingPage
@@ -3346,6 +3345,9 @@ id browser_actions_menu_item_icon
 id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
+id button1To2
+id button2To1
+id button2To3
 id buttonPanel
 id cache_measures
 id callMeasure
@@ -3611,6 +3613,7 @@ id outward
 id overshoot
 id packed
 id page1
+id page2
 id parallax
 id parent
 id parentPanel
