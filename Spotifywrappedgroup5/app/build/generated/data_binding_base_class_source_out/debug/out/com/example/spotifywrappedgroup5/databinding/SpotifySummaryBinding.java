@@ -14,6 +14,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.airbnb.lottie.LottieAnimationView;
 import com.example.spotifywrappedgroup5.R;
 import com.google.android.material.progressindicator.CircularProgressIndicator;
 import java.lang.NullPointerException;
@@ -43,6 +44,9 @@ public final class SpotifySummaryBinding implements ViewBinding {
   public final Button button3To4;
 
   @NonNull
+  public final LottieAnimationView fireworksAnimationView;
+
+  @NonNull
   public final LinearLayout linearLayout3;
 
   @NonNull
@@ -59,6 +63,9 @@ public final class SpotifySummaryBinding implements ViewBinding {
 
   @NonNull
   public final ConstraintLayout page3;
+
+  @NonNull
+  public final TextView personalityTextView;
 
   @NonNull
   public final CircularProgressIndicator progressbar;
@@ -78,15 +85,20 @@ public final class SpotifySummaryBinding implements ViewBinding {
   @NonNull
   public final TextView usernameTextView;
 
+  @NonNull
+  public final TextView yourpersonality;
+
   private SpotifySummaryBinding(@NonNull ConstraintLayout rootView,
       @NonNull RecyclerView artistsview, @NonNull Button button1To2, @NonNull Button button2To1,
       @NonNull Button button2To3, @NonNull Button button3To2, @NonNull Button button3To4,
-      @NonNull LinearLayout linearLayout3, @NonNull TextView lovinggg,
-      @NonNull ConstraintLayout mainContainer, @NonNull ConstraintLayout page1,
-      @NonNull ConstraintLayout page2, @NonNull ConstraintLayout page3,
+      @NonNull LottieAnimationView fireworksAnimationView, @NonNull LinearLayout linearLayout3,
+      @NonNull TextView lovinggg, @NonNull ConstraintLayout mainContainer,
+      @NonNull ConstraintLayout page1, @NonNull ConstraintLayout page2,
+      @NonNull ConstraintLayout page3, @NonNull TextView personalityTextView,
       @NonNull CircularProgressIndicator progressbar, @NonNull TextView topTrackBy,
       @NonNull ImageView topTrackImageView, @NonNull TextView topTrackName,
-      @NonNull TextView topartiststextview, @NonNull TextView usernameTextView) {
+      @NonNull TextView topartiststextview, @NonNull TextView usernameTextView,
+      @NonNull TextView yourpersonality) {
     this.rootView = rootView;
     this.artistsview = artistsview;
     this.button1To2 = button1To2;
@@ -94,18 +106,21 @@ public final class SpotifySummaryBinding implements ViewBinding {
     this.button2To3 = button2To3;
     this.button3To2 = button3To2;
     this.button3To4 = button3To4;
+    this.fireworksAnimationView = fireworksAnimationView;
     this.linearLayout3 = linearLayout3;
     this.lovinggg = lovinggg;
     this.mainContainer = mainContainer;
     this.page1 = page1;
     this.page2 = page2;
     this.page3 = page3;
+    this.personalityTextView = personalityTextView;
     this.progressbar = progressbar;
     this.topTrackBy = topTrackBy;
     this.topTrackImageView = topTrackImageView;
     this.topTrackName = topTrackName;
     this.topartiststextview = topartiststextview;
     this.usernameTextView = usernameTextView;
+    this.yourpersonality = yourpersonality;
   }
 
   @Override
@@ -171,6 +186,12 @@ public final class SpotifySummaryBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.fireworksAnimationView;
+      LottieAnimationView fireworksAnimationView = ViewBindings.findChildViewById(rootView, id);
+      if (fireworksAnimationView == null) {
+        break missingId;
+      }
+
       id = R.id.linearLayout3;
       LinearLayout linearLayout3 = ViewBindings.findChildViewById(rootView, id);
       if (linearLayout3 == null) {
@@ -204,6 +225,12 @@ public final class SpotifySummaryBinding implements ViewBinding {
       id = R.id.page3;
       ConstraintLayout page3 = ViewBindings.findChildViewById(rootView, id);
       if (page3 == null) {
+        break missingId;
+      }
+
+      id = R.id.personalityTextView;
+      TextView personalityTextView = ViewBindings.findChildViewById(rootView, id);
+      if (personalityTextView == null) {
         break missingId;
       }
 
@@ -243,10 +270,17 @@ public final class SpotifySummaryBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.yourpersonality;
+      TextView yourpersonality = ViewBindings.findChildViewById(rootView, id);
+      if (yourpersonality == null) {
+        break missingId;
+      }
+
       return new SpotifySummaryBinding((ConstraintLayout) rootView, artistsview, button1To2,
-          button2To1, button2To3, button3To2, button3To4, linearLayout3, lovinggg, mainContainer,
-          page1, page2, page3, progressbar, topTrackBy, topTrackImageView, topTrackName,
-          topartiststextview, usernameTextView);
+          button2To1, button2To3, button3To2, button3To4, fireworksAnimationView, linearLayout3,
+          lovinggg, mainContainer, page1, page2, page3, personalityTextView, progressbar,
+          topTrackBy, topTrackImageView, topTrackName, topartiststextview, usernameTextView,
+          yourpersonality);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
