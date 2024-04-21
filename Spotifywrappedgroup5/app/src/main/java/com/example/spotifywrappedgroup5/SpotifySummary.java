@@ -23,6 +23,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.example.spotifywrappedgroup5.databinding.SpotifySummaryBinding;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -44,6 +45,7 @@ import java.io.InputStream;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -68,6 +70,9 @@ public class SpotifySummary extends Fragment {
     private FirebaseAuth auth;
     private FirebaseDatabase database;
     private DatabaseReference reference;
+    LottieAnimationView lottieAnimationView;
+    private HashMap<String, Integer> genreCountMap = new HashMap<>();
+
     private Handler mainHandler = new Handler();
 
     MediaPlayer m;
@@ -151,6 +156,7 @@ public class SpotifySummary extends Fragment {
         //topArtistView = view.findViewById(R.id.topArtistView);
         topTrackName = view.findViewById(R.id.topTrackName);
         topTrackBy = view.findViewById(R.id.topTrackBy);
+        lottieAnimationView = view.findViewById(R.id.fireworksAnimationView);
 
         Button button1to2 = view.findViewById(R.id.button1To2);
         Button button2to1 = view.findViewById(R.id.button2To1);
@@ -466,6 +472,8 @@ public class SpotifySummary extends Fragment {
                     if (j < genresArray.length() - 1) {
                         genresStringBuilder.append(", ");
                     }
+                    String genre = genresArray.getString(j);
+                    genreCountMap.put(genre, genreCountMap.getOrDefault(genre, 0) + 1);
                 }
                 String genres = genresStringBuilder.toString();
                 int popularity = artist.getInt("popularity");
@@ -475,7 +483,7 @@ public class SpotifySummary extends Fragment {
             ArtistsAdapter adapter = new ArtistsAdapter(artistsNames, imageUrls);
             artistsview.setAdapter(adapter);
             artistsview.setLayoutManager(new LinearLayoutManager(getActivity())); // Don't forget to set the LayoutManager
-
+            listeningPersonality();
         } catch (Exception e) {
             Toast.makeText(getActivity(), "Error displaying data" + e, Toast.LENGTH_LONG).show();
             System.out.println(e);
@@ -562,4 +570,60 @@ public class SpotifySummary extends Fragment {
             System.out.println(e);
         }
     }
-}
+    // Method to display listening personality
+    public void listeningPersonality() {
+        // Determine the user's listening personality based on their top genres
+        String userPersonality = determinePersonality(genreCountMap);
+
+        // Assuming there's a TextView in your layout with the id personalityTextView
+        TextView personalityTextView = getView().findViewById(R.id.personalityTextView);
+        personalityTextView.setText(userPersonality);
+
+//        lottieAnimationView.setAnimation("fireworks.json");
+//         lottieAnimationView.playAnimation();
+    }
+
+    private String determinePersonality(HashMap<String, Integer> genreCountMap) {
+        // Logic to determine the most common genre or a set of genres
+        // Then map that to a listening personality
+        // For example:
+        String mostCommonGenre = getMostCommonGenre(genreCountMap);
+
+        // Now map the most common genre to a personality
+        // This mapping is purely illustrative; you need to define it based on your own rules
+        String personality;
+        switch (mostCommonGenre) {
+            case "rock":
+                personality = "The Rocker";
+                break;
+                case "pop":
+                    personality = "The Pop Enthusiast";
+                    break;
+                    case "pluggnb":
+                    personality = "The pluggnb Enthusiast";
+                    break;
+                case "k-pop girl group":
+                    personality = "The K-Pop Stan";
+                    break;
+                case "jazz":
+                    personality = "The Deep Driver";
+                    break;
+                    case "rap":
+                personality = "The Devotee";
+                break;
+            default:
+                personality = "The Eclectic";
+        }
+        return personality;
+    }
+
+    private String getMostCommonGenre(HashMap<String, Integer> genreCountMap) {
+        // Logic to find out the most common genre from the map
+        Map.Entry<String, Integer> mostCommonEntry = null;
+        for (Map.Entry<String, Integer> entry : genreCountMap.entrySet()) {
+            if (mostCommonEntry == null || entry.getValue().compareTo(mostCommonEntry.getValue()) > 0) {
+                mostCommonEntry = entry;
+            }
+        }
+        return mostCommonEntry != null ? mostCommonEntry.getKey() : "Various";
+    }}

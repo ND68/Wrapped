@@ -95,6 +95,7 @@ id currEmail
 id currPass
 id delete_account
 id email
+id fireworksAnimationView
 id full_name
 id include2
 id linearLayout
@@ -113,6 +114,7 @@ id page2
 id page3
 id password
 id passwordInput
+id personalityTextView
 id progressbar
 id settings
 id settingsPage
@@ -132,6 +134,7 @@ id userNameInput
 id usernameTextView
 id verify_password
 id wrapped
+id yourpersonality
 layout activity_main
 layout artist_item
 layout content_main
@@ -147,6 +150,7 @@ menu bottom_navigation_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
 navigation nav_graph
+raw fireworks
 string app_name
 string artists
 string email
