@@ -431,10 +431,13 @@ public class SpotifySummary extends Fragment {
         try {
             JSONArray items = topArtists.getJSONArray("items");
             ArrayList<String> artistsNames = new ArrayList<>();
+            ArrayList<String> imageUrls = new ArrayList<>();
             for (int i = 0; i < items.length(); i++) {
                 JSONObject artist = items.getJSONObject(i);
                 String name = artist.getString("name");
                 artistsNames.add(name);
+                String imageUrl = artist.getJSONArray("images").getJSONObject(0).get("url").toString();
+                imageUrls.add(imageUrl);
                 JSONArray genresArray = artist.getJSONArray("genres");
                 StringBuilder genresStringBuilder = new StringBuilder();
                 for (int j = 0; j < genresArray.length(); j++) {
@@ -447,12 +450,8 @@ public class SpotifySummary extends Fragment {
                 int popularity = artist.getInt("popularity");
                 TextView artistInfoTextView = new TextView(getActivity());
                 artistInfoTextView.setText(String.format("%s\nGenres: %s\nPopularity: %d\n\n", name, genres, popularity));
-                String Imageurl = artist.getJSONArray("images").getJSONObject(0).get("url").toString();
-                new FetchImage(topArtistView, Imageurl).start();
-
-
             }
-            ArtistsAdapter adapter = new ArtistsAdapter(artistsNames);
+            ArtistsAdapter adapter = new ArtistsAdapter(artistsNames, imageUrls);
             artistsview.setAdapter(adapter);
             artistsview.setLayoutManager(new LinearLayoutManager(getActivity())); // Don't forget to set the LayoutManager
 
@@ -480,7 +479,7 @@ public class SpotifySummary extends Fragment {
                 }
 
             }
-            ArtistsAdapter adapter = new ArtistsAdapter(genresName);
+            ArtistsAdapter adapter = new ArtistsAdapter(genresName, null);
             artistsview.setAdapter(adapter);
             artistsview.setLayoutManager(new LinearLayoutManager(getActivity())); // Don't forget to set the LayoutManager
 

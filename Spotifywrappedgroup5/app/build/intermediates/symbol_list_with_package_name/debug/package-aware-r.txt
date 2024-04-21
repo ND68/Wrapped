@@ -3321,6 +3321,8 @@ id animateToStart
 id antiClockwise
 id anticipate
 id arc
+id artist_image
+id artist_name
 id artistsview
 id asConfigured
 id async
@@ -3914,6 +3916,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
+layout artist_item
 layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row
 layout com_spotify_sdk_login_activity

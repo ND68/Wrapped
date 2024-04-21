@@ -82,6 +82,8 @@ id action_SignUpPage_to_LandingPage
 id action_global_SpotifySummary
 id action_global_settingsPage
 id action_settingsPage_to_LandingPage
+id artist_image
+id artist_name
 id artistsview
 id bottom_navigation
 id button1To2
@@ -130,6 +132,7 @@ id usernameTextView
 id verify_password
 id wrapped
 layout activity_main
+layout artist_item
 layout content_main
 layout delete_account_popup
 layout landing_page
