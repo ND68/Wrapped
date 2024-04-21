@@ -87,6 +87,7 @@ public class SpotifySummary extends Fragment {
     private TextView topTrackBy;
     private ConstraintLayout page1;
     private ConstraintLayout page2;
+    private ConstraintLayout page3;
 
 
     @Override
@@ -147,15 +148,19 @@ public class SpotifySummary extends Fragment {
         artistsview = view.findViewById(R.id.artistsview);
 
         topTrackImageView = view.findViewById(R.id.topTrackImageView);
-        topArtistView = view.findViewById(R.id.topArtistView);
+        //topArtistView = view.findViewById(R.id.topArtistView);
         topTrackName = view.findViewById(R.id.topTrackName);
         topTrackBy = view.findViewById(R.id.topTrackBy);
 
         Button button1to2 = view.findViewById(R.id.button1To2);
         Button button2to1 = view.findViewById(R.id.button2To1);
+        Button button2to3 = view.findViewById(R.id.button2To3);
+        Button button3to2 = view.findViewById(R.id.button3To2);
         page1 = view.findViewById(R.id.page1);
         page2 = view.findViewById(R.id.page2);
         page2.setVisibility(View.INVISIBLE);
+        page3 = view.findViewById(R.id.page3);
+        page3.setVisibility(View.INVISIBLE);
         button1to2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -169,6 +174,22 @@ public class SpotifySummary extends Fragment {
             public void onClick(View v) {
                 page2.setVisibility(View.INVISIBLE);
                 page1.setVisibility(View.VISIBLE);
+            }
+        });
+
+        button2to3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                page2.setVisibility(View.INVISIBLE);
+                page3.setVisibility(View.VISIBLE);
+            }
+        });
+
+        button3to2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                page3.setVisibility(View.INVISIBLE);
+                page2.setVisibility(View.VISIBLE);
             }
         });
     }
@@ -431,10 +452,13 @@ public class SpotifySummary extends Fragment {
         try {
             JSONArray items = topArtists.getJSONArray("items");
             ArrayList<String> artistsNames = new ArrayList<>();
+            ArrayList<String> imageUrls = new ArrayList<>();
             for (int i = 0; i < items.length(); i++) {
                 JSONObject artist = items.getJSONObject(i);
                 String name = artist.getString("name");
                 artistsNames.add(name);
+                String imageUrl = artist.getJSONArray("images").getJSONObject(0).get("url").toString();
+                imageUrls.add(imageUrl);
                 JSONArray genresArray = artist.getJSONArray("genres");
                 StringBuilder genresStringBuilder = new StringBuilder();
                 for (int j = 0; j < genresArray.length(); j++) {
@@ -447,12 +471,8 @@ public class SpotifySummary extends Fragment {
                 int popularity = artist.getInt("popularity");
                 TextView artistInfoTextView = new TextView(getActivity());
                 artistInfoTextView.setText(String.format("%s\nGenres: %s\nPopularity: %d\n\n", name, genres, popularity));
-                String Imageurl = artist.getJSONArray("images").getJSONObject(0).get("url").toString();
-                new FetchImage(topArtistView, Imageurl).start();
-
-
             }
-            ArtistsAdapter adapter = new ArtistsAdapter(artistsNames);
+            ArtistsAdapter adapter = new ArtistsAdapter(artistsNames, imageUrls);
             artistsview.setAdapter(adapter);
             artistsview.setLayoutManager(new LinearLayoutManager(getActivity())); // Don't forget to set the LayoutManager
 
@@ -480,7 +500,7 @@ public class SpotifySummary extends Fragment {
                 }
 
             }
-            ArtistsAdapter adapter = new ArtistsAdapter(genresName);
+            ArtistsAdapter adapter = new ArtistsAdapter(genresName, null);
             artistsview.setAdapter(adapter);
             artistsview.setLayoutManager(new LinearLayoutManager(getActivity())); // Don't forget to set the LayoutManager
 

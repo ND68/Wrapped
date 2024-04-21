@@ -82,11 +82,15 @@ id action_SignUpPage_to_LandingPage
 id action_global_SpotifySummary
 id action_global_settingsPage
 id action_settingsPage_to_LandingPage
+id artist_image
+id artist_name
 id artistsview
 id bottom_navigation
 id button1To2
 id button2To1
 id button2To3
+id button3To2
+id button3To4
 id currEmail
 id currPass
 id delete_account
@@ -95,7 +99,6 @@ id full_name
 id include2
 id linearLayout
 id linearLayout3
-id linearLayout4
 id login
 id loginButton
 id lovinggg
@@ -107,6 +110,7 @@ id newEmail
 id newPass
 id page1
 id page2
+id page3
 id password
 id passwordInput
 id progressbar
@@ -118,7 +122,6 @@ id textView
 id textView2
 id textView3
 id toolbar
-id topArtistView
 id topTrackBy
 id topTrackImageView
 id topTrackName
@@ -130,6 +133,7 @@ id usernameTextView
 id verify_password
 id wrapped
 layout activity_main
+layout artist_item
 layout content_main
 layout delete_account_popup
 layout landing_page

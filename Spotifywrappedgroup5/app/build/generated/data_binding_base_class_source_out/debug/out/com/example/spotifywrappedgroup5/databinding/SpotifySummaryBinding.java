@@ -37,10 +37,13 @@ public final class SpotifySummaryBinding implements ViewBinding {
   public final Button button2To3;
 
   @NonNull
-  public final LinearLayout linearLayout3;
+  public final Button button3To2;
 
   @NonNull
-  public final LinearLayout linearLayout4;
+  public final Button button3To4;
+
+  @NonNull
+  public final LinearLayout linearLayout3;
 
   @NonNull
   public final TextView lovinggg;
@@ -55,10 +58,10 @@ public final class SpotifySummaryBinding implements ViewBinding {
   public final ConstraintLayout page2;
 
   @NonNull
-  public final CircularProgressIndicator progressbar;
+  public final ConstraintLayout page3;
 
   @NonNull
-  public final ImageView topArtistView;
+  public final CircularProgressIndicator progressbar;
 
   @NonNull
   public final TextView topTrackBy;
@@ -77,11 +80,11 @@ public final class SpotifySummaryBinding implements ViewBinding {
 
   private SpotifySummaryBinding(@NonNull ConstraintLayout rootView,
       @NonNull RecyclerView artistsview, @NonNull Button button1To2, @NonNull Button button2To1,
-      @NonNull Button button2To3, @NonNull LinearLayout linearLayout3,
-      @NonNull LinearLayout linearLayout4, @NonNull TextView lovinggg,
+      @NonNull Button button2To3, @NonNull Button button3To2, @NonNull Button button3To4,
+      @NonNull LinearLayout linearLayout3, @NonNull TextView lovinggg,
       @NonNull ConstraintLayout mainContainer, @NonNull ConstraintLayout page1,
-      @NonNull ConstraintLayout page2, @NonNull CircularProgressIndicator progressbar,
-      @NonNull ImageView topArtistView, @NonNull TextView topTrackBy,
+      @NonNull ConstraintLayout page2, @NonNull ConstraintLayout page3,
+      @NonNull CircularProgressIndicator progressbar, @NonNull TextView topTrackBy,
       @NonNull ImageView topTrackImageView, @NonNull TextView topTrackName,
       @NonNull TextView topartiststextview, @NonNull TextView usernameTextView) {
     this.rootView = rootView;
@@ -89,14 +92,15 @@ public final class SpotifySummaryBinding implements ViewBinding {
     this.button1To2 = button1To2;
     this.button2To1 = button2To1;
     this.button2To3 = button2To3;
+    this.button3To2 = button3To2;
+    this.button3To4 = button3To4;
     this.linearLayout3 = linearLayout3;
-    this.linearLayout4 = linearLayout4;
     this.lovinggg = lovinggg;
     this.mainContainer = mainContainer;
     this.page1 = page1;
     this.page2 = page2;
+    this.page3 = page3;
     this.progressbar = progressbar;
-    this.topArtistView = topArtistView;
     this.topTrackBy = topTrackBy;
     this.topTrackImageView = topTrackImageView;
     this.topTrackName = topTrackName;
@@ -155,15 +159,21 @@ public final class SpotifySummaryBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.linearLayout3;
-      LinearLayout linearLayout3 = ViewBindings.findChildViewById(rootView, id);
-      if (linearLayout3 == null) {
+      id = R.id.button3To2;
+      Button button3To2 = ViewBindings.findChildViewById(rootView, id);
+      if (button3To2 == null) {
         break missingId;
       }
 
-      id = R.id.linearLayout4;
-      LinearLayout linearLayout4 = ViewBindings.findChildViewById(rootView, id);
-      if (linearLayout4 == null) {
+      id = R.id.button3To4;
+      Button button3To4 = ViewBindings.findChildViewById(rootView, id);
+      if (button3To4 == null) {
+        break missingId;
+      }
+
+      id = R.id.linearLayout3;
+      LinearLayout linearLayout3 = ViewBindings.findChildViewById(rootView, id);
+      if (linearLayout3 == null) {
         break missingId;
       }
 
@@ -191,15 +201,15 @@ public final class SpotifySummaryBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.progressbar;
-      CircularProgressIndicator progressbar = ViewBindings.findChildViewById(rootView, id);
-      if (progressbar == null) {
+      id = R.id.page3;
+      ConstraintLayout page3 = ViewBindings.findChildViewById(rootView, id);
+      if (page3 == null) {
         break missingId;
       }
 
-      id = R.id.topArtistView;
-      ImageView topArtistView = ViewBindings.findChildViewById(rootView, id);
-      if (topArtistView == null) {
+      id = R.id.progressbar;
+      CircularProgressIndicator progressbar = ViewBindings.findChildViewById(rootView, id);
+      if (progressbar == null) {
         break missingId;
       }
 
@@ -234,8 +244,8 @@ public final class SpotifySummaryBinding implements ViewBinding {
       }
 
       return new SpotifySummaryBinding((ConstraintLayout) rootView, artistsview, button1To2,
-          button2To1, button2To3, linearLayout3, linearLayout4, lovinggg, mainContainer, page1,
-          page2, progressbar, topArtistView, topTrackBy, topTrackImageView, topTrackName,
+          button2To1, button2To3, button3To2, button3To4, linearLayout3, lovinggg, mainContainer,
+          page1, page2, page3, progressbar, topTrackBy, topTrackImageView, topTrackName,
           topartiststextview, usernameTextView);
     }
     String missingId = rootView.getResources().getResourceName(id);

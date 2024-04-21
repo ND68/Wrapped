@@ -136,6 +136,10 @@
         "source": "com.example.spotifywrappedgroup5.app-main-51:/xml/backup_rules.xml"
     },
     {
+        "merged": "com.example.spotifywrappedgroup5.app-merged_res-49:/layout_artist_item.xml.flat",
+        "source": "com.example.spotifywrappedgroup5.app-main-51:/layout/artist_item.xml"
+    },
+    {
         "merged": "com.example.spotifywrappedgroup5.app-merged_res-49:/layout_main_display_page.xml.flat",
         "source": "com.example.spotifywrappedgroup5.app-main-51:/layout/main_display_page.xml"
     },
