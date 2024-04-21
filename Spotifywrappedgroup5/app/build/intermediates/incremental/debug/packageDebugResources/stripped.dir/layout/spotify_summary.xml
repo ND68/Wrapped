@@ -32,7 +32,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:layout_editor_absoluteX="100dp"
-            tools:layout_editor_absoluteY="69dp">
+            tools:layout_editor_absoluteY="69dp"
+            tools:visibility="gone">
 
             <LinearLayout
                 android:id="@+id/linearLayout3"
@@ -110,8 +111,7 @@
             android:id="@+id/page2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="gone"
-            tools:visibility="visible">
+            tools:visibility="gone">
 
             <Button
                 android:id="@+id/button2To3"
@@ -155,35 +155,50 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/artistsview"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/topartiststextview"
-                app:layout_constraintVertical_bias="0.0" />
-
-            <LinearLayout
-                android:id="@+id/linearLayout4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:background="@drawable/edittext_box"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:padding="24dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/artistsview">
+                app:layout_constraintTop_toBottomOf="@id/topartiststextview"
+                app:layout_constraintVertical_bias="0.395" />
 
-                <ImageView
-                    android:id="@+id/topArtistView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/ic_launcher_foreground" />
-            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/page3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/button3To4"
+                android:layout_width="22dp"
+                android:layout_height="234dp"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="#4D3C3C3C"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                app:icon="@android:drawable/ic_media_ff"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/button3To2"
+                android:layout_width="22dp"
+                android:layout_height="234dp"
+                android:layout_marginStart="8dp"
+                android:backgroundTint="#4D3C3C3C"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                app:icon="@android:drawable/ic_media_rew"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

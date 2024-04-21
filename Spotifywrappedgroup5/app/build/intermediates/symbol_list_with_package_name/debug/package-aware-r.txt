@@ -3350,6 +3350,8 @@ id browser_actions_menu_view
 id button1To2
 id button2To1
 id button2To3
+id button3To2
+id button3To4
 id buttonPanel
 id cache_measures
 id callMeasure
@@ -3499,7 +3501,6 @@ id line3
 id linear
 id linearLayout
 id linearLayout3
-id linearLayout4
 id listMode
 id list_item
 id locale
@@ -3616,6 +3617,7 @@ id overshoot
 id packed
 id page1
 id page2
+id page3
 id parallax
 id parent
 id parentPanel
@@ -3754,7 +3756,6 @@ id title_template
 id toggle
 id toolbar
 id top
-id topArtistView
 id topPanel
 id topTrackBy
 id topTrackImageView
