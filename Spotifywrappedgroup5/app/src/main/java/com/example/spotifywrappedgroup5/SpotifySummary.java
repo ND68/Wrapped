@@ -521,8 +521,7 @@ public class SpotifySummary extends Fragment {
     public void getSongRec() {
 
         // Hard coded values (CHANGE THIS TO MEET THE LOGIC OF THE APP):
-        String seedArtists = "4NHQUGzhtTLFvgF5SZesLK";
-        String seedGenres = "classical,country";
+git         String seedGenres = "classical,country";
         String seedTracks = "0c6xIDDpzE81m2q797ordA";
 
         String url = String.format("https://api.spotify.com/v1/recommendations?limit=10&market=US&seed_artists=%s&seed_genres=%s&seed_tracks=%s",
