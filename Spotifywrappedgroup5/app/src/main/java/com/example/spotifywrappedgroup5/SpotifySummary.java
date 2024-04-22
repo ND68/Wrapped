@@ -659,35 +659,61 @@ public class SpotifySummary extends Fragment {
     }
 
     private String determinePersonality(HashMap<String, Integer> genreCountMap) {
-        // Logic to determine the most common genre or a set of genres
-        // Then map that to a listening personality
-        // For example:
+
         String mostCommonGenre = getMostCommonGenre(genreCountMap);
 
-        // Now map the most common genre to a personality
-        // This mapping is purely illustrative; you need to define it based on your own rules
         String personality;
         switch (mostCommonGenre) {
             case "rock":
-                personality = "The Rocker";
+                personality = "The Rocker\n\nYou're not afraid to turn the volume up and let classic guitar riffs fill the room. Rock is more than music to you; it's a lifestyle.";
                 break;
-                case "pop":
-                    personality = "The Pop Enthusiast";
-                    break;
-                    case "pluggnb":
-                    personality = "The pluggnb Enthusiast";
-                    break;
-                case "k-pop girl group":
-                    personality = "The K-Pop Stan";
-                    break;
-                case "jazz":
-                    personality = "The Deep Driver";
-                    break;
-                    case "rap":
-                personality = "The Devotee";
+            case "pop":
+                personality = "The Pop Enthusiast\n\nYou keep up with trends and have a playlist for every occasion. Pop music keeps you in sync with the mainstream pulse.";
+                break;
+            case "pluggnb":
+                personality = "The PluggNB Lover\n\nYou're all about vibing to the smooth beats of pluggnb, finding solace in its innovative and minimalist sound.";
+                break;
+            case "k-pop girl group":
+                personality = "The K-Pop Stan\n\nYour love for K-Pop extends beyond just the music; it's about the culture, the choreography, and the vivid storytelling.";
+                break;
+            case "jazz":
+                personality = "The Jazz Aficionado\n\nWith a taste for complexity and improvisation, you dive deep into the rich soundscapes of jazz.";
+                break;
+            case "rap":
+                personality = "The Rap Fanatic\n\nFrom classic beats to lyrical prowess, you appreciate the raw expression and storytelling in rap.";
+                break;
+            case "classical":
+                personality = "The Classical Connoisseur\n\nFor you, music is an art form best expressed through the timeless compositions of classical masters.";
+                break;
+            case "electronic":
+                personality = "The EDM Addict\n\nYou live for the drop and can't help but dance to the electrifying beats of EDM.";
+                break;
+            case "country":
+                personality = "The Country Soul\n\nStories told through country tunes speak to you, and your playlists are full of heartbreak, love, and life lessons.";
+                break;
+            case "metal":
+                personality = "The Metalhead\n\nYou thrive on the intense energy of metal music, and its powerful themes resonate with your core.";
+                break;
+            case "blues":
+                personality = "The Blues Enthusiast\n\nYour soul connects with the raw emotion and authentic stories told through blues music.";
+                break;
+            case "reggae":
+                personality = "The Reggae Lover\n\nLaid-back but vibrant, reggae music is your go-to for vibes that speak peace and togetherness.";
+                break;
+            case "folk":
+                personality = "The Folk Wanderer\n\nYou cherish the storytelling and simplicity of folk music, which connects you to cultural roots and personal tales.";
+                break;
+            case "indie":
+                personality = "The Indie Explorer\n\nYou are drawn to the unique, often understated sounds of indie artists who operate outside mainstream norms.";
+                break;
+            case "r&b":
+                personality = "The R&B Soul\n\nYou savor the smooth vocals and sensual beats of R&B, which provide a soundtrack for both your romantic and reflective moments.";
+                break;
+            case "punk":
+                personality = "The Punk Rebel\n\nWith its fast-paced and raw edge, punk music fuels your rebellious spirit and challenges societal norms.";
                 break;
             default:
-                personality = "The Eclectic";
+                personality = "The Eclectic Listener\n\nYou defy genres, your music taste spans across all spectrums, making you truly eclectic.";
         }
         return personality;
     }
