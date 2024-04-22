@@ -162,6 +162,7 @@ public class SpotifySummary extends Fragment {
         Button button2to1 = view.findViewById(R.id.button2To1);
         Button button2to3 = view.findViewById(R.id.button2To3);
         Button button3to2 = view.findViewById(R.id.button3To2);
+        Button button3to4 = view.findViewById(R.id.button3To4);
         Button button4to3 = view.findViewById(R.id.button4To3);
         page1 = view.findViewById(R.id.page1);
         page2 = view.findViewById(R.id.page2);
@@ -207,6 +208,14 @@ public class SpotifySummary extends Fragment {
             public void onClick(View v) {
                 page4.setVisibility(View.INVISIBLE);
                 page3.setVisibility(View.VISIBLE);
+            }
+        });
+
+        button3to4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                page3.setVisibility(View.INVISIBLE);
+                page4.setVisibility(View.VISIBLE);
             }
         });
     }
