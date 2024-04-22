@@ -49,6 +49,9 @@ public final class SpotifySummaryBinding implements ViewBinding {
   public final LinearLayout linearLayout3;
 
   @NonNull
+  public final LinearLayout linearLayout4;
+
+  @NonNull
   public final TextView lovinggg;
 
   @NonNull
@@ -102,7 +105,8 @@ public final class SpotifySummaryBinding implements ViewBinding {
   private SpotifySummaryBinding(@NonNull ConstraintLayout rootView,
       @NonNull RecyclerView artistsview, @NonNull Button button1To2, @NonNull Button button2To1,
       @NonNull Button button2To3, @NonNull Button button3To2, @NonNull Button button3To4,
-      @NonNull Button button4To3, @NonNull LinearLayout linearLayout3, @NonNull TextView lovinggg,
+      @NonNull Button button4To3, @NonNull LinearLayout linearLayout3,
+      @NonNull LinearLayout linearLayout4, @NonNull TextView lovinggg,
       @NonNull ConstraintLayout mainContainer, @NonNull ConstraintLayout page1,
       @NonNull ConstraintLayout page2, @NonNull ConstraintLayout page3,
       @NonNull ConstraintLayout page4, @NonNull TextView personalityTextView,
@@ -120,6 +124,7 @@ public final class SpotifySummaryBinding implements ViewBinding {
     this.button3To4 = button3To4;
     this.button4To3 = button4To3;
     this.linearLayout3 = linearLayout3;
+    this.linearLayout4 = linearLayout4;
     this.lovinggg = lovinggg;
     this.mainContainer = mainContainer;
     this.page1 = page1;
@@ -211,6 +216,12 @@ public final class SpotifySummaryBinding implements ViewBinding {
       id = R.id.linearLayout3;
       LinearLayout linearLayout3 = ViewBindings.findChildViewById(rootView, id);
       if (linearLayout3 == null) {
+        break missingId;
+      }
+
+      id = R.id.linearLayout4;
+      LinearLayout linearLayout4 = ViewBindings.findChildViewById(rootView, id);
+      if (linearLayout4 == null) {
         break missingId;
       }
 
@@ -317,10 +328,10 @@ public final class SpotifySummaryBinding implements ViewBinding {
       }
 
       return new SpotifySummaryBinding((ConstraintLayout) rootView, artistsview, button1To2,
-          button2To1, button2To3, button3To2, button3To4, button4To3, linearLayout3, lovinggg,
-          mainContainer, page1, page2, page3, page4, personalityTextView, progressbar, topTrackBy,
-          topTrackImageView, topTrackName, topartiststextview, track1TextView, track2TextView,
-          track3TextView, usernameTextView, yourpersonality);
+          button2To1, button2To3, button3To2, button3To4, button4To3, linearLayout3, linearLayout4,
+          lovinggg, mainContainer, page1, page2, page3, page4, personalityTextView, progressbar,
+          topTrackBy, topTrackImageView, topTrackName, topartiststextview, track1TextView,
+          track2TextView, track3TextView, usernameTextView, yourpersonality);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

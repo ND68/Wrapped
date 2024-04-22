@@ -100,6 +100,7 @@ id full_name
 id include2
 id linearLayout
 id linearLayout3
+id linearLayout4
 id login
 id loginButton
 id lovinggg

@@ -12,12 +12,12 @@
         "source": "/Users/nathand/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-main-52:/mipmap-anydpi/ic_launcher.xml"
     },
     {
-        "merged": "/Users/nathand/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-merged_res-50:/layout_update_email_popup.xml.flat",
-        "source": "/Users/nathand/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-main-52:/layout/update_email_popup.xml"
-    },
-    {
         "merged": "/Users/nathand/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-merged_res-50:/mipmap-mdpi_ic_launcher.webp.flat",
         "source": "/Users/nathand/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-main-52:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/nathand/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-merged_res-50:/layout_update_email_popup.xml.flat",
+        "source": "/Users/nathand/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-main-52:/layout/update_email_popup.xml"
     },
     {
         "merged": "/Users/nathand/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-merged_res-50:/raw_fireworks.json.flat",
