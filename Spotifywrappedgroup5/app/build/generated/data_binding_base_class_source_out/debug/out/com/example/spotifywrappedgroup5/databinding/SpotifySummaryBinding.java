@@ -44,6 +44,9 @@ public final class SpotifySummaryBinding implements ViewBinding {
   public final Button button3To4;
 
   @NonNull
+  public final Button button4To3;
+
+  @NonNull
   public final LottieAnimationView fireworksAnimationView;
 
   @NonNull
@@ -63,6 +66,9 @@ public final class SpotifySummaryBinding implements ViewBinding {
 
   @NonNull
   public final ConstraintLayout page3;
+
+  @NonNull
+  public final ConstraintLayout page4;
 
   @NonNull
   public final TextView personalityTextView;
@@ -91,10 +97,11 @@ public final class SpotifySummaryBinding implements ViewBinding {
   private SpotifySummaryBinding(@NonNull ConstraintLayout rootView,
       @NonNull RecyclerView artistsview, @NonNull Button button1To2, @NonNull Button button2To1,
       @NonNull Button button2To3, @NonNull Button button3To2, @NonNull Button button3To4,
-      @NonNull LottieAnimationView fireworksAnimationView, @NonNull LinearLayout linearLayout3,
-      @NonNull TextView lovinggg, @NonNull ConstraintLayout mainContainer,
-      @NonNull ConstraintLayout page1, @NonNull ConstraintLayout page2,
-      @NonNull ConstraintLayout page3, @NonNull TextView personalityTextView,
+      @NonNull Button button4To3, @NonNull LottieAnimationView fireworksAnimationView,
+      @NonNull LinearLayout linearLayout3, @NonNull TextView lovinggg,
+      @NonNull ConstraintLayout mainContainer, @NonNull ConstraintLayout page1,
+      @NonNull ConstraintLayout page2, @NonNull ConstraintLayout page3,
+      @NonNull ConstraintLayout page4, @NonNull TextView personalityTextView,
       @NonNull CircularProgressIndicator progressbar, @NonNull TextView topTrackBy,
       @NonNull ImageView topTrackImageView, @NonNull TextView topTrackName,
       @NonNull TextView topartiststextview, @NonNull TextView usernameTextView,
@@ -106,6 +113,7 @@ public final class SpotifySummaryBinding implements ViewBinding {
     this.button2To3 = button2To3;
     this.button3To2 = button3To2;
     this.button3To4 = button3To4;
+    this.button4To3 = button4To3;
     this.fireworksAnimationView = fireworksAnimationView;
     this.linearLayout3 = linearLayout3;
     this.lovinggg = lovinggg;
@@ -113,6 +121,7 @@ public final class SpotifySummaryBinding implements ViewBinding {
     this.page1 = page1;
     this.page2 = page2;
     this.page3 = page3;
+    this.page4 = page4;
     this.personalityTextView = personalityTextView;
     this.progressbar = progressbar;
     this.topTrackBy = topTrackBy;
@@ -186,6 +195,12 @@ public final class SpotifySummaryBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.button4To3;
+      Button button4To3 = ViewBindings.findChildViewById(rootView, id);
+      if (button4To3 == null) {
+        break missingId;
+      }
+
       id = R.id.fireworksAnimationView;
       LottieAnimationView fireworksAnimationView = ViewBindings.findChildViewById(rootView, id);
       if (fireworksAnimationView == null) {
@@ -225,6 +240,12 @@ public final class SpotifySummaryBinding implements ViewBinding {
       id = R.id.page3;
       ConstraintLayout page3 = ViewBindings.findChildViewById(rootView, id);
       if (page3 == null) {
+        break missingId;
+      }
+
+      id = R.id.page4;
+      ConstraintLayout page4 = ViewBindings.findChildViewById(rootView, id);
+      if (page4 == null) {
         break missingId;
       }
 
@@ -277,10 +298,10 @@ public final class SpotifySummaryBinding implements ViewBinding {
       }
 
       return new SpotifySummaryBinding((ConstraintLayout) rootView, artistsview, button1To2,
-          button2To1, button2To3, button3To2, button3To4, fireworksAnimationView, linearLayout3,
-          lovinggg, mainContainer, page1, page2, page3, personalityTextView, progressbar,
-          topTrackBy, topTrackImageView, topTrackName, topartiststextview, usernameTextView,
-          yourpersonality);
+          button2To1, button2To3, button3To2, button3To4, button4To3, fireworksAnimationView,
+          linearLayout3, lovinggg, mainContainer, page1, page2, page3, page4, personalityTextView,
+          progressbar, topTrackBy, topTrackImageView, topTrackName, topartiststextview,
+          usernameTextView, yourpersonality);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

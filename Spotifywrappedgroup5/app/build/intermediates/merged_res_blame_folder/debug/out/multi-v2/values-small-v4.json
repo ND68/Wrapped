@@ -4,7 +4,7 @@
             "outputFile": "com.example.spotifywrappedgroup5.app-mergeDebugResources-48:/values-small-v4/values-small-v4.xml",
             "map": [
                 {
-                    "source": "/Users/ameenagbaria/.gradle/caches/transforms-3/ef1d107286681c397c32c0470a3f9537/transformed/material-1.11.0/res/values-small-v4/values-small-v4.xml",
+                    "source": "/Users/nathand/.gradle/caches/transforms-3/ef1d107286681c397c32c0470a3f9537/transformed/material-1.11.0/res/values-small-v4/values-small-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

@@ -93,7 +93,7 @@ public class SpotifySummary extends Fragment {
     private ConstraintLayout page1;
     private ConstraintLayout page2;
     private ConstraintLayout page3;
-
+    private ConstraintLayout page4;
 
     @Override
     public View onCreateView(
@@ -162,11 +162,14 @@ public class SpotifySummary extends Fragment {
         Button button2to1 = view.findViewById(R.id.button2To1);
         Button button2to3 = view.findViewById(R.id.button2To3);
         Button button3to2 = view.findViewById(R.id.button3To2);
+        Button button4to3 = view.findViewById(R.id.button4To3);
         page1 = view.findViewById(R.id.page1);
         page2 = view.findViewById(R.id.page2);
         page2.setVisibility(View.INVISIBLE);
         page3 = view.findViewById(R.id.page3);
         page3.setVisibility(View.INVISIBLE);
+        page4 = view.findViewById(R.id.page4);
+        page4.setVisibility(View.INVISIBLE);
         button1to2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -196,6 +199,14 @@ public class SpotifySummary extends Fragment {
             public void onClick(View v) {
                 page3.setVisibility(View.INVISIBLE);
                 page2.setVisibility(View.VISIBLE);
+            }
+        });
+
+        button4to3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                page4.setVisibility(View.INVISIBLE);
+                page3.setVisibility(View.VISIBLE);
             }
         });
     }

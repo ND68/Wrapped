@@ -91,6 +91,7 @@ id button2To1
 id button2To3
 id button3To2
 id button3To4
+id button4To3
 id currEmail
 id currPass
 id delete_account
@@ -112,6 +113,7 @@ id newPass
 id page1
 id page2
 id page3
+id page4
 id password
 id passwordInput
 id personalityTextView
@@ -150,7 +152,6 @@ menu bottom_navigation_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
 navigation nav_graph
-raw fireworks
 string app_name
 string artists
 string email

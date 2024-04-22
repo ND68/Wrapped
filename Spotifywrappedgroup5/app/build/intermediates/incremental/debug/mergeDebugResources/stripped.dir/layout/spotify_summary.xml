@@ -28,6 +28,27 @@
         tools:layout_editor_absoluteY="0dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/page4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/button3To2"
+                android:layout_width="22dp"
+                android:layout_height="234dp"
+                android:layout_marginStart="8dp"
+                android:backgroundTint="#4D3C3C3C"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                app:icon="@android:drawable/ic_media_rew"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/page1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -234,7 +255,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Button
-                android:id="@+id/button3To2"
+                android:id="@+id/button4To3"
                 android:layout_width="22dp"
                 android:layout_height="234dp"
                 android:layout_marginStart="8dp"

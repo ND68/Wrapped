@@ -4,7 +4,7 @@
             "outputFile": "com.example.spotifywrappedgroup5.app-mergeDebugResources-48:/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "/Users/ameenagbaria/.gradle/caches/transforms-3/ac1b0f3bbb39696f5f3dbdf2dcef2fc3/transformed/appcompat-1.6.1/res/values-v16/values-v16.xml",
+                    "source": "/Users/nathand/.gradle/caches/transforms-3/ac1b0f3bbb39696f5f3dbdf2dcef2fc3/transformed/appcompat-1.6.1/res/values-v16/values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "/Users/ameenagbaria/.gradle/caches/transforms-3/515f3302060a0a7f1aea236cb05fb870/transformed/core-1.9.0/res/values-v16/values-v16.xml",
+                    "source": "/Users/nathand/.gradle/caches/transforms-3/515f3302060a0a7f1aea236cb05fb870/transformed/core-1.9.0/res/values-v16/values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
