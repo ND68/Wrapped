@@ -150,7 +150,6 @@ menu bottom_navigation_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
 navigation nav_graph
-raw fireworks
 string app_name
 string artists
 string email
