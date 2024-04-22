@@ -3471,7 +3471,6 @@ id fill
 id fill_horizontal
 id fill_vertical
 id filled
-id fireworksAnimationView
 id fitCenter
 id fitEnd
 id fitStart
@@ -3796,6 +3795,9 @@ id topTrackImageView
 id topTrackName
 id topartiststextview
 id touch_outside
+id track1TextView
+id track2TextView
+id track3TextView
 id transitionToEnd
 id transitionToStart
 id transition_current_scene
@@ -4049,7 +4051,6 @@ mipmap ic_launcher_round
 navigation nav_graph
 plurals mtrl_badge_content_description
 raw firebase_common_keep
-raw fireworks
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description

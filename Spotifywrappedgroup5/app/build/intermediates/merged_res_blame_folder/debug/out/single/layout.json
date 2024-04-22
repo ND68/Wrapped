@@ -1,50 +1,50 @@
 [
     {
-        "merged": "/Users/nathand/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-mergeDebugResources-49:/layout/spotify_summary.xml",
-        "source": "/Users/nathand/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-main-52:/layout/spotify_summary.xml"
+        "merged": "/Users/govindnarainkhandelwal/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-mergeDebugResources-49:/layout/landing_page.xml",
+        "source": "/Users/govindnarainkhandelwal/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-main-52:/layout/landing_page.xml"
     },
     {
-        "merged": "/Users/nathand/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-mergeDebugResources-49:/layout/artist_item.xml",
-        "source": "/Users/nathand/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-main-52:/layout/artist_item.xml"
+        "merged": "/Users/govindnarainkhandelwal/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-mergeDebugResources-49:/layout/signup_page.xml",
+        "source": "/Users/govindnarainkhandelwal/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-main-52:/layout/signup_page.xml"
     },
     {
-        "merged": "/Users/nathand/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-mergeDebugResources-49:/layout/main_display_page.xml",
-        "source": "/Users/nathand/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-main-52:/layout/main_display_page.xml"
+        "merged": "/Users/govindnarainkhandelwal/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-mergeDebugResources-49:/layout/settings_page.xml",
+        "source": "/Users/govindnarainkhandelwal/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-main-52:/layout/settings_page.xml"
     },
     {
-        "merged": "/Users/nathand/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-mergeDebugResources-49:/layout/signup_page.xml",
-        "source": "/Users/nathand/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-main-52:/layout/signup_page.xml"
+        "merged": "/Users/govindnarainkhandelwal/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-mergeDebugResources-49:/layout/main_display_page.xml",
+        "source": "/Users/govindnarainkhandelwal/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-main-52:/layout/main_display_page.xml"
     },
     {
-        "merged": "/Users/nathand/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-mergeDebugResources-49:/layout/content_main.xml",
-        "source": "/Users/nathand/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-main-52:/layout/content_main.xml"
+        "merged": "/Users/govindnarainkhandelwal/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-mergeDebugResources-49:/layout/update_pass_popup.xml",
+        "source": "/Users/govindnarainkhandelwal/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-main-52:/layout/update_pass_popup.xml"
     },
     {
-        "merged": "/Users/nathand/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-mergeDebugResources-49:/layout/activity_main.xml",
-        "source": "/Users/nathand/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-main-52:/layout/activity_main.xml"
-    },
-    {
-        "merged": "/Users/nathand/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-mergeDebugResources-49:/layout/delete_account_popup.xml",
-        "source": "/Users/nathand/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-main-52:/layout/delete_account_popup.xml"
-    },
-    {
-        "merged": "/Users/nathand/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-mergeDebugResources-49:/layout/settings_page.xml",
-        "source": "/Users/nathand/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-main-52:/layout/settings_page.xml"
-    },
-    {
-        "merged": "/Users/nathand/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-mergeDebugResources-49:/layout/update_pass_popup.xml",
-        "source": "/Users/nathand/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-main-52:/layout/update_pass_popup.xml"
-    },
-    {
-        "merged": "/Users/nathand/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-mergeDebugResources-49:/layout/landing_page.xml",
-        "source": "/Users/nathand/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-main-52:/layout/landing_page.xml"
+        "merged": "/Users/govindnarainkhandelwal/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-mergeDebugResources-49:/layout/delete_account_popup.xml",
+        "source": "/Users/govindnarainkhandelwal/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-main-52:/layout/delete_account_popup.xml"
     },
     {
         "merged": "com.example.spotifywrappedgroup5.app-mergeDebugResources-49:/layout/spotify_summary.xml",
         "source": "com.example.spotifywrappedgroup5.app-main-52:/layout/spotify_summary.xml"
     },
     {
-        "merged": "/Users/nathand/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-mergeDebugResources-49:/layout/update_email_popup.xml",
-        "source": "/Users/nathand/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-main-52:/layout/update_email_popup.xml"
+        "merged": "/Users/govindnarainkhandelwal/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-mergeDebugResources-49:/layout/spotify_summary.xml",
+        "source": "/Users/govindnarainkhandelwal/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-main-52:/layout/spotify_summary.xml"
+    },
+    {
+        "merged": "/Users/govindnarainkhandelwal/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-mergeDebugResources-49:/layout/activity_main.xml",
+        "source": "/Users/govindnarainkhandelwal/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-main-52:/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/govindnarainkhandelwal/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-mergeDebugResources-49:/layout/content_main.xml",
+        "source": "/Users/govindnarainkhandelwal/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-main-52:/layout/content_main.xml"
+    },
+    {
+        "merged": "/Users/govindnarainkhandelwal/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-mergeDebugResources-49:/layout/artist_item.xml",
+        "source": "/Users/govindnarainkhandelwal/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-main-52:/layout/artist_item.xml"
+    },
+    {
+        "merged": "/Users/govindnarainkhandelwal/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-mergeDebugResources-49:/layout/update_email_popup.xml",
+        "source": "/Users/govindnarainkhandelwal/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-main-52:/layout/update_email_popup.xml"
     }
 ]
