@@ -3725,6 +3725,7 @@ id snackbar_text
 id snap
 id snapMargins
 id software
+id songRec
 id south
 id spacer
 id special_effects_controller_view_tag
@@ -4251,6 +4252,7 @@ string searchview_navigation_content_description
 string side_sheet_accessibility_pane_title
 string side_sheet_behavior
 string signup_button
+string songrec
 string status_bar_notification_info_overflow
 string submit
 string username

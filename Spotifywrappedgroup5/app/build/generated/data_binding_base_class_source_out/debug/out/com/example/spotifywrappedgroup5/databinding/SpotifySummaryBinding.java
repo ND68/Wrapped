@@ -76,6 +76,9 @@ public final class SpotifySummaryBinding implements ViewBinding {
   public final CircularProgressIndicator progressbar;
 
   @NonNull
+  public final TextView songRec;
+
+  @NonNull
   public final TextView topTrackBy;
 
   @NonNull
@@ -110,11 +113,12 @@ public final class SpotifySummaryBinding implements ViewBinding {
       @NonNull ConstraintLayout mainContainer, @NonNull ConstraintLayout page1,
       @NonNull ConstraintLayout page2, @NonNull ConstraintLayout page3,
       @NonNull ConstraintLayout page4, @NonNull TextView personalityTextView,
-      @NonNull CircularProgressIndicator progressbar, @NonNull TextView topTrackBy,
-      @NonNull ImageView topTrackImageView, @NonNull TextView topTrackName,
-      @NonNull TextView topartiststextview, @NonNull TextView track1TextView,
-      @NonNull TextView track2TextView, @NonNull TextView track3TextView,
-      @NonNull TextView usernameTextView, @NonNull TextView yourpersonality) {
+      @NonNull CircularProgressIndicator progressbar, @NonNull TextView songRec,
+      @NonNull TextView topTrackBy, @NonNull ImageView topTrackImageView,
+      @NonNull TextView topTrackName, @NonNull TextView topartiststextview,
+      @NonNull TextView track1TextView, @NonNull TextView track2TextView,
+      @NonNull TextView track3TextView, @NonNull TextView usernameTextView,
+      @NonNull TextView yourpersonality) {
     this.rootView = rootView;
     this.artistsview = artistsview;
     this.button1To2 = button1To2;
@@ -133,6 +137,7 @@ public final class SpotifySummaryBinding implements ViewBinding {
     this.page4 = page4;
     this.personalityTextView = personalityTextView;
     this.progressbar = progressbar;
+    this.songRec = songRec;
     this.topTrackBy = topTrackBy;
     this.topTrackImageView = topTrackImageView;
     this.topTrackName = topTrackName;
@@ -273,6 +278,12 @@ public final class SpotifySummaryBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.songRec;
+      TextView songRec = ViewBindings.findChildViewById(rootView, id);
+      if (songRec == null) {
+        break missingId;
+      }
+
       id = R.id.topTrackBy;
       TextView topTrackBy = ViewBindings.findChildViewById(rootView, id);
       if (topTrackBy == null) {
@@ -330,7 +341,7 @@ public final class SpotifySummaryBinding implements ViewBinding {
       return new SpotifySummaryBinding((ConstraintLayout) rootView, artistsview, button1To2,
           button2To1, button2To3, button3To2, button3To4, button4To3, linearLayout3, linearLayout4,
           lovinggg, mainContainer, page1, page2, page3, page4, personalityTextView, progressbar,
-          topTrackBy, topTrackImageView, topTrackName, topartiststextview, track1TextView,
+          songRec, topTrackBy, topTrackImageView, topTrackName, topartiststextview, track1TextView,
           track2TextView, track3TextView, usernameTextView, yourpersonality);
     }
     String missingId = rootView.getResources().getResourceName(id);

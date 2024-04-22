@@ -75,6 +75,7 @@
     <string name="password">Password: </string>
     <string name="project_id" translatable="false">spotify-wrapped-group-5</string>
     <string name="signup_button">Sign up</string>
+    <string name="songrec">Based on your listening, we think you will love...</string>
     <string name="submit">Submit</string>
     <string name="username">Username: </string>
     <string name="verify">Verify Password: </string>

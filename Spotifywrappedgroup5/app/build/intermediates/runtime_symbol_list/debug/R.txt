@@ -3724,6 +3724,7 @@ int id snackbar_text 0x7f0901d6
 int id snap 0x7f0901d7
 int id snapMargins 0x7f0901d8
 int id software 0x7f0901d9
+int id songRec 0x7f09024c
 int id south 0x7f0901da
 int id spacer 0x7f0901db
 int id special_effects_controller_view_tag 0x7f0901dc
@@ -4250,6 +4251,7 @@ int string searchview_navigation_content_description 0x7f1300c2
 int string side_sheet_accessibility_pane_title 0x7f1300c3
 int string side_sheet_behavior 0x7f1300c4
 int string signup_button 0x7f1300c5
+int string songrec 0x7f1300ca
 int string status_bar_notification_info_overflow 0x7f1300c6
 int string submit 0x7f1300c7
 int string username 0x7f1300c8

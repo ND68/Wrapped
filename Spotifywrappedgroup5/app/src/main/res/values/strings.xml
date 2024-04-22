@@ -9,5 +9,6 @@
     <string name="verify">Verify Password: </string>
     <string name="submit">Submit</string>
     <string name="artists">Your top artists:</string>
+    <string name="songrec">Based on your listening, we think you will love...</string>
 
 </resources>

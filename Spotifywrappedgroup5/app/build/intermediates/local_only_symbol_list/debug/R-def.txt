@@ -121,6 +121,7 @@ id progressbar
 id settings
 id settingsPage
 id singup
+id songRec
 id submit_signup
 id textView
 id textView2
@@ -170,6 +171,7 @@ string login_button
 string password
 string project_id
 string signup_button
+string songrec
 string submit
 string username
 string verify
