@@ -95,7 +95,6 @@ id currEmail
 id currPass
 id delete_account
 id email
-id fireworksAnimationView
 id full_name
 id include2
 id linearLayout
@@ -128,6 +127,9 @@ id topTrackBy
 id topTrackImageView
 id topTrackName
 id topartiststextview
+id track1TextView
+id track2TextView
+id track3TextView
 id update_email
 id update_pass
 id userNameInput

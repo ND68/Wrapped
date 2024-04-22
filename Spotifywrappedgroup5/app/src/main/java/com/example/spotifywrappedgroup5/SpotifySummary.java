@@ -74,6 +74,11 @@ public class SpotifySummary extends Fragment {
     private HashMap<String, Integer> genreCountMap = new HashMap<>();
 
     private Handler mainHandler = new Handler();
+    private String topArtistId;
+    private TextView track1TextView;
+    private TextView track2TextView;
+    private TextView track3TextView;
+
 
     MediaPlayer m;
 
@@ -156,7 +161,7 @@ public class SpotifySummary extends Fragment {
         //topArtistView = view.findViewById(R.id.topArtistView);
         topTrackName = view.findViewById(R.id.topTrackName);
         topTrackBy = view.findViewById(R.id.topTrackBy);
-        lottieAnimationView = view.findViewById(R.id.fireworksAnimationView);
+        //lottieAnimationView = view.findViewById(R.id.fireworksAnimationView);
 
         Button button1to2 = view.findViewById(R.id.button1To2);
         Button button2to1 = view.findViewById(R.id.button2To1);
@@ -208,6 +213,7 @@ public class SpotifySummary extends Fragment {
         displayUserProfile();
         displayTopArtists();
         displayTopTrack();
+        getSongRec();
 
         progressBar.setVisibility(View.INVISIBLE);
         container.setVisibility(View.VISIBLE);
@@ -489,6 +495,24 @@ public class SpotifySummary extends Fragment {
             System.out.println(e);
         }
     }
+    public String fetchTopArtistId() {
+        final String url = "https://api.spotify.com/v1/me/top/artists?limit=1";
+        JSONObject topArtist = getJSON(url);
+
+        try {
+            if (topArtist != null && topArtist.has("items")) {
+                JSONArray items = topArtist.getJSONArray("items");
+                if (items.length() > 0) {
+                    JSONObject artist = items.getJSONObject(0);
+                    return artist.getString("id");
+                }
+            }
+        } catch (JSONException e) {
+            Log.e("Spotify", "Failed to parse top artist data", e);
+        }
+        return null;  // Return null if there's an error or no artist data
+    }
+
     public void displayTopGenres() {
         JSONObject topGenres = getJSON("https://api.spotify.com/v1/me/top/artists");
         try {
@@ -545,30 +569,82 @@ public class SpotifySummary extends Fragment {
             System.out.println(e);
         }
     }
+    public String fetchTopTrackId() {
+        final String url = "https://api.spotify.com/v1/me/top/tracks?limit=1";
+        JSONObject topTrack = getJSON(url);
 
-    public void getSongRec() {
-
-        // Hard coded values (CHANGE THIS TO MEET THE LOGIC OF THE APP):
-        String seedGenres = "classical,country";
-        String seedTracks = "0c6xIDDpzE81m2q797ordA";
-
-        String url = String.format("https://api.spotify.com/v1/recommendations?limit=10&market=US&seed_artists=%s&seed_genres=%s&seed_tracks=%s",
-                seedArtists, seedGenres, seedTracks);
-
-        JSONObject recommendations = getJSON(url);
         try {
-            JSONArray tracks = recommendations.getJSONArray("tracks");
-            for (int i = 0; i < tracks.length(); i++) {
-                JSONObject track = tracks.getJSONObject(i);
-                String trackName = track.getString("name");
-                String artistName = track.getJSONArray("artists").getJSONObject(0).getString("name");
-                System.out.println("Recommended track: " + trackName + " by " + artistName);
+            if (topTrack != null && topTrack.has("items")) {
+                JSONArray items = topTrack.getJSONArray("items");
+                if (items.length() > 0) {
+                    JSONObject track = items.getJSONObject(0);
+                    return track.getString("id");  // Extract the track ID
+                }
             }
         } catch (JSONException e) {
-            Toast.makeText(getActivity(), "Error parsing recommendations: " + e.getMessage(), Toast.LENGTH_LONG).show();
-            System.out.println(e);
+            Log.e("Spotify", "Failed to parse top track data", e);
+        }
+        return null;
+    }
+
+    public void getSongRec() {
+        String seedArtists = fetchTopArtistId();
+        String seedTracks = fetchTopTrackId();
+
+        if (seedArtists == null || seedTracks == null) {
+            Log.e("Spotify", "Error: Required seeds are missing");
+            return;
+        }
+
+        String url = String.format("https://api.spotify.com/v1/recommendations?limit=10&market=US&seed_artists=%s&seed_tracks=%s",
+                seedArtists, seedTracks);
+
+        JSONObject recommendations = getJSON(url);
+
+        try {
+            if (recommendations != null && recommendations.has("tracks")) {
+                JSONArray tracks = recommendations.getJSONArray("tracks");
+                // Ensure there are at least three tracks
+                int maxTracks = Math.min(tracks.length(), 3);
+                for (int i = 0; i < maxTracks; i++) {
+                    JSONObject track = tracks.getJSONObject(i);
+                    String trackName = track.getString("name");
+                    String artistName = track.getJSONArray("artists").getJSONObject(0).getString("name");
+                    String songRecommendation = trackName + " by " + artistName;
+                    displaySongRecommendation(songRecommendation, i);
+                }
+            } else {
+                Log.e("Spotify", "No recommendations found");
+            }
+        } catch (JSONException e) {
+            Log.e("Spotify", "Error parsing recommendations", e);
         }
     }
+
+    private void displaySongRecommendation(String recommendation, int trackNumber) {
+        if (isAdded()) {
+            getActivity().runOnUiThread(() -> {
+                TextView recommendationTextView;
+                switch (trackNumber) {
+                    case 0:
+                        recommendationTextView = getView().findViewById(R.id.track1TextView);
+                        break;
+                    case 1:
+                        recommendationTextView = getView().findViewById(R.id.track2TextView);
+                        break;
+                    case 2:
+                        recommendationTextView = getView().findViewById(R.id.track3TextView);
+                        break;
+                    default:
+                        return; // Exit if more than three tracks
+                }
+                recommendationTextView.setText(recommendation);
+            });
+        }
+    }
+
+
+
     // Method to display listening personality
     public void listeningPersonality() {
         // Determine the user's listening personality based on their top genres
@@ -616,6 +692,7 @@ public class SpotifySummary extends Fragment {
         return personality;
     }
 
+
     private String getMostCommonGenre(HashMap<String, Integer> genreCountMap) {
         // Logic to find out the most common genre from the map
         Map.Entry<String, Integer> mostCommonEntry = null;
@@ -625,4 +702,10 @@ public class SpotifySummary extends Fragment {
             }
         }
         return mostCommonEntry != null ? mostCommonEntry.getKey() : "Various";
-    }}
+    }
+
+
+
+}
+
+
