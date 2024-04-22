@@ -30,3 +30,14 @@
 2024 Apr. 9  <br>
 1. Completed functions that get and process top artists.
 2. Clean the UI and implement the UI design.
+
+2024 Apr. 16 <br>
+1. Initiated the implementation of the analysis of music taste and personality.
+2. Initiated the implementation of background music for the wrap
+
+2024 Apr. 18 <br>
+1. Added images for artists and wrapped report
+2. Completed the implementation of background music for the wrap.
+
+2024 Apr. 21 <br>
+1. Complemented the implementation of the analysis of music taste and personality.
