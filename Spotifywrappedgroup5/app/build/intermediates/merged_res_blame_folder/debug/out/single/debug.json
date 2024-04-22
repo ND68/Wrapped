@@ -8,12 +8,12 @@
         "source": "/Users/ameenagbaria/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-main-52:/mipmap-xhdpi/ic_launcher.webp"
     },
     {
-        "merged": "/Users/ameenagbaria/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-merged_res-50:/mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "/Users/ameenagbaria/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-main-52:/mipmap-mdpi/ic_launcher.webp"
-    },
-    {
         "merged": "/Users/ameenagbaria/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-merged_res-50:/font_montserrat_italic_variablefont_wght.ttf.flat",
         "source": "/Users/ameenagbaria/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-main-52:/font/montserrat_italic_variablefont_wght.ttf"
+    },
+    {
+        "merged": "/Users/ameenagbaria/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-merged_res-50:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "/Users/ameenagbaria/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-main-52:/mipmap-mdpi/ic_launcher.webp"
     },
     {
         "merged": "/Users/ameenagbaria/.gradle/daemon/8.2/com.example.spotifywrappedgroup5.app-merged_res-50:/drawable_music_note.xml.flat",
