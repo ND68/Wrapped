@@ -1,0 +1,1 @@
+[{"navFile":"src/main/res/navigation/nav_graph.xml","javaFiles":["com.example.Wrapped.NavGraphDirections","com.example.Wrapped.LandingPageDirections","com.example.Wrapped.SignupPageDirections","com.example.Wrapped.SpotifySummaryDirections","com.example.Wrapped.SettingsPageDirections"]}]
