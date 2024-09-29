@@ -105,7 +105,6 @@ id login
 id loginButton
 id lovinggg
 id mainContainer
-id nameTextView
 id nav_graph
 id nav_host_fragment_content_main
 id newEmail
@@ -146,7 +145,6 @@ layout artist_item
 layout content_main
 layout delete_account_popup
 layout landing_page
-layout main_display_page
 layout settings_page
 layout signup_page
 layout spotify_summary

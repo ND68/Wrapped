@@ -56,8 +56,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 
 public class SpotifySummary extends Fragment {
-    public static final String CLIENT_ID = "4cf685333f204e4fadde2561002b308a";
-    public static final String REDIRECT_URI = "spotifywrappedgroup5://auth";
+    public final String CLIENT_ID = BuildConfig.CLIENT_ID;
+    public final String REDIRECT_URI = "spotifywrappedgroup5://auth";
 
     public static final int AUTH_TOKEN_REQUEST_CODE = 0;
     public static final int AUTH_CODE_REQUEST_CODE = 1;

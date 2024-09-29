@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
     public String userName;
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
-    public static final String CLIENT_ID = "4cf685333f204e4fadde2561002b308a";
+    public final String CLIENT_ID = BuildConfig.CLIENT_ID;
     public static final String REDIRECT_URI = "spotifywrappedgroup5://auth";
 
     public static final int AUTH_TOKEN_REQUEST_CODE = 0;
